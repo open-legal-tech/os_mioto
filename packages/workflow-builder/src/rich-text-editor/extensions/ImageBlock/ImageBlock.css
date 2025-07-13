@@ -1,0 +1,5 @@
+@reference "@mioto/design-system/css"
+
+.ProseMirror:not([contenteditable="false"]) > .ProseMirror-selectednode img {
+  @apply ring-2 ring-offset-2 ring-primary7;
+}

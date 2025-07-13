@@ -1,0 +1,40 @@
+{
+  "name": "@mioto/sync-server",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@hocuspocus/extension-database": "^2.15.2",
+    "@hocuspocus/extension-logger": "^2.15.2",
+    "@hocuspocus/server": "^2.15.2",
+    "@mioto/env": "workspace:^",
+    "@mioto/prisma": "workspace:^",
+    "@mioto/server": "workspace:^",
+    "@sentry/cli": "^2.42.5",
+    "@sentry/node": "^9.9.0",
+    "express": "^4.21.2",
+    "express-ws": "^5.0.2",
+    "morgan": "^1.10.0",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.24",
+    "zod": "^3.24.2"
+  },
+  "scripts": {
+    "build": "pnpm env:dev -- rm -rf dist && bun build ./src/index.ts --outdir ./dist --target=node",
+    "build:prod": "rm -rf dist && bun build ./src/index.ts --outdir ./dist --target=node",
+    "serve": "pnpm env:dev -- bun --watch run ./src/index.ts --port 8081",
+    "proxy": "caddy reverse-proxy --from localhost:9091 --to :8081",
+    "typecheck": "tsc --noEmit",
+    "validate-env": "pnpm env:prod -- tsx ../../scripts/validate-env.ts",
+    "lint": "pnpm biome check --apply ./",
+    "lint:unsafe": "pnpm biome check --apply-unsafe ./",
+    "ignore": "pnpm dlx turbo-ignore @mioto/sync-server --task=build",
+    "env:dev": "dotenvx run -f .env.development",
+    "sentry:sourcemaps": "pnpm env:prod -- sentry-cli sourcemaps inject --org miotolabs --project sync-server ./dist && sentry-cli sourcemaps upload --org miotolabs --project sync-server ./dist",
+    "docker:build": "APP_PATH='apps/sync-server' pnpm -w env:prod -- bash ./scripts/docker-build.sh"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/express-ws": "^3.0.5",
+    "@types/morgan": "^1.9.9"
+  }
+}

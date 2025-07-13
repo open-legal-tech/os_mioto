@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "ms-vsliveshare.vsliveshare-pack",
+    "bradlc.vscode-tailwindcss",
+    "ms-playwright.playwright",
+    "astro-build.astro-vscode"
+  ]
+}

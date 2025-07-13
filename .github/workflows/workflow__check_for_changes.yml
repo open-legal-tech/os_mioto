@@ -1,0 +1,71 @@
+on:
+  workflow_call:
+    inputs:
+      app-name:
+        required: true
+        type: string
+      workflow-name:
+        required: true
+        type: string
+    outputs:
+      should-run:
+        value: ${{ jobs.check.outputs.should-run }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      should-run: ${{ steps.set-output.outputs.should-run }}
+
+    steps:
+      - run: |
+          result="$(gh run list -w "${{ inputs.workflow-name }}" -R https://github.com/miotolabs/mioto --json conclusion,headSha -L 50 --jq '.[] | select(.conclusion=="success") | .headSha' | head -1)"
+
+          echo 'LAST_SUCCESSFULL_COMMIT_SHA='$result >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - id: ignore
+        shell: bash
+        continue-on-error: true
+        # The output here is only set if the docker:ignore does not fail. That means that the
+        # output is only set if the apps files have NOT changed.
+        run: |
+          pnpm run -r -F "${{ inputs.app-name  }}" ignore --fallback=$LAST_SUCCESSFULL_COMMIT_SHA
+
+      - id: set-output
+        shell: bash
+        run: echo "should-run=${{steps.ignore.outcome != 'success'}}" >> $GITHUB_OUTPUT
+
+      - name: Summary
+        shell: bash
+        # The run is skipped if the apps files have not changed.
+        if: ${{ steps.ignore.outputs.should-run }}
+        run: |
+          echo "The run is skipped, because no change happened in the apps files." >> $GITHUB_STEP_SUMMARY
+
+      # - name: Cancel the current workflow run
+      #   # The run is skipped if the apps files have not changed.
+      #   if: ${{ steps.ignore.outputs.should-run }}
+      #   env:
+      #     GITHUB_RUN_ID: ${{ github.run_id }}
+      #     GITHUB_REPOSITORY: ${{ github.repository }}
+      #     OWNER: ${{ github.repository_owner }}
+      #     REPO: ${{ github.event.repository.name }}
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   run: |
+      #     gh run cancel $GITHUB_RUN_ID -R https://github.com/$OWNER/$REPO

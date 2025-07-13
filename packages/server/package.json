@@ -1,0 +1,70 @@
+{
+  "name": "@mioto/server",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.750.0",
+    "@aws-sdk/s3-request-presigner": "3.750.0",
+    "@aws-sdk/util-create-request": "3.750.0",
+    "@aws-sdk/util-format-url": "3.734.0",
+    "@azure/communication-email": "^1.0.0",
+    "@azure/identity": "^4.8.0",
+    "@azure/msal-node": "^3.4.1",
+    "@azure/storage-blob": "^12.27.0",
+    "@mioto/email": "workspace:^",
+    "@mioto/env": "workspace:^",
+    "@mioto/errors": "workspace:^",
+    "@mioto/locale": "workspace:^",
+    "@mioto/prisma": "workspace:^",
+    "@scaleway/sdk": "^2.71.1",
+    "@zxcvbn-ts/core": "^3.0.4",
+    "@zxcvbn-ts/language-common": "^3.0.4",
+    "@zxcvbn-ts/language-de": "^3.0.2",
+    "@zxcvbn-ts/language-en": "^3.0.2",
+    "angular-expressions": "^1.4.3",
+    "date-fns": "4.1.0",
+    "dayjs": "^1.11.13",
+    "docx-templates": "^4.14.1",
+    "docxtemplater": "^3.60.2",
+    "file-type": "^19.6.0",
+    "framer-motion": "12.4.7",
+    "jose": "^5.10.0",
+    "js-base64": "^3.7.7",
+    "lodash": "^4.17.21",
+    "next-intl": "3.26.5",
+    "pizzip": "^3.1.8",
+    "prettier": "^3.5.3",
+    "remeda": "2.20.2",
+    "vitest": "2.1.8",
+    "xstate": "^5.19.2",
+    "yjs": "^13.6.24",
+    "zod": "^3.24.2"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "exports": {
+    "./db/*": [
+      "./src/db/*.ts"
+    ],
+    "./*": [
+      "./src/models/*.ts"
+    ],
+    "./actions/*": [
+      "./src/actions/*.ts"
+    ],
+    "./redirects/*": [
+      "./src/redirects/*.ts"
+    ],
+    "./env": "./env.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "pnpm biome check --apply ./",
+    "lint:unsafe": "pnpm biome check --apply-unsafe ./"
+  }
+}

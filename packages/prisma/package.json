@@ -1,0 +1,24 @@
+{
+  "name": "@mioto/prisma",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "6.4.1",
+    "@zenstackhq/runtime": "2.11.6",
+    "prisma": "6.4.1",
+    "zenstack": "2.11.6"
+  },
+  "scripts": {
+    "postinstall": "pnpm run generate",
+    "generate": "zenstack generate --schema=./schema.zmodel && pnpm prisma generate",
+    "migrate": "pnpm prisma migrate dev",
+    "lint": "pnpm biome check --apply ./",
+    "lint:unsafe": "pnpm biome check --apply-unsafe ./",
+    "studio": "pnpx prisma studio --schema=prisma/schema.prisma",
+    "env:dev": "dotenvx run -f .env.development"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
+  "main": "./index.ts"
+}

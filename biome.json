@@ -1,0 +1,35 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "files": {
+    "ignore": ["**/*.mock.*"]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
+      },
+      "correctness": {
+        "noUnusedImports": "warn"
+      },
+      "style": {
+        "noUnusedTemplateLiteral": "off",
+        "useNodejsImportProtocol": "off"
+      }
+    }
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git"
+  },
+  "organizeImports": {
+    "enabled": false
+  }
+}

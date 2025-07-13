@@ -1,0 +1,41 @@
+config:
+  azure-native:location: swedencentral
+  infra:access_token_secret:
+    secure: AAABACvZznjjbkEDjtk0G6TrGYBGDuBFp9zfbQcmJGv3hT3Y1gFt/j5J/h7k5oR9WfN/wDKeeLjWeEgsJqpF0vftVY4fQEv0
+  infra:client_endpoint: https://mioto.app
+  infra:contact_email: hello@mioto.app
+  infra:db_password:
+    secure: AAABAEE+gjJqX7cD2rzuxv3qJtbq3jm7Fp2a5/IHXJYEilhue6Im5mtNZ7/dvDhLnk5DnP6GOH7d5b0Gh2+dLXGEWOoY+vkB5fnA7g==
+  infra:db_username: mioto
+  infra:docs_endpoint: https://docs.mioto.app
+  infra:docs_image: miotoregistry.azurecr.io/docs:1.0.0
+  infra:dotenv-key:
+    secure: AAABACGnFAG/7NWJM1FBYl5PK7jhlIZ4xa1/1bvtFpX0qrcUPO5lx9rHklPfZZV4AhrFlUl2aoNt8J2WMaLIDi7dwb/MK1ZPhiY7qs+J4/0x5z10MW5R2F2t3yj1+BiB
+  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.1
+  infra:jwt_access_expiration_minutes: "15"
+  infra:jwt_refresh_expiration_days: "30"
+  infra:org: PhilGarb
+  infra:pdf_engine_image: gotenberg/gotenberg:8
+  infra:posthog_token:
+    secure: AAABAM+yMeLBCl3OYrC511ajdBRyMCoAN8dLwmGLvGIy/THa++73Oqs9UN8X7tHMdnKWd+iOJuMukAW0kH5smMsq9SfG2jql91QtusXPRA==
+  infra:refresh_token_secret:
+    secure: AAABADYpZPWIUCWTfiAql6JW9pRnr2eEd3RwMpNYDq7DJuYb99Y017zBhXacbWsthlZ+ICeWoVUess5KuMp1qJ+DeLb+fJY7
+  infra:register_access_codes:
+    - test
+  infra:sender_email: DoNotReply@email.mioto.app
+  infra:sentry_org: miotolabs
+  infra:sentry_team: mioto-labs
+  infra:specialized_token_expiration_minutes: "30"
+  infra:sync_server_image: miotoregistry.azurecr.io/sync-server:1.0.0
+  infra:with_email_service: "true"
+  scaleway:access_key:
+    secure: AAABAIe8sVokAWg/YWnpArt+oKdV7XR5+PmFuYxwxECEdbDFPtnFbHaG97Qw1IkU513CDQ==
+  scaleway:secret_key:
+    secure: AAABAA5TR3nVxa9oZ56Bk7aiGJXhsbgwDbdLFz2rlErIgFWuHvguNTl7w5rMH3Xj/Acu5rIyMfhjneeyLISzOWONcp4=
+  sentry:token:
+    secure: AAABACYNpaH5vDEUEepatoMJ7hrTePr+0Yvmfn8fGJj1dadAbHh799l3/4NuqQ6Dj450UTgNVj0/2wWHTU5VmF3v7r/WVsW/XdeN5IdBM2pNSJ9lPDgt3NNlbBaVYxF2h9L7UaKFOA==
+  infra:s3_region: fr-par
+  infra:s3_endpoint: https://public-files-a6ae18f.s3.fr-par.scw.cloud
+  infra:public_file_bucket_name: public-files-a6ae18f
+  infra:privat_file_bucket_name: privat-files-011deea
+  infra:resource-group-name: "company"

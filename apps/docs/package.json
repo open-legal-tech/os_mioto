@@ -1,0 +1,21 @@
+{
+  "name": "@mioto/docs",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "env:prod": "dotenvx run -f .env.production",
+    "docker:build": "APP_PATH='apps/docs' pnpm -w env:prod -- bash ./scripts/docker-build.sh"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/starlight": "^0.30.6",
+    "astro": "^4.16.18",
+    "sharp": "^0.33.5",
+    "typescript": "^5.8.2"
+  }
+}

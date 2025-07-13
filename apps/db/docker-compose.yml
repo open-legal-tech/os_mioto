@@ -1,0 +1,12 @@
+# The containers that compose the project
+services:
+  db:
+    image: postgres:14
+    restart: always
+    container_name: postgres-prisma
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: db

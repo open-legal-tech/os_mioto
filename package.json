@@ -1,0 +1,39 @@
+{
+  "name": "@mioto/root",
+  "type": "module",
+  "scripts": {
+    "cleanup": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm -rf dist && rm -rf tmp",
+    "setup": "sh scripts/setup.sh",
+    "typecheck": "turbo typecheck",
+    "update:deps": "pnpx taze -r -I",
+    "env:prod": "dotenvx run -f .env.production",
+    "env": "dotenvx run -f .env.$ENV --",
+    "serve": "ENV=development pnpm run env turbo run serve -F=./apps/* --env-mode=loose",
+    "docker:build": "turbo -F @mioto/editor docker:build --env-mode loose",
+    "docker:push": "PUSH=true pnpm run docker:build"
+  },
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@dotenvx/dotenvx": "1.37.0",
+    "@types/node": "^22.13.13",
+    "eslint": "9.21.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.3",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  },
+  "volta": {
+    "node": "22.11.0",
+    "pnpm": "9.9.0"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.10",
+      "@types/react-dom": "19.0.4",
+      "react": "19.1.0",
+      "react-dom": "19.1.0"
+    }
+  }
+}

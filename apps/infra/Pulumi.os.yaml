@@ -1,0 +1,36 @@
+config:
+  azure-native:location: swedencentral
+  infra:access_token_secret:
+    secure: AAABAOS77T+7ZbiK/gOGSGXjEXDA9P2oTxx9IR7BM93zCUYYsF8w7zga7cIiP6pl5Lolu1LPs4zO9WuDxsnyZd5r8uiYDLYp
+  infra:client_endpoint: https://os.mioto.app
+  infra:docs_endpoint: https://docs.mioto.app
+  infra:contact_email: hello@mioto.app
+  infra:db_password:
+    secure: AAABADRhdrza7AzqaREEn8ETXh443rbsVV8qd7qPpyz1AOvxhtpsFvz7NEbkqEGiPZ2oCnkdthyJSNlMSgY8Kf1ai5VBqD6TTcwLFQ==
+  infra:db_username: mioto
+  infra:docs_image: miotoregistry.azurecr.io/docs:1.0.0
+  infra:dotenv-key:
+    secure: AAABAM/izuqwwxaCda0hk6ynEcA7ZVAMIRDBp8JQrszdvIpiX+jR5FUkO2qZc61bz4tmP5YVv4Z3SW4qUeEMHF8FhVThOy8aepVX92JVk10GkGTVXGQQeuxEdlwNGNot
+  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.4
+  infra:jwt_access_expiration_minutes: "15"
+  infra:jwt_refresh_expiration_days: "30"
+  infra:org: PhilGarb
+  infra:pdf_engine_image: gotenberg/gotenberg:8
+  infra:refresh_token_secret:
+    secure: AAABAJJGUg6iVwqGSFsTl47cC4pDeGHVxNYlp+q2FyYWzGBy0Aan2NB83h9ni7BCwmfypup2QgicT8JpOOtoN9Fn7FDMF+84
+  infra:sentry_org: miotolabs
+  infra:sentry_team: mioto-labs
+  infra:specialized_token_expiration_minutes: "30"
+  infra:sync_server_image: miotoregistry.azurecr.io/sync-server:1.0.0
+  infra:with_email_service: "true"
+  scaleway:access_key:
+    secure: AAABAIQg8e32mv9dNz7QpGgeTRmkXTGX2f/fRQHTr5mZPV2IDo9hcGwBsCIvEo7/GeLzZg==
+  scaleway:secret_key:
+    secure: AAABAF4wWzKEu16cTUHwdBLBZlPGEOK2Cs3Ylq3S83o7vZEZ9eOLUzFhVhLuF8ZY7xR97lxn7NAIvkv/mGCtq813//c=
+  sentry:token:
+    secure: AAABAJTKquecN1yTIF9t5B1qvQH8+favJSjMl0uACedbiMjKY/cL8jGbtt3H4zP/rUrMIQiAusYn9rT/uukZMqvqD6zVPrlgX8IFeHM8qLx4QeotM9/qz6mEDv9OKaYgIfD/eQJUFg==
+  infra:posthog_token:
+    secure: AAABABOVQvcxXUEUFhW6QNXz3LEQw6J3tkvFqY00AjnvpT67HtYZXnOoOy4FjDc9L9ZaGw2K7Qnw978KDoVFjqEn+hsqFb01OUyBA3yXhQ==
+  infra:sender_email: DoNotReply@email.mioto.app
+  infra:register_access_codes: ["test"]
+  infra:resource-group-name: "os"

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env"],
+  "ui": "tui",
+  "tasks": {
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "cache": true
+    },
+    "env:prod": { "cache": false },
+    "env:dev": { "cache": false },
+    "proxy": {
+      "persistent": true,
+      "cache": false
+    },
+    "lint": {},
+    "validate-env": {
+      "outputLogs": "errors-only"
+    },
+    "migrate": {
+      "dependsOn": ["start-db"]
+    },
+    "start-db": {
+      "cache": false
+    },
+    "down": {
+      "cache": false
+    },
+    "serve": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^migrate"]
+    },
+    "generate": {},
+    "docker:build": {
+      "dependsOn": ["prepare:docker:build"],
+      "cache": false
+    }
+  }
+}

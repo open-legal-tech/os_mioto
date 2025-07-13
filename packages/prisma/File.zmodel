@@ -1,0 +1,74 @@
+import "./schema.zmodel"
+import "./User.zmodel"
+import "./Tree.zmodel"
+
+
+model File {
+  uuid          String         @id @default(uuid()) @db.Uuid
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  displayName   String
+  extension     String
+  fileType      String
+  Asset         Asset?
+  Template      Template?
+  GeneratedFile GeneratedFile?
+  UserUpload    UserUpload?
+
+
+  @@allow("all", true)
+}
+
+model Asset {
+  Organization                 Organization  @relation(fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  organizationUuid             String        @db.Uuid
+  File                         File          @relation(fields: [fileUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  fileUuid                     String        @id @db.Uuid
+  ClientPortalPrivacyAgreement ClientPortal? @relation("privacy")
+  ClientPortalTerms            ClientPortal? @relation("terms")
+  ClientPortalLogo             ClientPortal? @relation("logo")
+  ClientPortalBackground       ClientPortal? @relation("background")
+
+  @@allow("all", auth().organizationUuid == organizationUuid && auth().role == "ADMIN")
+  @@allow("read", true)
+}
+
+model Template {
+  Organization     Organization   @relation(fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  organizationUuid String         @db.Uuid
+  File             File           @relation(fields: [fileUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  fileUuid         String         @id @db.Uuid
+  Trees            Tree[]
+  TreeSnapshots    TreeSnapshot[]
+  treeInternalUuid String         @db.Uuid @default(uuid())
+
+
+  @@allow("all", auth().organizationUuid == organizationUuid && auth().role == "ADMIN")
+  @@allow("read", Trees?[SoldTrees?[auth().uuid == customerUserUuid]])
+  @@allow("read", Trees?[Sessions?[auth().uuid == ownerUuid]])
+  @@allow("all", Trees?[Employee?[auth().uuid == userUuid]])
+}
+
+model GeneratedFile {
+  Session     Session @relation(fields: [sessionUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  sessionUuid String  @db.Uuid
+  File        File    @relation(fields: [fileUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  fileUuid    String  @id @db.Uuid
+
+
+  @@allow("all", auth().organizationUuid != Session.Owner.organizationUuid && auth().role == "ADMIN")
+  @@allow("all", auth().uuid == Session.ownerUuid)
+}
+
+model UserUpload {
+  Session     Session @relation(fields: [sessionUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  sessionUuid String  @db.Uuid
+  File        File    @relation(fields: [fileUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  fileUuid    String  @id @db.Uuid
+  User        User    @relation(fields: [userUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  userUuid    String  @db.Uuid
+
+
+  @@allow("all", auth().organizationUuid != Session.Owner.organizationUuid && auth().role == "ADMIN")
+  @@allow("all", auth().uuid == userUuid)
+}

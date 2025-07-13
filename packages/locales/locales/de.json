@@ -1,0 +1,2548 @@
+{
+  "app": {
+    "client": {
+      "alpha-badge": {
+        "title": "Alpha",
+        "tooltip": {
+          "content": "Das Mandantenportal befindet sich noch in der Alphaphase. Es sollte noch nicht öffentlich eingesetzt werden, aber kann getestet werden. Um das Feature möglichst gut zu gestalten würden wir uns über dein Feedback freuen."
+        }
+      },
+      "block": {
+        "pageTitle": "Mandant blockieren"
+      },
+      "block-client": {
+        "dialog": {
+          "block": {
+            "description": "Bitte bestätige die Sperrung von {customerName}. Der Mandant hat dann keine Zugang mehr. Die Sperrung kann jederzeit aufgehoben werden.",
+            "notification": {
+              "success": {
+                "content": "{customerName} wurde gesperrt.",
+                "title": "Mandant gesperrt"
+              }
+            },
+            "submit": "{customerName} sperren",
+            "title": "Mandant sperren"
+          },
+          "unblock": {
+            "description": "Bitte bestätige die Aufhebung der Sperrung von {customerName}. Der Mandant hat dann wieder Zugang.",
+            "notification": {
+              "success": {
+                "content": "{customerName} wurde entsperrt.",
+                "title": "Mandant entsperrt"
+              }
+            },
+            "submit": "{customerName} entsperren",
+            "title": "Mandant entsperren"
+          }
+        }
+      },
+      "card": {
+        "menu": {
+          "block-client": {
+            "block": {
+              "label": "Mandant sperren"
+            },
+            "unblock": {
+              "label": "Mandant entsperren"
+            }
+          },
+          "edit-client": {
+            "label": "Mandant bearbeiten"
+          },
+          "invite": {
+            "copy-link": {
+              "label": "Link kopieren",
+              "notification": {
+                "title": "Link kopiert"
+              }
+            },
+            "label": "Einladung",
+            "send-mail": {
+              "label": "Email senden",
+              "notification": {
+                "success": {
+                  "content": "Einladungsemail konnte nicht gesendet werden",
+                  "title": "Fehler"
+                }
+              }
+            }
+          },
+          "portal-access": {
+            "give-access": "Portalzugang freischalten",
+            "label": "Portal"
+          },
+          "remove-client": {
+            "label": "Mandant löschen"
+          },
+          "share-app": {
+            "label": "Anwendung freigeben"
+          },
+          "share-session": {
+            "label": "Einzelne Session teilen"
+          },
+          "tooltip": "Mandantenmenü: {name}"
+        },
+        "open": {
+          "tooltip": "Mandantenseite öffnen"
+        }
+      },
+      "client-form": {
+        "company": {
+          "label": "Unternehmen"
+        },
+        "email": {
+          "label": "E-Mail",
+          "required": "Eine E-Mail Adresse muss angegeben werden."
+        },
+        "firstname": {
+          "label": "Vorname"
+        },
+        "lastname": {
+          "label": "Nachname"
+        },
+        "portal-access": {
+          "label": "Mandant Portalzugang freigeben (auch später möglich)"
+        },
+        "reference-number": {
+          "label": "Referenznummer"
+        },
+        "send-email": {
+          "label": "Mandant via E-Mail über Portalzugang informieren"
+        }
+      },
+      "client-status": {
+        "active": "Aktiv",
+        "blocked": "Gesperrt",
+        "invited": "Eingeladen",
+        "no-portal": "Ohne Portal"
+      },
+      "deactivated": {
+        "content": "Das Portal ist deaktiviert und alle Zugänge sind gesperrt. Das Portal kann in den <link>Einstellungen</link> wieder aktiviert werden.",
+        "title": "Mandantenportal deaktiviert"
+      },
+      "delete": {
+        "pageTitle": "Mandant löschen"
+      },
+      "delete-client": {
+        "dialog": {
+          "cancel": "Abbrechen",
+          "description": "Bitte bestätige die Löschung von {customerName}. Der Mandant alle mit ihm verbundenen Daten werden unwiderruflich gelöscht.",
+          "notification": {
+            "success": {
+              "content": "{customerName} wurde gelöscht.",
+              "title": "Mandant gelöscht"
+            }
+          },
+          "submit": "{customerName} löschen",
+          "title": "Mandant löschen"
+        }
+      },
+      "edit": {
+        "pageTitle": "Mandant bearbeiten"
+      },
+      "edit-client": {
+        "dialog": {
+          "description": "Hier kann ein neuer Mandant angelegt werden.",
+          "info": {
+            "content": "Bitte stelle sicher, den Mandanten über die Änderung der Logindaten zu informieren. Dies kann automatisch über die E-Mail Option getan werden.",
+            "title": "Mandant Benachrichtung"
+          },
+          "notification": {
+            "success": {
+              "content": "{name} wurde aktualisiert.",
+              "title": "Mandant aktualisiert"
+            }
+          },
+          "title": "Mandant bearbeiten"
+        }
+      },
+      "edit-client-form": {
+        "company": {
+          "label": "Unternehmen"
+        },
+        "email": {
+          "label": "E-Mail",
+          "required": "Eine E-Mail Adresse muss angegeben werden."
+        },
+        "firstname": {
+          "label": "Vorname"
+        },
+        "lastname": {
+          "label": "Nachname"
+        },
+        "portal-access": {
+          "label": "Mandant Portalzugang freigeben"
+        },
+        "reference-number": {
+          "label": "Referenznummer"
+        },
+        "send-email": {
+          "label": "Mandant via E-Mail über Loginänderung informieren"
+        }
+      },
+      "individual": {
+        "pageTitle": "Mandant"
+      },
+      "list": {
+        "search": {
+          "label": "Klientensuche",
+          "placeholder": "Mandantenname, E-Mail, Referenznummer ..."
+        },
+        "sort": {
+          "createdAt": "Erstellt am",
+          "updatedAt": "Bearbeitet am"
+        }
+      },
+      "new-client": {
+        "dialog": {
+          "cancel": "Abbrechen",
+          "description": "Hier kann ein neuer Mandant angelegt werden.",
+          "notification": {
+            "success-with-portal": {
+              "content": "{name} wurde erfolgreich angelegt und der Einladungslink in die Zwischenablage kopiert",
+              "title": "Erfolg"
+            },
+            "success-with-portal-with-email": {
+              "content": "{name} wurde erfolgreich eingeladen"
+            },
+            "success-without-portal": {
+              "content": "{name} wurde erfolgreich angelegt",
+              "title": "Erfolg"
+            }
+          },
+          "submit": "Speichern",
+          "submit-and-next": "Speichern und weiteren Klienten hinzufügen",
+          "title": "Neuer Mandant"
+        },
+        "label": "Mandanten hinzufügen",
+        "notification": {
+          "e-mail_taken": {
+            "content": "Die gewünschte E-Mailadresse ist bereits vergeben.",
+            "title": "E-Mailadresse bereits vergeben"
+          }
+        }
+      },
+      "not-configured": {
+        "description": "Das Mandantenportal muss aktiviert und konfiguriert werden bevor Mandanten hinzugefügt werden können.",
+        "link": "Mandantenportal konfigurieren",
+        "title": "Mandantenportal nicht aktiv"
+      },
+      "page": {
+        "app-card": {
+          "active-session": {
+            "title": "Aktive Sessions"
+          },
+          "open-in-editor": "Anwendung im Editor öffnen",
+          "session-count": {
+            "number-of-sessions": "{remainingSessions} verbleibende Sessions",
+            "unlimited": "Unbegrenzte Sessions"
+          }
+        },
+        "session-card": {
+          "app-title": "Anwendung",
+          "last-edit": "Zuletzt bearbeitet"
+        },
+        "shared-apps": {
+          "share-button": "Anwendung freigeben",
+          "title": "Freigegebene Anwendungen"
+        },
+        "tasks": {
+          "description": "Hier wird es in Zukunft eine Übersicht über offene Aufgaben in den Sessions dieses Mandanten geben. Aufgaben können innerhalb einer Anwendung erstellt werden und werden dann hier angezeigt.",
+          "title": "Offene Aufgaben"
+        }
+      },
+      "pageTitle": "Mandanten",
+      "share": {
+        "pageTitle": "Anwendung teilen"
+      },
+      "share-session": {
+        "dialog": {
+          "cancel": "Abbrechen",
+          "copy-link": {
+            "error": {
+              "notification": {
+                "content": "Du hast uns nicht erlaubt, auf deine Zwischenablage zuzugreifen. Bitte passe die Berechtigung in deinem Browser and oder kopiere den Link manuell.",
+                "title": "Kopieren nicht möglich"
+              }
+            },
+            "link": {
+              "cta": "Klicke zum kopieren"
+            },
+            "success": {
+              "notification": {
+                "title": "Kopiert"
+              }
+            }
+          },
+          "submit": "Link generieren"
+        },
+        "pageTitle": "Session teilen"
+      },
+      "share-tree": {
+        "dialog": {
+          "cancel": "Abbrechen",
+          "credits": {
+            "help-tooltip": "Credits erlauben die Anzahl der erlaubten Ausführungen zu beschränken. Credits können nachträglich angepasst werden in dem du den Baum erneut teilst.",
+            "placeholder": "Leer lassen für unlimitierte Ausführungen"
+          },
+          "description": "Gib {name} eine Anwendung frei.",
+          "form": {
+            "app": {
+              "aria-label": "Anwendungsname",
+              "label": "Anwendung",
+              "list": {
+                "aria-label": "Anwendungsliste"
+              },
+              "placeholder": "Anwendungsname"
+            },
+            "credits": {
+              "label": "Credits"
+            }
+          },
+          "notification": {
+            "success": {
+              "title": "Erfolgreich freigegeben"
+            }
+          },
+          "submit": "Speichern",
+          "title": "Anwendung freigeben"
+        }
+      },
+      "title": "Mandanten"
+    },
+    "client-list": {
+      "empty": "Keine Mandanten gefunden"
+    },
+    "dashboard": {
+      "empty": "Keine Anwendungen gefunden",
+      "help-tooltip": {
+        "content": "Mioto-Anwendungen sind interaktive Formulare, die in der Form von Entscheidungsbäumen erstellt werden. Sie nehmen Nutzer:inneneingaben entgegen und generieren Ausgaben basierend auf den definierten Regeln und Bedingungen im Entscheidungsbaum.",
+        "title": "Anwendungen"
+      },
+      "menu": {
+        "clients": {
+          "tooltip": "Mandanten"
+        },
+        "my-apps": {
+          "tooltip": "Meine Anwendungen"
+        },
+        "portal": {
+          "tooltip": "Portal"
+        },
+        "settings": {
+          "tooltip": "Einstellungen"
+        }
+      },
+      "new-project": {
+        "create-new": {
+          "form": {
+            "description": {
+              "label": "Beschreibung"
+            }
+          },
+          "submit": "Anwendung erstellen",
+          "title": "Neue Anwendung erstellen"
+        },
+        "import": {
+          "label": "Anwendung importieren",
+          "notification": {
+            "invalid-file": {
+              "content": "Die bereitgestellte Datei ist nicht gültig.",
+              "title": "Ungültige Datei"
+            }
+          }
+        },
+        "label": "Anwendung erstellen"
+      },
+      "pageTitle": "Anwendungen",
+      "search": {
+        "label": "Anwendungssuche",
+        "placeholder": "Anwendungsname"
+      },
+      "sort-button": {
+        "created-at": "Erstellungsdatum",
+        "last-edit": "Zuletzt bearbeitet"
+      },
+      "title": "Meine Anwendungen",
+      "tree-card": {
+        "aria-label": "Anwendung {name} öffnen"
+      }
+    },
+    "editor": {
+      "broken-tree": {
+        "dialog": {
+          "submit": "Support kontaktieren"
+        }
+      },
+      "canvas": {
+        "notification": {
+          "delete-start-node": {
+            "title": "Startblock kann nicht gelöscht werden"
+          }
+        },
+        "select-block-type": "Blocktypen auswählen"
+      },
+      "createNodeButton": {
+        "tooltip": "Neuen Block hinzufügen"
+      },
+      "error": {
+        "broken-file": {
+          "content": "Es tut uns Leid, dass es zu diesem Fehler gekommen ist. Deine Daten sind nicht verloren. Bitte kontaktiere uns um eine manuelle Wiederherstellung zu versuchen.",
+          "title": "Die geöffnete Datei enthält Fehler die nicht automatisch zurückgesetzt werden konnten."
+        },
+        "connection-paused": {
+          "action": "Neu verbinden",
+          "icon": {
+            "tooltip": "Editor pausiert"
+          },
+          "title": "Die Verbindung zum Server wurde pausiert."
+        },
+        "unauthorized": {
+          "title": "Du bist nicht berechtigt diese Anwendung zu bearbeiten."
+        }
+      },
+      "errors": {
+        "circular_connection": {
+          "long": "Eine Verbindung zwischen diesen Blöcken würde zu einer zirkulären Verbindung führen.",
+          "short": "Fehlerhafte Verbindung"
+        },
+        "connected_to_self": {
+          "long": "Ein Block kann nicht mit sich selbst verbunden werden.",
+          "short": "Fehlerhafte Verbindung"
+        },
+        "duplicate_edge": {
+          "long": "Eine Verbindung zwischen diesen Blöcken existiert bereits.",
+          "short": "Doppelte Verbindung"
+        }
+      },
+      "global-variables": {
+        "add-button": {
+          "label": "Globale Variable hinzufügen"
+        },
+        "card": {
+          "copy-variable-key": {
+            "notification": {
+              "copy": {
+                "content": "Kopierter Name: <br></br><key></key>",
+                "title": "Variablenname kopiert"
+              }
+            },
+            "tooltip": "Variablennamen kopieren"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "no-name": "Kein Name",
+          "remove": {
+            "tooltip": "Globale Variable entfernen"
+          }
+        },
+        "menu-button": "Globale Variablen",
+        "title": "Globale Variablen"
+      },
+      "mioto-mind": {
+        "alpha-badge": {
+          "contact-button": "So kommen wir in Kontakt",
+          "description": "Mioto Mind befindet sich noch in einer sehr frühen Entwicklungsphase. Es kann zu Fehlern kommen. Bitte helfe uns mit deinem Feedback Mioto Mind zu verbessern.",
+          "title": "Mioto Mind in der Alpha Phase"
+        },
+        "initial-message": {
+          "content": "Hallo! Wie kann ich dir mit Mioto helfen?"
+        },
+        "menu-button": {
+          "tooltip": "Mioto Mind"
+        },
+        "placeholder": "Wie kann ich dir helfen?",
+        "submit": "AI Fragen",
+        "title": "Mioto Mind"
+      },
+      "nodeSearch": {
+        "createBadge": "Erstellen",
+        "placeholder": "Suche"
+      },
+      "not-found": {
+        "content": "Es existiert keine Anwendung mit dieser Id. Bitte überprüfe ob die Url korrekt ist. Wenn du denkst, dass die Url korrekt ist du aber trotzdem keine Anwendung finden kannst dann kontaktiere uns bitte.",
+        "title": "Anwendung nicht gefunden"
+      },
+      "pageTitle": "Editor",
+      "preview": {
+        "menu-button": {
+          "disabled": "Um die Preview zu öffnen wird ein Startblock benötigt.",
+          "enabled": "Anwendungsvorschau"
+        },
+        "save-session": {
+          "help-tooltip": {
+            "content": "Die Daten der Session können gespeichert werden um zu die erzeugten Variablen und den resultierenden Pfad zu überprüfen.",
+            "title": "Sessionspeicherung"
+          },
+          "text": "Session speichern"
+        },
+        "unknown-error": {
+          "content": "Es ist ein unbekannter Fehler aufgetreten. Wir wurden informiert und arbeiten an einer Lösung. Du kannst versuchen die Session zurückzusetzen um das Problem zu lösen.",
+          "reset-action": {
+            "label": "Zurücksetzen"
+          },
+          "title": "Unbekannter Fehler"
+        }
+      },
+      "project-menu": {
+        "select-theme": {
+          "disabled": {
+            "tooltip": "Keine Themes verfügbar"
+          },
+          "label": "Theme auswählen"
+        }
+      },
+      "toolbar": {
+        "fitView": {
+          "hiddenLabel": "Fokussiere die Anwendung"
+        },
+        "redo": {
+          "hiddenLabel": {
+            "disabled": "Wiederherstellen (deaktiviert)",
+            "enabled": "Wiederherstellen"
+          }
+        },
+        "reset-zoom": {
+          "tooltip": "Zoom zurücksetzen"
+        },
+        "undo": {
+          "hiddenLabel": {
+            "disabled": "Rückgängig machen (deaktiviert)",
+            "enabled": "Rückgängig machen"
+          }
+        },
+        "zoomIn": {
+          "hiddenLabel": "Zoom in"
+        },
+        "zoomOut": {
+          "hiddenLabel": "Zoom out"
+        }
+      }
+    },
+    "error": {
+      "title": "Oje, etwas ist schief gelaufen!"
+    },
+    "portal": {
+      "demo": {
+        "link": "Demo",
+        "tooltip": "Das Testen des Portals erlaubt dir ohne eigenen Portalaccount dieses wie ein Portalnutzer zu benutzen. Die verfügbaren Anwendungen kannst du in den Einstellungen konfigurieren."
+      },
+      "tabs": {
+        "settings": "Einstellungen",
+        "users": "Nutzer"
+      },
+      "title": "Portal"
+    },
+    "settings": {
+      "background-upload": {
+        "existing-file": {
+          "title": "Hintergrund"
+        },
+        "label": "Hintergrund",
+        "notification": {
+          "unknown-error": {
+            "content": "Der Hintergrund konnten nicht hochgeladen werden.",
+            "title": "Fehler"
+          }
+        },
+        "title": "Hintergrund"
+      },
+      "client-portal": {
+        "description": "Das Mandantenportal erlaubt deinen Mandanten Zugang zu deiner digitalen Kanzlei.",
+        "legal-documents": {
+          "title": "Rechtliche Dokumente"
+        },
+        "switch": {
+          "activate": {
+            "aria-label": "Mandantenportal aktivieren"
+          },
+          "deactivate": {
+            "alert": {
+              "description": "Wenn du das Mandantenportal deaktivierst werden die <strong> Zugänge all deiner Mandanten gesperrt.</strong> Es werden keine Daten gelöscht und bei Reaktivierung werden alle Zugänge wieder entsperrt.",
+              "label": "Mandantenportal deaktivieren",
+              "submit": "Mandantenportal deaktivieren"
+            },
+            "aria-label": "Mandantenportal deaktivieren"
+          }
+        },
+        "theming": {
+          "description": "Das Portal nutzt automatisch das Theme deiner Organisation.<br></br>Die folgenden Dateien werden verwendet um das Portal auf deine Organisation anzupassen.",
+          "title": "Theming"
+        },
+        "title": "Mandantenportal"
+      },
+      "deleteAccount": {
+        "submit": "Account löschen",
+        "title": "Account löschen",
+        "verifyOverlay": {
+          "additionalMessage": {
+            "content": "Das Löschen Ihres Accounts kann nicht rückgängig gemacht werden.",
+            "title": "Achtung!"
+          },
+          "description": "Bitte verifizieren Sie sich um Ihren Account zu löschen."
+        }
+      },
+      "file-card": {
+        "empty-dropzone": {
+          "aria-label": "{title} hochladen",
+          "label": "Drag & Drop oder klicken"
+        },
+        "url": {
+          "label": "Datei-URL"
+        }
+      },
+      "logo-upload": {
+        "existing-file": {
+          "title": "Logo"
+        },
+        "label": "Logo",
+        "notification": {
+          "unknown-error": {
+            "content": "Das Logo konnten nicht hochgeladen werden.",
+            "title": "Fehler"
+          }
+        }
+      },
+      "org-config": {
+        "form": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Organisationsname"
+          },
+          "submit": "Speichern",
+          "theme": {
+            "label": "Theme"
+          },
+          "title": "Generelles"
+        },
+        "title": "Organisation"
+      },
+      "pageTitle": "Einstellungen",
+      "privacy-upload": {
+        "existing-file": {
+          "download": {
+            "tooltip": "Datenschutzerklärung herunterladen"
+          },
+          "remove": {
+            "tooltip": "Datenschutzerklärung entfernen"
+          },
+          "title": "Datenschutzerklärung"
+        },
+        "help-tooltip": {
+          "content": "Die Datenschutzerklärung für dein Portal. Diese werden Mandanten zur Bestätigung bei Registrierung angezeigt.<br></br><br></br>Kann als Url oder Datei bereitgestellt werden.",
+          "title": "Datenschutzerklärungs des Portals"
+        },
+        "label": "Datenschutzerklärung",
+        "notification": {
+          "unknown-error": {
+            "content": "Die Datenschutzerklärung konnten nicht hochgeladen werden.",
+            "title": "Fehler"
+          }
+        },
+        "placeholder": "https://org.de/datenschutzerklärung",
+        "title": "Datenschutzerklärung"
+      },
+      "terms-upload": {
+        "existing-file": {
+          "download": {
+            "tooltip": "AGB herunterladen"
+          },
+          "remove": {
+            "tooltip": "AGB entfernen"
+          },
+          "title": "AGB"
+        },
+        "help-tooltip": {
+          "content": "Die AGB für dein Portal. Diese werden Mandanten zur Bestätigung bei Registrierung angezeigt.<br></br><br></br>Kann als Url oder Datei bereitgestellt werden.",
+          "title": "AGBs des Portals"
+        },
+        "label": "AGB",
+        "notification": {
+          "unknown-error": {
+            "content": "Die AGB konnten nicht hochgeladen werden.",
+            "title": "Fehler"
+          }
+        },
+        "placeholder": "https://org.de/agb",
+        "title": "AGB"
+      },
+      "theme-management": {
+        "add": {
+          "tooltip": "Füge ein neues Theme hinzu"
+        },
+        "custom-css-upload": {
+          "label": "CSS hochladen (optional)"
+        },
+        "delete": {
+          "label": "Löschen"
+        },
+        "delete-theme": {
+          "dialog": {
+            "cancel": "Abbrechen",
+            "content": "Bist du sicher, dass du das Theme <weak>{themeName}</weak> löschen möchtest?",
+            "heading": "Theme löschen",
+            "notification": {
+              "success": {
+                "title": "Theme erfolgreich gelöscht"
+              }
+            },
+            "submit": "Löschen"
+          }
+        },
+        "download": {
+          "label": "Herunterladen"
+        },
+        "edit": {
+          "label": "Bearbeiten"
+        },
+        "empty-label": "Theme wählen",
+        "file-upload": {
+          "css-template": {
+            "link": "CSS Vorlage"
+          },
+          "download": {
+            "tooltip": "Theme herunterladen"
+          },
+          "existing-file": {
+            "download": "{title} herunterladen"
+          },
+          "form": {
+            "file-upload": {
+              "invalid": {
+                "error": "Das Theme kann nicht hochgeladen werden, da es nicht den Anforderungen entspricht."
+              },
+              "label": "Theme hochladen",
+              "required": {
+                "error": "Bitte wähle eine Datei aus"
+              },
+              "success": {
+                "content": "Das Theme wurde erfolgreich hochgeladen",
+                "title": "Erfolg"
+              }
+            },
+            "name": {
+              "label": "Themename",
+              "required": "Bitte vergib einen Namen für das neue Theme."
+            },
+            "submit": "Speichern"
+          },
+          "heading": "Theme erstellen",
+          "remove": {
+            "tooltip": "Theme entfernen"
+          },
+          "theme-template": {
+            "link": "Theme Vorlage"
+          }
+        },
+        "help-tooltip": {
+          "content": "Themes erlauben dir das Portal und Anwendungen auf die Brand deiner Organisation anzupassen.",
+          "title": "Erklärung zu Themes"
+        },
+        "no-themes": {
+          "label": "Keine Themes"
+        },
+        "title": "Themes"
+      },
+      "title": "Einstellungen",
+      "user": {
+        "title": "Nutzer"
+      }
+    }
+  },
+  "auth": {
+    "create-org": {
+      "description": "<strong>Da dein Account vor dem 04.12.2023 erstellt wurde konfiguriere bitte deine Organisation.</strong><br></br> Seit dem 04.12.2023 sind Organisationen in Mioto verfügbar. Organisationen werden es erlauben mehrere Nutzer zu gruppieren und erleichtern das Teilen, Editieren und Ausführen von Anwendungen.",
+      "form": {
+        "name": {
+          "description": "Der Name deiner Organisation wird an verschiedenen Orten in Mioto genutzt um deine Organisation für Nutzer identifizierbar zu machen.",
+          "errors": {
+            "required": {
+              "message": "Bitte vergib einen Name für deine Organisation."
+            }
+          },
+          "heading": "Name",
+          "label": "Organisationsname",
+          "placeholder": "Jensen & Partner"
+        },
+        "slug": {
+          "description": "Die URL deiner Organisation stellt deinen Bereich in Mioto dar. Sie ist ein Teil des Brandings und erlaubt es dir deine Links von denen anderer Organisationen abzugrenzen.<br></br><strong>Beachte bitte, dass die URL nicht geändert werden kann.</strong>",
+          "errors": {
+            "allowed-characters": {
+              "message": "Bitte verwende nur Buchstaben, Zahlen, Binde- und Unterstriche."
+            },
+            "required": {
+              "message": "Bitte vergib eine URL für deine Organisation."
+            },
+            "slug-taken": {
+              "message": "Die gewünschte URL ist bereits vergeben. Bitte wähle eine Andere."
+            }
+          },
+          "label": "Organisations-URL<br></br>(erlaubte Zeichen: Buchstaben, Zahlen, Binde - und Unterstriche)",
+          "placeholder": "jensen-und-partner",
+          "title": "URL"
+        },
+        "submit": "Organisation anlegen"
+      },
+      "pageTitle": "Organisation erstellen",
+      "title": "Organisation anlegen"
+    },
+    "error": {
+      "content": "Es ist ein unbekannter Fehler aufgetreten. Bitte versuche es erneut. Sollte der Fehler weiterhin auftreten kontaktiere bitte den Support.",
+      "title": "Fehler"
+    },
+    "forgotPassword": {
+      "description": "Bitte gib deine E-Mail an, mit der du dich bei Mioto registriert hast.",
+      "errors": {
+        "user_not_found": "Der Nutzeraccount konnte nicht gefunden werden."
+      },
+      "pageTitle": "Passwort vergessen",
+      "submitButton": "Passwort zurücksetzen",
+      "success": {
+        "description": "Eine E-Mail zum Zurücksetzen des Passworts wurde an die angegebene E-Mail verschickt. Bitte prüfe dein Postfach.",
+        "loginLink": "Zurück zum Login",
+        "title": "Passwort zurückgesetzt"
+      },
+      "title": "Passwort zurücksetzen"
+    },
+    "layout": {
+      "image": {
+        "alt": "Mioto Anwendung"
+      }
+    },
+    "login": {
+      "description": "Starte in wenigen Augenblicken mit der Erstellung deiner persönlichen Automatisierungstools.",
+      "errors": {
+        "incorrect_email_or_password": "Du hast eine falsche Email-Adresse oder ein falsches Passwort eingegeben.",
+        "user_blocked": "Dein Account wurde gesperrt. Bitte kontaktiere deine Kanzlei."
+      },
+      "forgotPasswordLink": "Passwort vergessen?",
+      "pageTitle": "Login",
+      "registerCTA": "Registriere dich hier",
+      "registerQuestion": "Du hast noch kein Konto?",
+      "submit": "Jetzt anmelden",
+      "title": "Willkommen zurück"
+    },
+    "maintenance": {
+      "description": "Mioto befindet sich momentan im Wartungsmodus.",
+      "pageTitle": "Wartung"
+    },
+    "register": {
+      "access-form": {
+        "access-code": {
+          "required": {
+            "message": "Bitte gib ein Zugangspasswort ein."
+          }
+        },
+        "cta-meet": {
+          "button": "Gesprächstermin vereinbaren",
+          "cta": "Du hast Interesse an Mioto? Dann vereinbare hier einen Gesprächstermin."
+        },
+        "description": "Du gehörst bereits zu den ersten Usern? Dann gebe hier deinen Zugangscode ein.",
+        "errors": {
+          "access_code_not_found": "Das Zuganspasswort konnte nicht gefunden werden."
+        },
+        "submit": "Weiter zur Registrierung",
+        "title": "Mioto ist bald für alle da!"
+      },
+      "org-form": {
+        "description": "Konfiguriere hier deine Organisation.",
+        "form": {
+          "name": {
+            "errors": {
+              "required": {
+                "message": "Ein Organisationsname ist verpflichtend."
+              }
+            },
+            "label": "Organisationsname",
+            "placeholder": "Jensen und Partner"
+          },
+          "submit": "Registrieren",
+          "url": {
+            "errors": {
+              "pattern": {
+                "message": "Bitte verwende nur Buchstaben, Zahlen, Binde- und Unterstriche."
+              },
+              "required": {
+                "message": "Eine Organisationsurl ist verpflichtend."
+              }
+            },
+            "help-tooltip": {
+              "description": "Die Organisationsurl erscheint als Teil aller Links deines Mioto Accounts. Sie bleibt immer gleich und erlaubt das whitelabeling deiner Mioto Instanz.",
+              "title": "Organisations-URL"
+            },
+            "label": "Organisations-URL <weak>(kann nicht geändert werden)</weak>",
+            "placeholder": "jensen-und-partner"
+          }
+        },
+        "title": "Deine Organisation"
+      },
+      "pageTitle": "Registrierung",
+      "register-form": {
+        "description": "Starte in wenigen Augenblicken mit der Erstellung deiner persönlichen Automatisierungstools.",
+        "email": {
+          "error": {
+            "already_used": "Die E-Mail Adresse ist bereits vergeben."
+          }
+        },
+        "form": {
+          "alphaDisclaimer": {
+            "label": "Ich habe zur Kenntnis genommen, dass sich die Software in einer frühen Entwicklungsphase befindet und ein fehlerfreier Betrieb nicht garantiert werden kann."
+          },
+          "legal": {
+            "errors": {
+              "required": {
+                "message": "Bitte bestätigen sie diese Bedingung."
+              }
+            }
+          },
+          "new-password": {
+            "errors": {
+              "no-match": {
+                "message": "Die Passwörter stimmen nicht überein."
+              },
+              "required": {
+                "message": "Dieses Feld muss ausgefüllt werden."
+              }
+            }
+          },
+          "passwordConfirmation": {
+            "label": "Passwort wiederholen"
+          },
+          "privacy": {
+            "errors": {
+              "required": {
+                "message": "Bitte bestätigen sie diese Bedingung."
+              }
+            },
+            "label": "Ich habe die <link>Datenschutzerklärung</link> gelesen und stimme ihr zu."
+          },
+          "submit": "Jetzt anmelden",
+          "terms": {
+            "errors": {
+              "required": {
+                "message": "Bitte bestätigen sie diese Bedingung."
+              }
+            },
+            "label": "Ich habe die allgemeinen <link>Geschäftsbedingungen</link> gelesen und akzeptiere diese."
+          }
+        },
+        "loginCTA": {
+          "link": "Melde dich hier an",
+          "question": "Du hast bereits ein Konto?"
+        },
+        "newsletterSignUp": "Ich möchte den Mioto Newsletter erhalten um über Fortschritte bei der Entwicklung informiert zu werden.",
+        "title": "Willkommen bei Mioto!"
+      }
+    },
+    "resetPassword": {
+      "description": "Bitte vergib ein neues Passwort",
+      "errors": {
+        "unknown": {
+          "notification": {
+            "content": "Bitte melde dich beim Support zur Unterstützung.",
+            "title": "Passwort konnte nicht geändert werden"
+          }
+        }
+      },
+      "form": {
+        "password": {
+          "errors": {
+            "no-match": {
+              "message": "Die Passwörter stimmen nicht überein."
+            }
+          },
+          "label": "Passwort wiederholen"
+        },
+        "submit": "Passwort zurücksetzen"
+      },
+      "invalid": {
+        "description": "Dies ist kein gültiger Link um ein Passwort zurückzusetzen. Bitte versuche es erneut.",
+        "retry": "Passwort erneut zurücksetzen",
+        "title": "Ungültig"
+      },
+      "pageTitle": "Passwort zurücksetzen",
+      "success": {
+        "notification": {
+          "title": "Erfolgreich Passwort geändert"
+        }
+      },
+      "title": "Passwort zurücksetzen"
+    }
+  },
+  "client-portal": {
+    "dashboard": {
+      "app-card": {
+        "continue": "Fortsetzen"
+      },
+      "backButton": "Zurück zum Dashboard",
+      "empty": {
+        "content": "Ihre Kanzlei hat Ihnen noch keine Anwendungen freigegeben. Bitte schauen Sie später erneut vorbei.",
+        "title": "Keine Anwendungen"
+      },
+      "logoutButton": "Logout",
+      "menu": {
+        "dashboardLink": {
+          "tooltip": "Anwendungen"
+        },
+        "settingsLink": {
+          "tooltip": "Einstellungen"
+        }
+      },
+      "pageTitle": "Dashboard",
+      "title": "Verfügbare Anwendungen"
+    },
+    "error": {
+      "refreshButton": "Seite neu laden",
+      "title": "Es ist ein unbekannter Fehler aufgetreten."
+    },
+    "login": {
+      "blocked": {
+        "content": "Das Portal ist momentan nicht zugänglich. Bitte versuchen Sie es später erneut.",
+        "title": "Portal gesperrt"
+      },
+      "form": {
+        "password": {
+          "required": {
+            "errorMessage": "Bitte gib dein Passwort ein."
+          }
+        },
+        "submit": "Jetzt anmelden"
+      },
+      "pageTitle": "Login"
+    },
+    "no-access": {
+      "content": "Ihre Kanzlei hat Ihnen keinen Zugang zum Portal freigeschaltet. Bitte wenden Sie sich an {orgName} wenn dies ein Fehler sein sollte.",
+      "title": "Kein Zugang"
+    },
+    "not-found": {
+      "pageTitle": "Nicht gefunden",
+      "title": "Seite nicht gefunden"
+    },
+    "public-renderer": {
+      "pageTitle": "Renderer"
+    },
+    "register": {
+      "data-protection": {
+        "label": "Ich habe die <link>Datenschutzerklärung</link> gelesen und stimme ihr zu.",
+        "required": {
+          "errorMessage": "Bitte bestätigen sie diese Bedingung."
+        }
+      },
+      "errors": {
+        "invite_not_found": "Die Einladung konnte nicht gefunden werden.",
+        "user_blocked": "Dein Account wurde gesperrt. Bitte kontaktiere deine Kanzlei."
+      },
+      "pageTitle": "Registrierung",
+      "passwordConfirmation": {
+        "label": "Passwort bestätigen",
+        "mismatch": {
+          "errorMessage": "Die Passwörter stimmen nicht überein."
+        },
+        "required": {
+          "errorMessage": "Dieses Feld muss ausgefüllt werden."
+        }
+      },
+      "submit": "Registrieren",
+      "terms": {
+        "label": "Ich habe die allgemeinen <link>Geschäftsbedingungen</link> gelesen und akzeptiere diese.",
+        "required": {
+          "errorMessage": "Bitte bestätigen sie diese Bedingung."
+        }
+      }
+    },
+    "renderer": {
+      "pageTitle": "{treeName} {sessionName}"
+    },
+    "settings": {
+      "pageTitle": "Einstellungen"
+    },
+    "start-session": {
+      "disabled": "Keine weiteren Ausführungen verfügbar",
+      "error": {
+        "content": "Leider konnte die Anwendung nicht gestartet werden. Bitte wenden Sie sich an den Betreiber.",
+        "title": "Fehler"
+      },
+      "label": "Starten"
+    },
+    "tree": {
+      "pageTitle": "Übersicht {treeName}",
+      "remaining-sessions": {
+        "title": "Verbleibende Ausführungen"
+      },
+      "session-list": {
+        "title": "Ausführungen"
+      },
+      "unlimited-sessions": {
+        "title": "Unbegrenzte Ausführungen"
+      }
+    },
+    "treeCard": {
+      "continueButton": "Fortsetzen"
+    }
+  },
+  "common": {
+    "blockGroupNames": {
+      "action": "Aktionen",
+      "data": "Daten",
+      "placeholder": "Platzhalter",
+      "structure": "Struktur",
+      "system": "System"
+    },
+    "nodeNames": {
+      "ai": {
+        "long": "AI-Block",
+        "short": "AI"
+      },
+      "authentication": {
+        "long": "Mandantenblock",
+        "short": "Mandant"
+      },
+      "calculation": {
+        "long": "Berechnungsblock",
+        "short": "Berechnung"
+      },
+      "document": {
+        "long": "Dokumentengenerierungsblock (alt)",
+        "short": "Dokument (alt)"
+      },
+      "documentv2": {
+        "long": "Dokumentengenerierungsblock",
+        "short": "Dokument"
+      },
+      "form": {
+        "long": "Eingabeblock",
+        "short": "Eingabe"
+      },
+      "info": {
+        "long": "Informationsblock",
+        "short": "Information"
+      },
+      "logic": {
+        "long": "Logikblock",
+        "short": "Logik"
+      },
+      "node-group": {
+        "long": "Gruppenblock",
+        "short": "Gruppe"
+      },
+      "payment": {
+        "long": "Zahlungsblock",
+        "short": "Zahlung"
+      },
+      "placeholder": {
+        "long": "Platzhalterblock",
+        "short": "Platzhalter"
+      },
+      "reporting": {
+        "long": "E-Mailblock",
+        "short": "E-Mail"
+      },
+      "system-globalVariables": {
+        "long": "Globale Variablen",
+        "short": "Globale Variablen"
+      },
+      "text-interpolation": {
+        "long": "Textblock",
+        "short": "Textblock"
+      }
+    },
+    "variableNames": {
+      "boolean": "Wahr/Falsch",
+      "date": "Datum",
+      "file": "Dokument",
+      "multi-select": "Mehrfachauswahl",
+      "number": "Zahl",
+      "record": "Gruppe",
+      "rich-text": "Formatierter Text",
+      "select": "Einfachauswahl",
+      "text": "Text",
+      "textarea": "Textfeld"
+    }
+  },
+  "components": {
+    "alphabadge": {
+      "label": "Alpha"
+    },
+    "beta-badge": {
+      "button": {
+        "label": "Beta"
+      },
+      "popover": {
+        "contact-button": "So kommen wir in Kontakt",
+        "content": "Wir freuen uns, dass du Mioto nutzt. Bitte beachte, dass die Software aktuell noch in der Beta-Phase ist.<br></br>Wenn du auf Probleme stößt, Fragen hast oder uns einfach nur deine Meinung mitteilen möchtest, benutze bitte das Kontaktformular. Wir freuen uns auf deine Rückmeldung!",
+        "heading": "Mioto in der Beta-Phase"
+      }
+    },
+    "change-email": {
+      "description": "Deine derzeitige E-Mail Adresse ist: <weak>{userEmail}</weak>",
+      "errors": {
+        "email_already_used": "Die gewünschte E-Mailadresse ist bereits vergeben."
+      },
+      "label": "Neue E-Mail",
+      "notifications": {
+        "success": {
+          "title": "E-Mail erfolgreich geändert"
+        }
+      },
+      "submit": "E-Mail ändern",
+      "title": "E-Mail ändern"
+    },
+    "change-password": {
+      "errors": {
+        "weak_password": "Bitte kreiere ein komplexeres Passwort. Es muss mindestens 8 Zeichen lang sein und mindestens eine Zahl und ein Sonderzeichen enthalten."
+      },
+      "inputLabel": "Neues Passwort",
+      "notifications": {
+        "success": "Passwort erfolgreich geändert"
+      },
+      "submit": "Passwort ändern",
+      "title": "Passwort ändern"
+    },
+    "contact-form": {
+      "form": {
+        "email": {
+          "label": "Deine E-Mail",
+          "required": "Bitte gib deine E-Mail an, damit wir dir antworten können."
+        },
+        "message": {
+          "label": "Deine Nachricht",
+          "required": "Ohne eine Nachricht können wir dir nicht helfen."
+        }
+      },
+      "notifications": {
+        "unknown": {
+          "content": "Es ist ein Fehler beim Senden der Nachricht aufgetreten. Bitte versuche es später erneut.",
+          "title": "Fehler"
+        }
+      }
+    },
+    "date-picker": {
+      "placeholder": "Wähle ein Datum aus"
+    },
+    "deleteTreeDialog": {
+      "description": "Bitte gib den Namen der Anwendung <weak>{treeName}</weak> zur Bestätigung der Löschung ein.",
+      "submit": "Löschen",
+      "title": "Anwendung löschen",
+      "tree-name": {
+        "label": "Anwendungsname"
+      }
+    },
+    "dialog": {
+      "cancel": "Schließe den Dialog",
+      "close-button": "Abbrechen"
+    },
+    "email-input": {
+      "label": "E-Mail",
+      "placeholder": "beispiel@email.com",
+      "required": {
+        "errorMessage": "Bitte gib eine E-Mail an."
+      }
+    },
+    "error-card": {
+      "assurance": "Keine Sorge, deine Daten sind gespeichert und sicher.",
+      "callToAction": "Klicke hier, um weiterzuarbeiten",
+      "description": "Leider funktioniert Mioto gerade nicht wie es sollte. Wir arbeiten bereits daran den Fehler zu beheben.",
+      "title": "Etwas ist schiefgelaufen"
+    },
+    "file-dropzone": {
+      "existing-file": {
+        "download": {
+          "tooltip": "{title} herunterladen"
+        },
+        "remove": {
+          "tooltip": "{title} entfernen"
+        }
+      }
+    },
+    "group-input": {
+      "required": {
+        "errorMessage": "Eine Auswahl muss getroffen werden."
+      }
+    },
+    "header": {
+      "homeButtonHiddenLabel": "Gehe zurück zum Dashboard"
+    },
+    "info-dropdown": {
+      "contact-support": "Support kontaktieren",
+      "documentation": {
+        "label": "Dokumentation"
+      },
+      "imprint": {
+        "label": "Impressum"
+      },
+      "privacy": {
+        "label": "Datenschutzerklärung"
+      },
+      "terms": {
+        "label": "AGB"
+      }
+    },
+    "inputs": {
+      "optional-badge": "*Optional"
+    },
+    "language-toogle": {
+      "languages": {
+        "de": "Deutsch",
+        "en": "Englisch"
+      },
+      "tooltip": "Sprache zu {language} ändern"
+    },
+    "new-password-input": {
+      "form": {
+        "new-password": {
+          "required": "Dieses Feld muss ausgefüllt werden.",
+          "weak_password": "Dein Passwort ist zu schwach. Klicke den Stärkeindikator rechts, für Tipps."
+        }
+      },
+      "strength-indicator": {
+        "label": "Stärke: {strengthScore}",
+        "popover": {
+          "description": "Dies sind Tipps um dein Passwort zu stärken. Dies sind keine verpflichtenden Regeln. Du musst nur einen Stärkegrad von 3 erreichen.",
+          "title": "Tipps"
+        },
+        "tipps": {
+          "1": "Keine existierenden Wörter",
+          "2": "Kein Datum",
+          "3": "Mischung aus Groß- und Kleinschreibung",
+          "4": "Nutzung von Sonderzeichen"
+        }
+      }
+    },
+    "password-input": {
+      "label": "Passwort",
+      "tooltip": {
+        "hidden": "Passwort anzeigen",
+        "visible": "Passwort verstecken"
+      }
+    },
+    "project-menu": {
+      "changeTreeData": {
+        "button": "Anwendungsdaten ändern"
+      },
+      "create-version": {
+        "button": "Version erstellen",
+        "disabled": {
+          "no-store": {
+            "tooltip": "Deine Anwendung ist noch nicht vollständig auf dem Server gespeichert. Eine Version kann erst erstellt werden wenn alle Änderungen übertragen wurden."
+          }
+        },
+        "errors": {
+          "missing_tree_document": {
+            "content": "Die Version konnte nicht erstellt werden, da die Anwendung keinen Inhalt enthält.",
+            "title": "Fehler"
+          },
+          "missing_tree_start_node": {
+            "content": "Die Version konnte nicht erstellt werden, da die Anwendung keinen Startblock enthält.",
+            "title": "Fehler"
+          },
+          "unknown": {
+            "content": "Es ist ein Fehler bei der Erstellung der Version aufgetreten. Wir wurden informiert und werden diesen schnellstmöglich beheben.",
+            "title": "Fehler"
+          }
+        },
+        "sub-menu": {
+          "label": "Versionen"
+        },
+        "success": {
+          "content": "Eine Version wurde erfolgreich erstellt.",
+          "title": "Version erstellt"
+        }
+      },
+      "deleteTree": {
+        "button": "Anwendung löschen"
+      },
+      "export": {
+        "button": "Exportieren",
+        "errors": {
+          "unknown": {
+            "content": "Die exportierte Datei ist nicht gültig. Sie kann nicht wieder importiert werden. Bitte kontaktiere den Support zur Wiederherstellung.",
+            "title": "Ungültige Datei"
+          }
+        },
+        "saveButton": "Speichern"
+      },
+      "label": "Menü für {treeName}",
+      "sharePublic": {
+        "button": "Öffentlich freigeben",
+        "configure": {
+          "button": "Öffentliche Freigabe verwalten",
+          "copy-link": {
+            "label": "Link kopieren",
+            "notification": {
+              "success": {
+                "title": "Erfolgreich kopiert"
+              }
+            }
+          },
+          "end-sharing": "Freigabe beenden",
+          "share-button": {
+            "label": "Anwendung freigeben",
+            "notification": {
+              "success": {
+                "content": "Der Link wurde kopiert.",
+                "title": "Erfolgreich freigegeben"
+              }
+            }
+          }
+        },
+        "disabled": {
+          "reason": {
+            "tooltip": "Erstelle eine Version um die Anwendung freizugeben."
+          }
+        }
+      }
+    },
+    "rich-text-editor": {
+      "add-file-variable": {
+        "aria-label": "Dateivariable auswählen",
+        "tooltip": "Füge einen Dokument Downloadlink hinzu"
+      },
+      "add-image": {
+        "alt-text": {
+          "error": {
+            "required": "Bitte stelle einen Alt-Text bereit."
+          },
+          "label": "Alt-Text",
+          "placeholder": "Mioto Screenshot"
+        },
+        "button": {
+          "tooltip": "Füge ein Bild hinzu"
+        },
+        "drag-and-drop": {
+          "clear-input": "Bild entfernen",
+          "empty-label": "oder Bilddatei hochladen"
+        },
+        "heading": "Bildeinbindung",
+        "help-tooltip": {
+          "intro": {
+            "content": "Um Bilder einzubinden kann entweder eine Bild-Url eingetragen oder eine Datei hochgeladen werden.",
+            "heading": "Wie sollten Bilder eingebunden werden?"
+          },
+          "title": "Bilder",
+          "upload": {
+            "content": "Für Bilder die nur in deiner Mioto Anwendung relevant sind kannst du das Bild direkt hochladen und wir übernehmen die Speicherung für dich.",
+            "heading": "Bild hochladen"
+          },
+          "url": {
+            "content": "Sollte das Bild bereits irgendwo online verfügbar sein (bspw. über deine Webseite gehostet) kann es Sinn machen nur die Url zu nutzen um ein Update des Bildes an allen Stellen einfacher zu gestalten.",
+            "heading": "Bild-Url"
+          }
+        },
+        "submit": "Bild hinzufügen",
+        "title": "Bild einbinden",
+        "url": {
+          "error": {
+            "invalid-url": "Diese URL ist nicht gültig.",
+            "required": "Bitte stelle eine Bild-URL bereit."
+          },
+          "label": "Bild-URL",
+          "placeholder": "https://mioto.app/Mioto_Product.png"
+        }
+      },
+      "add-link": {
+        "edit": {
+          "tooltip": "Link bearbeiten"
+        },
+        "error": {
+          "invalid-url": "Bitte gebe einen gültigen Link ein"
+        },
+        "link": {
+          "errors": {
+            "required": "Bitte geben Sie einen Link ein"
+          },
+          "label": "Link",
+          "text": {
+            "label": "Text"
+          }
+        },
+        "open-external": {
+          "tooltip": "{linkName} öffnen"
+        },
+        "remove": {
+          "tooltip": "Link entfernen"
+        },
+        "submit": "Speichern",
+        "tooltip": "Füge einen Link hinzu"
+      },
+      "add-rich-text-variable": {
+        "aria-label": "Formatierte Text Variable auswählen",
+        "tooltip": "Füge formatierten Text hinzu."
+      },
+      "add-variable": {
+        "aria-label": "Variable auswählen",
+        "tooltip": "Füge eine Variable hinzu"
+      },
+      "addition": {
+        "tooltip": "Füge eine Addition hinzu"
+      },
+      "bold": {
+        "tooltip": "Markiere den ausgewählten Text fett"
+      },
+      "close-bracket": {
+        "tooltip": "Füge eine geschlossene Klammer hinzu"
+      },
+      "cursiv": {
+        "tooltip": "Markiere den ausgewählten Text kursiv"
+      },
+      "custom-date": {
+        "tooltip": "Datum hinzufügen"
+      },
+      "date-difference": {
+        "difference-selector": {
+          "business-days": "Geschäftstagen",
+          "days": "Tagen",
+          "label": "Differenz in",
+          "months": "Monaten",
+          "weeks": "Wochen",
+          "years": "Jahren"
+        },
+        "earlier-date": {
+          "label": "Früheres Datum"
+        },
+        "later-date": {
+          "label": "Späteres Datum"
+        }
+      },
+      "division": {
+        "tooltip": "Füge eine Division hinzu"
+      },
+      "file-variable": {
+        "loading": {
+          "tooltip": "Dein Link wird noch geladen"
+        }
+      },
+      "heading": {
+        "tooltip": "Konvertiere den ausgewählten Text in eine Überschrift"
+      },
+      "multiplikation": {
+        "tooltip": "Füge eine Multiplikation hinzu"
+      },
+      "open-bracket": {
+        "tooltip": "Füge eine offene Klammer hinzu"
+      },
+      "paragraph": {
+        "tooltip": "Konvertiere den ausgewählten Text in einen Paragraphen"
+      },
+      "placeholder": "Tippe / für Kommandos.",
+      "potenz": {
+        "tooltip": "Füge eine Potenz hinzu"
+      },
+      "slashCommand": {
+        "addVariable": {
+          "description": "Füge eine Variable ein",
+          "title": "Variable"
+        }
+      },
+      "sorted-list": {
+        "tooltip": "Erstelle eine sortierte Liste"
+      },
+      "subtraktion": {
+        "tooltip": "Füge eine Subtraktion hinzu"
+      },
+      "toggle-content": {
+        "tooltip": "Füge einen ausklappbaren Text hinzu"
+      },
+      "toolbar": {
+        "depreceation": {
+          "tooltip": {
+            "description": "Zur Verbesserung des Editorworkflows haben wir ein neues Menü eingeführt. Dies kann durch tippen von \"/\" direkt im Editor geöffnet werden. Dieses Menü wird die Toolbar ablösen.",
+            "extended-descriptions": {
+              "file-variable": "Um auf die Dateivariablen zuzugreifen wähle den Menüpunkt Datei Downloadlink, Dateivorschau oder tippe \"file:\" nach \"/\".",
+              "rich-text-variable": "Um auf die formatierten Variablen zuzugreifen wähle den Menüpunkt Formatierter Text oder tippe \"rich-text\" nach \"/\".",
+              "variable": "Um auf die Variablen zuzugreifen wähle den Menüpunkt Variablen oder tippe \"@\" nach \"/\"."
+            },
+            "title": "Slashmenü"
+          }
+        }
+      },
+      "underline": {
+        "tooltip": "Unterstreiche den ausgewählten Text"
+      },
+      "unsorted-list": {
+        "tooltip": "Erstelle eine unsortierte Liste"
+      },
+      "variable-invalid-type": {
+        "tooltip": "{variableName} ist nur noch als {variableType} verfügbar. Bitte lösche diese Variable und füge sie erneut hinzu."
+      },
+      "variables": {
+        "invalid": "Ungültige Berechnung",
+        "not-found": "Variable nicht gefunden"
+      }
+    },
+    "search": {
+      "sort-button": {
+        "ascending": "Aufsteigend",
+        "descending": "Absteigend",
+        "label": "Sortieren",
+        "remove-sort": {
+          "tooltip": "Filter entfernen"
+        }
+      }
+    },
+    "select": {
+      "clear": {
+        "tooltip": "Inhalt löschen"
+      }
+    },
+    "select-with-combobox": {
+      "no-options": "Keine Auswahlmöglichkeit gefunden"
+    },
+    "supportDialog": {
+      "added-data": {
+        "description": "Um die Fehlerbehebung zu erleichtern fügen wir automatisch die folgenden Daten an die Supportanfrage an. Solltest du damit nicht einverstanden sein kontaktiere uns bitte über das generelle Supportformular.",
+        "title": "Automatisch hinzugefügte Daten"
+      },
+      "form": {
+        "email": {
+          "label": "Deine E-Mail",
+          "required": "Bitte gib deine E-Mail an, damit wir dir antworten können."
+        },
+        "message": {
+          "label": "Deine Nachricht",
+          "required": "Ohne eine Nachricht können wir dir nicht helfen."
+        }
+      },
+      "submit": "Absenden",
+      "success": "Vielen Dank für deine Anfrage. Wir melden uns schnellstmöglich. Der Dialog kann jetzt geschlossen werden.",
+      "title": "Support kontaktieren"
+    },
+    "tree-name-input": {
+      "label": "Anwendungsname",
+      "length": "Bitte wähle einen kürzeren Namen für deine Anwendung. Maximal {treeNameMaxLength} Zeichen sind erlaubt.",
+      "placeholder": "Anwendungsname",
+      "required": "Bitte gib einen Anwendungsnamen ein."
+    },
+    "updateTreeDialog": {
+      "form": {
+        "description": {
+          "label": "Beschreibung"
+        }
+      },
+      "submit": "Anwendungsänderungen speichern",
+      "title": "Anwendungsdaten ändern"
+    },
+    "user-menu": {
+      "docs": {
+        "label": "Dokumentation"
+      },
+      "home": {
+        "label": "Homepage"
+      },
+      "label": "Account",
+      "logout": "Logout",
+      "settings": "Einstellungen"
+    },
+    "verifyLogin": {
+      "descriptionFallback": "Bitte bestätige deine Identität.",
+      "form": {
+        "password": {
+          "required": "Bitte gib dein Passwort ein."
+        }
+      },
+      "submit": "Bestätigen",
+      "title": "Passwort verifizieren"
+    }
+  },
+  "error": {
+    "backButton": "Zurück zu Mioto",
+    "contact-support": {
+      "button": "Support kontaktieren"
+    },
+    "pageTitle": "Fehler | Mioto"
+  },
+  "maintenance": {
+    "info": {
+      "content": "Mioto befindet sich im Wartungsmodus.",
+      "title": "Wartung",
+      "until": "Dieser wird vorraussichtlich {time} beendet sein."
+    }
+  },
+  "mioto-mind": {
+    "chat": {
+      "clear": "Chat löschen",
+      "input": {
+        "placeholder": "Schreib etwas..."
+      },
+      "quick-messages": {
+        "start-risk-analysis": "Starte die Risikoanalyse",
+        "user-message": "Starte die Risikoanalyse"
+      }
+    },
+    "system-prompt": "Du bist ein hochspezialisierter Rechtsanwalt.",
+    "tools": {
+      "analyze-risks": {
+        "description": "Nutze dies für alles, was mit Risiken zu tun hat.",
+        "loading": {
+          "message": "Suche Risiken"
+        },
+        "parameters": {
+          "question": {
+            "description": "Die exakte Frage des Nutzers."
+          }
+        }
+      }
+    }
+  },
+  "not-found": {
+    "info": {
+      "title": "Ups, wo ist die Seite hin?"
+    }
+  },
+  "packages": {
+    "design-system": {
+      "help-tooltip": {
+        "title": "Information zu {title}"
+      }
+    },
+    "node-editor": {
+      "canvas-node": {
+        "end": {
+          "label": "Ende",
+          "tooltip": "Endblock"
+        },
+        "source-port": {
+          "aria-label": "Port zur verbindung von Blöcken"
+        },
+        "start": {
+          "label": "Start",
+          "tooltip": "Startblock"
+        }
+      },
+      "delete-nodes": {
+        "dialog": {
+          "heading": "Bist du sicher, dass du die Blöcke löschen willst?",
+          "submit": "Löschen"
+        }
+      },
+      "logic-configurator": {
+        "condition": {
+          "number": {
+            "condition-selector": {
+              "label": "Vergleichswert"
+            }
+          },
+          "readable-input": {
+            "disabled": "Variable nicht mehr verfügbar (Klicke um zu löschen)",
+            "empty": "Bedingung konfigurieren",
+            "readable-condition": {
+              "with-variable-name": "Wenn <variable-name></variable-name> in <strong>{recordVariableName}</strong> <operator></operator> <comparator></comparator>",
+              "without-variable-name": "Wenn <strong>{recordVariableName}</strong> <operator></operator> <comparator></comparator>"
+            }
+          },
+          "select": {
+            "condition-selector": {
+              "label": "Vergleichswert",
+              "no-label": "Kein Label"
+            },
+            "variable-selector": {
+              "label": "Eingabe"
+            }
+          },
+          "text": {
+            "condition-selector": {
+              "label": "Vergleichswert"
+            },
+            "variable-selector": {
+              "label": "Eingabe"
+            }
+          },
+          "variable-selector": {
+            "combobox": {
+              "input": {
+                "placeholder": "Variable suchen"
+              },
+              "list": {
+                "aria-label": "Variablenauswahl"
+              }
+            },
+            "label": "Variable",
+            "placeholder": "Variable auswählen",
+            "this-block": {
+              "badge": "Dieser Block"
+            }
+          }
+        },
+        "create-connection-button": {
+          "combobox": {
+            "input": {
+              "placeholder": "Ziel suchen"
+            }
+          },
+          "create-item": {
+            "badge": "Erstellen"
+          },
+          "label": "Verbindung hinzufügen"
+        },
+        "final-block": {
+          "info": {
+            "content": "Dies ist ein Endblock. Die Verbindungen haben keinen Effekt.",
+            "title": "Inaktiv"
+          }
+        },
+        "help-tooltip": {
+          "content": "Verbindungen steuern die Übergänge zwischen Blöcken. Sie enthalten Bedingungen, die bestimmen, wann sie aktiviert werden. Bei mehreren zutreffenden Bedingungen wird die erste in der Liste genutzt.",
+          "title": "Verbindungen"
+        },
+        "list": {
+          "aria-label": "Verbindungen",
+          "card": {
+            "conditions": {
+              "add-button": "Bedingung hinzufügen",
+              "and": "und",
+              "chain": {
+                "and": "Und",
+                "help-tooltip": {
+                  "content": "Diese Funktion ermöglicht dir die Definition komplexer Bedingungen in deinem Entscheidungsbaum, indem du Bedingungen miteinander verkettest. 'Und' bedeutet, dass alle mit 'Und' verketteten Bedingungen erfüllt sein müssen, um den entsprechenden Pfad fortzusetzen. 'Oder' bedeutet, dass mindestens eine der Bedingungen erfüllt sein muss, um fortzufahren.",
+                  "title": "Verkettungen"
+                },
+                "or": "Oder"
+              },
+              "remove": "Bedingung löschen",
+              "title": {
+                "help-tooltip": {
+                  "content": "Bedingungen stellen die Regeln dar, unter denen eine bestimmte Verbindung zwischen den Blöcken angesteuert wird.",
+                  "title": "Bedingungen"
+                },
+                "text": "Bedingung"
+              }
+            },
+            "title-fallback": "Kein Ziel"
+          },
+          "direct-edge": {
+            "badge": {
+              "title": "Direktverbindung",
+              "tooltip": "In der Direktverbindung haben Bedingungen keinen Effekt."
+            }
+          },
+          "fallback-edge": {
+            "menu": {
+              "remove": "Rückfallverbindung entfernen"
+            },
+            "title": "Rückfall",
+            "tooltip": "Trifft keine Bedingung zu, wird die Rückfallverbindung aktiviert."
+          },
+          "menu": {
+            "make-fallback-edge": {
+              "help-tooltip": {
+                "content": "Bei einer Rückfallverbindung haben Bedingungen keinen Effekt.",
+                "title": "Rückfallverbindungen"
+              },
+              "title": "Zu Rückfallverbindung machen"
+            },
+            "remove": "Verbindung löschen",
+            "select-target": "Zu Ziel springen",
+            "target-selector": {
+              "create-item": {
+                "badge": "Erstellen"
+              },
+              "label": "Ziel auswählen"
+            },
+            "tooltip": "Verbindungsmenü"
+          }
+        },
+        "operator-selector": {
+          "aria-label": "Operator auswählen - aktuell {operator}"
+        },
+        "reorder": {
+          "start": {
+            "tooltip": "Reihenfolge ändern"
+          },
+          "stop": {
+            "tooltip": "Reihenfolge nicht mehr ändern"
+          }
+        },
+        "title": "Verbindungen"
+      },
+      "node-dropdown": {
+        "list": {
+          "aria-label": "Wähle den gewünschten Blocktypen aus"
+        }
+      },
+      "node-menu": {
+        "copy-variable": {
+          "label": "Variablenname kopieren",
+          "notification": {
+            "copy": {
+              "content": "Kopierter Name: <br></br><key></key>",
+              "title": "Variablenname kopiert"
+            }
+          }
+        },
+        "deleteNode": {
+          "disabledForStartNodeLabel": "Der Startblock kann nicht entfernt werden.",
+          "label": "Block löschen"
+        },
+        "duplicateNode": {
+          "label": "Block duplizieren"
+        },
+        "endNode": {
+          "add": {
+            "label": "Zu einem Endblock machen"
+          },
+          "remove": {
+            "label": "Endblock entfernen"
+          }
+        },
+        "iconLabel": "Öffne Menü für Block: {name}",
+        "makeStartNode": {
+          "label": "Zum Startblock machen"
+        },
+        "previewLabel": "Vorschau"
+      },
+      "nodeEditingSidebar": {
+        "nameInput": {
+          "error": {
+            "duplicate": "warning__Der Blockname ist bereits vergeben. Wir empfehlen, einen eindeutigen Namen zu vergeben um den Block besser finden zu können.",
+            "too_long": "Ein Blockname darf maximal 70 Zeichen lang sein."
+          },
+          "label": "Blockname",
+          "placeholder": "Mein Block"
+        },
+        "nodeLabels": {
+          "finalNode": "Ende",
+          "startNode": "Start"
+        },
+        "parentNodeSelector": {
+          "label": "Elternblock",
+          "noNameFallback": "Elternblock ohne Name"
+        },
+        "richNumberEditor": {
+          "label": "Formel"
+        },
+        "richTextEditor": {
+          "label": "Inhalt"
+        }
+      },
+      "target-selector": {
+        "combobox": {
+          "list": {
+            "aria-label": "Zielauswahlliste"
+          },
+          "placeholder": "Block suchen..."
+        },
+        "create-item": {
+          "badge": "Erstellen"
+        },
+        "select": {
+          "placeholder": "Zielblock auswählen"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "edge": {
+      "complex-logic": {
+        "boolean": {
+          "false": "nicht aktiviert",
+          "true": "aktiviert",
+          "variable": {
+            "false": "Falsch",
+            "true": "Wahr"
+          }
+        },
+        "date": {
+          "after": "nach",
+          "at": "am",
+          "before": "vor"
+        },
+        "number": {
+          "defined": "gesetzt",
+          "equal": "gleich",
+          "larger": "größer",
+          "larger-equal": "größer gleich",
+          "smaller": "kleiner",
+          "smaller-equal": "kleiner gleich",
+          "undefined": "nicht gesetzt",
+          "unequal": "ungleich"
+        },
+        "select": {
+          "defined": "gesetzt",
+          "equal": "gleich",
+          "undefined": "nicht gesetzt",
+          "unequal": "ungleich"
+        },
+        "text": {
+          "contains": "enthält",
+          "defined": "gesetzt",
+          "equal": "gleich",
+          "not-contain": "enthält nicht",
+          "undefined": "nicht gesetzt",
+          "unequal": "ungleich"
+        }
+      }
+    },
+    "node": {
+      "AI": {
+        "files": {
+          "select": {
+            "placeholder": "Dateien auswählen"
+          }
+        },
+        "prompt-types": {
+          "boolean": "Wahr/Falsch",
+          "number": "Zahl",
+          "text": "Text"
+        },
+        "select-ai-type": {
+          "decision": {
+            "label": "Entscheidung"
+          },
+          "extraction": {
+            "label": "Extraktion"
+          },
+          "label": "AI Type"
+        },
+        "sidebar": {
+          "decision": {
+            "meta-prompt": {
+              "heading": "Meta Prompt"
+            }
+          },
+          "extraction": {
+            "extraction": {
+              "button-label": "Neue Extraktion",
+              "delete": {
+                "tooltip": "Extraktion löschen"
+              },
+              "formatting-instructions": {
+                "help-tooltip": "Teile der AI mit in welcher Weise die Antwort formatiert werden soll. Bspw. \"Gib die Antwort in einem Satz.\" oder \"Gib die Antwort mit Erklärungen.\"",
+                "label": "Formatbeschreibung",
+                "placeholder": "Beschreibe wie das Ergebnis formatiert werden soll."
+              },
+              "heading": "Extraktionen",
+              "name": {
+                "label": "Name",
+                "placeholder": "Der Name für die extrahierte Variable"
+              },
+              "prompt": {
+                "label": "Prompt",
+                "placeholder": "Dein Prompt an die AI."
+              }
+            },
+            "files": {
+              "heading": "Anhänge",
+              "label": "Dateien (momentan wird nur pdf unterstützt)"
+            },
+            "meta-prompt": {
+              "heading": "Meta Prompt"
+            },
+            "models": {
+              "gpt-35": "GPT 3.5",
+              "gpt-4": "GPT 4",
+              "label": "Sprachmodel"
+            },
+            "rich-text": {
+              "label": "Prompt"
+            }
+          }
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Konfiguration"
+        }
+      },
+      "authentication": {
+        "sidebar": {
+          "tabs": {
+            "connections": "Verbindungen"
+          }
+        },
+        "variable": {
+          "email": "Anwenderemail",
+          "first-name": "Anwendervorname",
+          "last-name": "Anwendernachname",
+          "reference-number": "Anwenderreferenznummer",
+          "session-name": "Sessionname"
+        }
+      },
+      "calculation": {
+        "global-variable-connector": {
+          "label": "Verknüpfte globale Variable"
+        },
+        "help-tooltip": {
+          "date": {
+            "content": "Eine Datumsberechnung erlaubt dir Tage, Geschäftstage, Wochen, Monate oder Jahre von einem Datum abzuziehen oder zu addieren, um eine Datumsvariable zu produzieren.",
+            "heading": "Datum"
+          },
+          "date-difference": {
+            "content": "Eine Datumsdifferenzberechnung gibt dir die Differenz von zwischen zwei Daten in Tagen, Geschäftstagen, Wochen, Monaten oder Jahren als Zahlenvariable.",
+            "heading": "Datumsdifferenz"
+          },
+          "numbers": {
+            "content": "Zahlenberechnungen sind genau was du dir darunter vorstellst. Sie erlauben dir eine Formel einzugeben die wenn ausgewertet eine Zahlenvariable produziert.",
+            "heading": "Nummern"
+          }
+        },
+        "output": {
+          "alpha-disclaimer": {
+            "tooltip": "Die PDF Ausgabe ist noch in der Alpha Phase und sollte nur getestet werden. Bitte verwende sie nicht in veröffentlichten Anwendungen. Bei Fehlern oder allgemeinem Feedback sende uns gerne eine E-Mail an support@mioto.app."
+          },
+          "date": "Datum",
+          "date-difference": "Datumsdifferenz",
+          "date-variable-name": "Datumsberechnung",
+          "label": "Ausgabe als",
+          "number": "Zahl",
+          "number-variable-name": "Berechnung"
+        },
+        "round-to": {
+          "label": "Runden auf Stelle"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Inhalt"
+        }
+      },
+      "document": {
+        "name": {
+          "label": "Dokumentenname"
+        },
+        "outputAs": {
+          "docx": "Word (.docx)",
+          "label": "Dateiformat",
+          "pdf": "PDF"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Inhalt"
+        },
+        "template-card": {
+          "notification": {
+            "invalid_file_type": {
+              "content": "Die Datei ist nicht im korrekten Format und kann daher nicht hochgeladen werden.",
+              "explanation": {
+                "title": "Errors"
+              },
+              "title": "Ungültiger Dateityp"
+            },
+            "size_too_large": {
+              "content": "Die Datei ist größer als die erlaubten 15mb",
+              "title": "Datei zu groß"
+            },
+            "upload-failed": {
+              "content": "Bitte versuche es erneut.",
+              "title": "Hochladen fehlgeschlagen"
+            }
+          },
+          "remove": {
+            "label": "Template löschen",
+            "notification": {
+              "error": {
+                "content": "Das Template konnte nicht gelöscht werden.",
+                "title": "Fehler beim Löschen"
+              }
+            }
+          },
+          "update": {
+            "label": "Template aktualisieren"
+          },
+          "upload": {
+            "label": "Template hochladen"
+          }
+        },
+        "template-download-link": {
+          "error": {
+            "tooltip": "Fehler bei der Bereitstellung des Templates"
+          },
+          "loading": {
+            "tooltip": "Lade generiertes Dokument"
+          },
+          "tooltip": "Template herunterladen"
+        },
+        "title": {
+          "help-tooltip": {
+            "content": "Dieser Block repräsentiert ein spezifisches Dokument oder eine Datei, die im Rahmen deines Projekts dynamisch erstellt wird. Das Dokument kann als Variable in den Text-Editor verschiedener Blöcke eingebunden werden, um es Nutzer:innen bereitzustellen.",
+            "title": "Dokumentblock"
+          },
+          "text": "Template Konfiguration"
+        }
+      },
+      "form": {
+        "date": {
+          "description": "Erlaubt Nutzer:innen, ein Datum einzugeben.",
+          "label-default": "Datumseingabe",
+          "name": "Datum",
+          "required": {
+            "error-message": "Dieses Datum muss angegeben werden"
+          }
+        },
+        "email": {
+          "label-default": "Emaileingabe",
+          "name": "Email",
+          "pattern": {
+            "errorMessage": "Die angegebene E-Mail ist fehlerhaft"
+          }
+        },
+        "file": {
+          "description": "Erlaubt Nutzer:innen, Dateien hochzuladen.",
+          "name": "Dateiupload",
+          "renderer": {
+            "input": {
+              "datatype": "Akzeptierte Dateitypen",
+              "noValue": "Datei hochladen",
+              "required": {
+                "error": {
+                  "message": "Eine Datei muss hochgeladen werden"
+                }
+              },
+              "validate": {
+                "error": ""
+              },
+              "withValue": "Neue Datei hochladen"
+            }
+          }
+        },
+        "generic-input": {
+          "required": {
+            "errorMessage": "Bitte fülle dieses Feld aus.",
+            "label": "*Pflichtfeld"
+          }
+        },
+        "info": {
+          "tabs": {
+            "connections": "Verbindungen",
+            "content": "Inhalt"
+          }
+        },
+        "inputs": {
+          "card": {
+            "aria-label": {
+              "when-reordering": "Eingabe {inputLabel} an Stelle {position}",
+              "when-reordering-without-label": "Eingabe ohne Name an Stelle {position}"
+            }
+          },
+          "config": {
+            "name": {
+              "help-tooltip": {
+                "content": "Den Eingabenamen brauchst du, um eine Eingabe als Variable zu referenzieren.",
+                "title": "Eingabename"
+              },
+              "label": "Eingabename"
+            },
+            "placeholder": {
+              "label": "Platzhalter"
+            },
+            "renderer-label": {
+              "deactivate": {
+                "label": "Label deaktivieren"
+              },
+              "help-tooltip": {
+                "content": "Das hier vergebene Label wird als Label für die Eingabe im Formular genutzt.",
+                "title": "Label"
+              },
+              "label": "Label"
+            },
+            "required": {
+              "label": "Pflichtfeld"
+            }
+          },
+          "global-variable": {
+            "combobox": {
+              "placeholder": "Globale Variable suchen"
+            },
+            "tooltip": "Überschreibt die globale {variableType} Variable: {variableName}"
+          },
+          "menu": {
+            "global-variables": {
+              "add": "Globale Variable verknüpfen",
+              "remove": "Globale Variablenverknüpfung entfernen"
+            },
+            "remove": "Eingabe löschen",
+            "tooltip": "Eingabenmenü",
+            "type-dropdown": {
+              "help-tooltip": {
+                "title": "Eingabetypen"
+              },
+              "label": "Eingabetyp ändern"
+            }
+          },
+          "new": {
+            "aria-label": "Eingabetyp auswählen",
+            "label": "Eingabe hinzufügen"
+          },
+          "reorder": {
+            "end": {
+              "tooltip": "Neuordnen beenden"
+            },
+            "start": {
+              "tooltip": "Neuordnen"
+            }
+          },
+          "title": {
+            "help-tooltip": {
+              "content": "Diese Elemente stellen verschiedene Arten von Nutzer:inneneingaben dar, die du in deinem Formular abfragen kannst.",
+              "title": "Eingaben"
+            },
+            "text": "Eingaben"
+          }
+        },
+        "missing-answer-text": "Kein Antworttext",
+        "multi-select": {
+          "answers": {
+            "input": {
+              "aria-label": "Antwort an Stelle {position}"
+            },
+            "label": "Antworten",
+            "remove": "Entferne die Antwort",
+            "reorder": "Verschiebe die Antwort"
+          },
+          "description": "Erlaubt Nutzer:innen, mehrere Optionen aus einer vordefinierten Liste zu wählen.",
+          "label-default": "Mehrfachauswahl",
+          "name": "Mehrfachauswahl"
+        },
+        "number": {
+          "description": "Erlaubt Nutzer:innen, eine numerische Eingabe zu machen.",
+          "label-default": "Zahleneingabe",
+          "max": {
+            "errorMessage": "Der Wert darf höchstens {maxValue} sein.",
+            "label": "Max"
+          },
+          "min": {
+            "errorMessage": "Der Wert muss mindestens {minValue} sein.",
+            "label": "Min"
+          },
+          "name": "Zahleneingabe",
+          "round-to": {
+            "label": "Runden auf Stelle"
+          }
+        },
+        "renderer-configuration": {
+          "button-label": {
+            "label": "Buttonlabel"
+          },
+          "label": "Renderer Konfiguration"
+        },
+        "rich-text": {
+          "description": "Erlaubt Nutzer:innen, formatierten Text wie, bspw. Listen und Überschriften, einzugeben.",
+          "label-default": "Textfeld",
+          "name": "Formatierter Text"
+        },
+        "select": {
+          "addOptionButton": "Neue Antwort",
+          "answers": {
+            "input": {
+              "aria-label": "Antwortoption {position}",
+              "placeholder": "Antwort"
+            },
+            "label": "Antworten",
+            "remove": {
+              "tooltip": "Entferne die Antwort"
+            },
+            "reorder-handle": {
+              "tooltip": "Verschiebe die Antwort"
+            }
+          },
+          "description": "Erlaubt Nutzer:innen, eine einzige Option aus einer vordefinierten Liste zu wählen.",
+          "label-default": "Einfachauswahl",
+          "name": "Einfachauswahl"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Inhalt"
+        },
+        "text": {
+          "description": "Erlaubt Nutzer:innen, eine einzelne Zeile Text einzugeben.",
+          "label-default": "Texteingabe",
+          "name": "Texteingabe"
+        },
+        "textarea": {
+          "description": "Erlaubt Nutzer:innen, mehrere Zeilen Text einzugeben.",
+          "label-default": "Textfeld",
+          "name": "Textfeld"
+        }
+      },
+      "global-variables": {
+        "execution-date": "Ausführungsdatum",
+        "name": "Globale Variablen"
+      },
+      "info": {
+        "renderer-configuration": {
+          "button-label": {
+            "label": "Buttonlabel"
+          },
+          "label": "Renderer Konfiguration"
+        }
+      },
+      "payment": {
+        "public-key": {
+          "label": "Öffentlicher Schlüssel"
+        }
+      },
+      "reporting": {
+        "attachement": {
+          "card": {
+            "remove": {
+              "tooltip": "{documentName} als Anhang entfernen"
+            }
+          },
+          "label": "Anhänge (max. 2)",
+          "popover": {
+            "aria-label": "Zu Ursprungsblock gehen",
+            "title": "Ursprungsblock"
+          },
+          "select": {
+            "max": {
+              "notification": {
+                "content": "Es können maximal {maxSelection} Dateien ausgewählt werden. Bitte entferne zuerst eine Datei.",
+                "title": "Maximale Anzahl an Dateien erreicht"
+              }
+            }
+          },
+          "selection": {
+            "empty-item": "Keine Dokumente gefunden",
+            "list": {
+              "aria-label": "Anhangauswahlliste"
+            },
+            "placeholder": "Dateiname"
+          }
+        },
+        "decision-process": "Entscheidungsverlauf",
+        "e-mail": {
+          "label": "Inhalt",
+          "title": "E-Mail Konfiguration"
+        },
+        "files": {
+          "select": {
+            "placeholder": "Anhänge auswählen"
+          }
+        },
+        "no-content": "Report hat keinen Inhalt",
+        "path": {
+          "label": "Entscheidungsverlauf anhängen"
+        },
+        "recipient": {
+          "email-from-variable": "E-Mail von Variable",
+          "enter-custom": "Benutzerdefinierte E-Mail",
+          "label": "Sende an",
+          "placeholder": "E-Mail eingeben",
+          "select-email-variable": "Bitte wählen Sie eine E-Mail-Variable aus",
+          "send-to-account-email": {
+            "label": "An Account E-Mail senden"
+          },
+          "send-to-admin": "E-Mail des Administratorkontos"
+        },
+        "subject": {
+          "errors": {
+            "too_long": "Der Betreff ist zu lang.",
+            "too_short": "Der Betreff ist zu kurz. Er muss mindestens {minLength} Zeichen lang sein."
+          },
+          "label": "Betreff"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Inhalt"
+        },
+        "variable": {
+          "send": "E-Mail versandt"
+        }
+      },
+      "text-interpolation": {
+        "formatted": {
+          "help-tooltip": {
+            "content": "Wenn diese Option ausgewählt ist der Text formatiert in anderen Blöcken einsetzbar. Ist sie nicht ausgewählt wird der Text als unformatierter Text ausgegeben. Der Vorteil von unformatiertem Text ist, dass dieser im Fließtext verwendet werden kann.",
+            "title": "Formatierter Text"
+          },
+          "label": "Text formatiert ausgeben"
+        },
+        "tabs": {
+          "connections": "Verbindungen",
+          "content": "Inhalt"
+        },
+        "variable": {
+          "combination": "Textkombination"
+        }
+      }
+    }
+  },
+  "renderer": {
+    "error": {
+      "content": "Es ist ein Fehler bei der Verarbeitung aufgetreten. Keine Sorge ihre Daten wurden bis zu diesem Punkt gesichert. Bitte laden Sie die Ausführung neu um es erneut zu versuchen. Sollte der Fehler erneut auftreten wenden Sie sich bitte an den Support.",
+      "invalid_formular": {
+        "content": "Die konfigurierte Formel konnte nicht ausgewertet werden. Bitte überprüfe die mathematische Korrektheit deiner Formel.",
+        "title": "Ungültige Formel"
+      },
+      "invalid_recipient": {
+        "content": "Die E-Mail konnte nicht versandt werden, da die Empfänger E-Mail Adresse ungültig ist.",
+        "title": "Fehlerhafter Empfänger"
+      },
+      "invalid_template": {
+        "content": "Das bereitgestellte Template ist ungültig.",
+        "title": "Ungültiges Template"
+      },
+      "later_date_before_earlier_date": {
+        "content": "Das spätere Datum muss nach dem früheren Datum liegen.",
+        "title": "Falsche Datumseingabe"
+      },
+      "missing_content": {
+        "content": "Die E-Mail konnte nicht versandt werden, da kein Inhalt konfiguriert ist.",
+        "title": "Fehlender Inhalt"
+      },
+      "missing_edges_for_node": {
+        "content": "Dieser Block hat keine Verbindungen und kann daher nicht weiter ausgeführt werden.",
+        "title": "Keine Verbindungen"
+      },
+      "missing_formular": {
+        "content": "Es ist keine Formel konfiguriert.",
+        "title": "Fehlende Formel"
+      },
+      "missing_recipient": {
+        "content": "Die E-Mail konnte nicht versandt werden, da kein Empfänger konfiguriert ist.",
+        "title": "Fehlender Empfänger"
+      },
+      "missing_subject": {
+        "content": "Die E-Mail konnte nicht versandt werden, da kein Betreff konfiguriert ist.",
+        "title": "Fehlender Betreff"
+      },
+      "missing_template": {
+        "content": "Das verknüpfte Template konnte nicht gefunden werden.",
+        "title": "Fehlendes Template"
+      },
+      "missing_template_uuid": {
+        "content": "Es ist kein Template im Dokumentenblock hinterlegt.",
+        "title": "Fehlendes Template"
+      },
+      "no_edge_matched": {
+        "content": "In Block {blockName} konnte keine Verbindung ausgeführt werden. Es kann sein, dass die Variable aus einer oder mehreren Bedingung/en fehlt. Überprüfe, ob alle relevanten Variablen abgefragt werden und ob die Abfragen Pflichtfelder sind. Um sicherzustellen, dass immer eine Verbindung ausgeführt werden kann, kannst du eine Verbindung als Rückfallverbindung festlegen. Dies tust du im Menü einer Verbindung.",
+        "title": "Verbindungsfehler"
+      },
+      "no_meta_prompt": {
+        "content": "Es wurde kein Meta Prompt für die AI konfiguriert. Bitte füge einen Meta Prompt hinzu.",
+        "title": "Fehlender Meta Prompt"
+      },
+      "template_not_found": {
+        "content": "Das verknüpfte Template konnte nicht gefunden werden. Bitte aktualisiere das Template um den Dokumentenblock wiederherzustellen.",
+        "title": "Template nicht gefunden"
+      },
+      "title": "Fehler",
+      "unknown_error": {
+        "content": "Ein unbekannter Fehler ist aufgetreten.",
+        "title": "Unbekannter Fehler"
+      }
+    },
+    "final": {
+      "message": "Erfolgreich abgeschlossen"
+    },
+    "navigation": {
+      "back": "Vor",
+      "next": "Zurück",
+      "restart": "Neu starten",
+      "submit": "Zum nächsten Schritt"
+    },
+    "renderer": {
+      "navigation": {
+        "restart": "Neustarten"
+      }
+    },
+    "reset": {
+      "alert": {
+        "description": "Bitte bestätigen Sie das Löschen der aktuellen Daten. Dies kann nicht rückgängig gemacht werden.",
+        "submit": "Zurücksetzen",
+        "title": "Ausführung zurücksetzen"
+      },
+      "button": {
+        "tooltip": "Session zurücksetzen"
+      },
+      "loading-text": "Setze zurück..."
+    }
+  }
+}

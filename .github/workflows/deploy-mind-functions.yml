@@ -1,0 +1,101 @@
+name: mind-functions
+
+on:
+  # push:
+  #   branches:
+  #     - mioto-mind
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AZURE_FUNCTIONAPP_NAME: 'agb-review'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      shouldSkip: ${{ steps.check-change.outputs.shouldSkip }}
+
+    steps:
+      - run: |
+          result="$(gh run list -w editor-app -R https://github.com/miotolabs/mioto --json conclusion,headSha -L 50 --jq '.[] | select(.conclusion=="success") | .headSha' | head -1)"
+
+          echo 'LAST_SUCCESSFULL_COMMIT_SHA='$result >> $GITHUB_ENV
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - id: check-change
+        shell: bash
+        continue-on-error: true
+        # The output here is only set if the docker:ignore does not fail. That means that the
+        # output is only set if the apps files have NOT changed.
+        run: |
+          pnpm run -r -F mind-functions ignore --fallback=$LAST_SUCCESSFULL_COMMIT_SHA && \
+          echo "shouldSkip=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Summary
+        shell: bash
+        # The run is skipped if the apps files have not changed.
+        if: ${{ steps.check-change.outputs.shouldSkip }}
+        run: |
+          echo "The run is skipped, because no change happened in the apps files." >> $GITHUB_STEP_SUMMARY
+
+      - name: Cancel the current workflow run
+        # The run is skipped if the apps files have not changed.
+        if: ${{ steps.check-change.outputs.shouldSkip }}
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh run cancel $GITHUB_RUN_ID -R https://github.com/$OWNER/$REPO
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: check
+    if: ${{ needs.check.outputs.shouldSkip == '0' }}
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      AZURE_FUNCTIONAPP_PACKAGE_PATH: './apps/mioto-mind/functions'
+
+    steps:
+    - name: Resolve project dependencies using pnpm and build
+      shell: bash
+      env:
+        AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+        LANGCHAIN_API_KEY: ${{ secrets.LANGCHAIN_API_KEY }}
+      run: |
+        pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+        pnpm install
+        cp -LR node_modules tmp && rm -rf node_modules && mv tmp node_modules
+        pnpm turbo run build -F mind-functions
+        popd
+
+    - name: Run Azure Functions Action
+      uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}

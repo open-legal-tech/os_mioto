@@ -1,0 +1,123 @@
+import "./User.zmodel"
+import "./Tree.zmodel"
+import "./File.zmodel"
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-arm64-openssl-1.1.x"]
+}
+
+model Organization {
+  uuid String @id @unique @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  Themes Theme[] @relation("themes")
+  Trees Tree[]
+  Assets Asset[]
+  Templates Template[]
+  Users User[]
+  Theme Theme? @relation("orgTheme")
+  name String?
+  slug String @unique
+  homepageUrl String?
+  ClientPortal ClientPortal?
+  analyticsKey String?
+
+  @@allow("all", Users?[this.uuid == auth().uuid] && auth().role == "ADMIN")
+  @@allow('read', true)
+}
+
+model ClientPortal {
+  organizationUuid String @id @unique @db.Uuid
+  Organization Organization @relation(fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  Logo Asset? @relation("logo", fields: [logoUuid], references: [fileUuid])
+  logoUuid String? @unique @db.Uuid
+  logoUrl String?
+  Background Asset? @relation("background", fields: [backgroundUuid], references: [fileUuid])
+  backgroundUuid String? @unique @db.Uuid
+  backgroundUrl String?
+  Privacy Asset? @relation("privacy", fields: [privacyUuid], references: [fileUuid])
+  privacyUuid String? @unique @db.Uuid
+  privacyUrl String?
+  Terms Asset? @relation("terms", fields: [termsUuid], references: [fileUuid])
+  termsUuid String? @unique @db.Uuid
+  termsUrl String?
+
+  @@allow("all", Organization.Users?[this.organizationUuid == auth().organizationUuid] && auth().role == "ADMIN")
+  @@allow("read", true)
+}
+
+
+model Theme {
+  uuid String @id @default(uuid()) @db.Uuid
+  name String
+  content Json
+  customCss String?
+  Organization Organization @relation("themes", fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  organizationUuid String @db.Uuid
+  Tree Tree[]
+  OrgTheme Organization? @relation("orgTheme", fields: [orgThemeUuid], references: [uuid])
+  orgThemeUuid String? @unique @db.Uuid
+
+
+  @@allow("all", Organization.Users?[this.organizationUuid == auth().organizationUuid] && auth().role == "ADMIN")
+  @@allow("read", true)
+}
+
+
+model Session {
+  uuid String @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name String
+  userLabel String?
+  state Json @db.JsonB
+  status SessionStatus
+  ownerUuid String @db.Uuid
+  Owner User @relation(fields: [ownerUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  treeUuid String @db.Uuid
+  Tree Tree @relation(fields: [treeUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  GeneratedFile GeneratedFile[]
+  UserUpload UserUpload[]
+  TreeSnapshot TreeSnapshot? @relation(fields: [treeSnapshotUuid], references: [uuid])
+  treeSnapshotUuid String? @db.Uuid
+
+
+  @@allow("all", Owner.organizationUuid == auth().organizationUuid && auth().role == "ADMIN")
+  @@allow("all", auth().uuid == ownerUuid)
+}
+
+
+model Token {
+  id Int @id @default(autoincrement())
+  token String
+  type TokenType
+  Owner User @relation(fields: [ownerUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  ownerUuid String @db.Uuid
+  expires DateTime
+  blacklisted Boolean @default(false)
+
+
+  @@allow("all", auth().uuid == ownerUuid)
+}
+
+
+enum TokenType {
+  ACCESS
+  REFRESH
+  RESET_PASSWORD
+  VERIFY_EMAIL
+  UPLOAD_FILE
+  ANONYMUS_USER
+}
+
+enum SessionStatus {
+  IN_PROGRESS
+  COMPLETED
+}

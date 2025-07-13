@@ -1,0 +1,7 @@
+{
+  "name": "@mioto/db",
+  "scripts": {
+    "serve": "docker compose -f docker-compose.yml up -d --wait || true",
+    "down": "docker compose -f docker-compose.yml down"
+  }
+}

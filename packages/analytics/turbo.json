@@ -1,0 +1,10 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "validate-env": {
+      "dependsOn": ["^validate-env"],
+      "env": ["POSTHOG_TOKEN"]
+    }
+  }
+}

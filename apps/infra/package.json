@@ -1,0 +1,18 @@
+{
+  "name": "@mioto/infra",
+  "main": "index.ts",
+  "version": "1.0.0",
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@pulumi/azure-native": "^2.89.3",
+    "@pulumi/azuread": "^6.4.0",
+    "@pulumi/command": "^1.0.2",
+    "@pulumi/docker": "^4.6.2",
+    "@pulumi/docker-build": "^0.0.10",
+    "@pulumi/pulumi": "^3.158.0",
+    "@pulumiverse/scaleway": "^1.25.0",
+    "@pulumiverse/sentry": "^0.0.9"
+  }
+}

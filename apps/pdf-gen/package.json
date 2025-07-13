@@ -1,0 +1,8 @@
+{
+  "name": "@mioto/pdf-generator",
+  "scripts": {
+    "serve": "pnpm start-db",
+    "down": "docker compose -f docker-compose.yml down",
+    "start-db": "docker compose -f docker-compose.yml up -d --wait || true"
+  }
+}

@@ -1,0 +1,60 @@
+import "./schema.zmodel"
+import "./User.zmodel"
+import "./File.zmodel"
+
+model Tree {
+  uuid String @id @unique @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name String
+  description String?
+  document Bytes?
+  Snapshots TreeSnapshot[]
+  Sessions Session[]
+  Organization Organization @relation(fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  organizationUuid String @db.Uuid
+  Template Template[]
+  SoldTrees SoldTree[]
+  Employee Employee[]
+  Theme Theme? @relation(fields: [themeUuid], references: [uuid])
+  themeUuid String? @db.Uuid
+  isPublic Boolean?
+
+
+  @@allow("read", isPublic)
+  @@allow('all', Employee?[userUuid == auth().uuid] && auth().role == "ADMIN")
+  @@allow('read', Employee?[userUuid == auth().uuid])
+  @@allow('read', Sessions?[ownerUuid == auth().uuid])
+  @@allow("read", SoldTrees?[customerUserUuid == auth().uuid])
+}
+
+model TreeSnapshot {
+  uuid String @id @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  document Bytes?
+  OriginTree Tree @relation(fields: [originTreeUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  originTreeUuid String @db.Uuid
+  Sessions Session[]
+  Template Template[]
+
+
+  @@allow("read", OriginTree.isPublic)
+  @@allow('read', Sessions?[auth().uuid == ownerUuid])
+  @@allow('read', OriginTree.Sessions?[ownerUuid == auth().uuid])
+  @@allow('read', OriginTree.SoldTrees?[auth().uuid == customerUserUuid])
+  @@allow('all', auth().organizationUuid == OriginTree.organizationUuid && auth().role == "ADMIN")
+}
+
+model SoldTree {
+  Tree Tree @relation(fields: [treeUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  treeUuid String @db.Uuid
+  credits Int?
+  Customer Customer @relation(fields: [customerUserUuid], references: [userUuid], onDelete: Cascade, onUpdate: Cascade)
+  customerUserUuid String @db.Uuid
+
+  @@unique([treeUuid, customerUserUuid])
+
+  @@allow('read', auth().uuid == customerUserUuid)
+  @@allow('all', auth().organizationUuid == Tree.organizationUuid && auth().role == "ADMIN")
+}

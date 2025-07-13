@@ -1,0 +1,17 @@
+{
+  "name": "@mioto/icons",
+  "version": "1.0.0",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./*": "./src/*.tsx"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "pnpm biome check --apply ./",
+    "lint:unsafe": "pnpm biome check --apply-unsafe ./"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7"
+  }
+}

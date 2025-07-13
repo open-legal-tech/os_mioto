@@ -1,0 +1,38 @@
+diff --git a/dist-es/getEndpointPlugin.js b/dist-es/getEndpointPlugin.js
+index e2335f4bef2b745b1d378136248becb246f603af..222fc258570cb1babd4923187de0bade73267227 100644
+--- a/dist-es/getEndpointPlugin.js
++++ b/dist-es/getEndpointPlugin.js
+@@ -1,18 +1,20 @@
+-import { serializerMiddlewareOption } from "@smithy/middleware-serde";
+ import { endpointMiddleware } from "./endpointMiddleware";
+ export const endpointMiddlewareOptions = {
+-    step: "serialize",
+-    tags: ["ENDPOINT_PARAMETERS", "ENDPOINT_V2", "ENDPOINT"],
+-    name: "endpointV2Middleware",
+-    override: true,
+-    relation: "before",
+-    toMiddleware: serializerMiddlewareOption.name,
++  step: "serialize",
++  tags: ["ENDPOINT_PARAMETERS", "ENDPOINT_V2", "ENDPOINT"],
++  name: "endpointV2Middleware",
++  override: true,
++  relation: "before",
++  toMiddleware: "serializerMiddleware",
+ };
+ export const getEndpointPlugin = (config, instructions) => ({
+-    applyToStack: (clientStack) => {
+-        clientStack.addRelativeTo(endpointMiddleware({
+-            config,
+-            instructions,
+-        }), endpointMiddlewareOptions);
+-    },
++  applyToStack: (clientStack) => {
++    clientStack.addRelativeTo(
++      endpointMiddleware({
++        config,
++        instructions,
++      }),
++      endpointMiddlewareOptions
++    );
++  },
+ });

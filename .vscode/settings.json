@@ -1,0 +1,76 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/*.yarn": true
+  },
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tailwindCSS.includeLanguages": {
+    "\"plaintext\"": "\"javascript\""
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "i18n-ally.localesPaths": [
+    "packages/locales/locales"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "([\"'`][^\"'`]*.*?[\"'`])",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ]
+  ],
+  "tailwindCSS.experimental.configFile": "packages/design-system/src/global.css",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.keepFulfilled": false,
+  "i18n-ally.displayLanguage": "en",
+  "i18n-ally.extract.autoDetect": true,
+  "i18n-ally.namespace": false,
+  "i18n-ally.enabledFrameworks": [
+    "next-intl"
+  ],
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#fdab3f",
+    "titleBar.activeBackground": "#fc950d",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#fc950d99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#FC950D",
+  "svg.preview.background": "transparent",
+  "workbench.editor.customLabels.patterns": {
+    "**/app/**/page.tsx": "${dirname} - Page",
+    "**/app/**/index.tsx": "${dirname} - Index",
+    "**/app/**/layout.tsx": "${dirname} - Layout",
+    "**/app/**/template.tsx": "${dirname} - Template",
+    "**/components/**/index.tsx": "${dirname} - Component"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+  },
+  "yaml.schemas": {
+    "file:///Users/philippgarbowsky/.vscode/extensions/atlassian.atlascode-3.0.10/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+    "https://www.artillery.io/schema.json": []
+  },
+  "i18n-ally.sourceLanguage": "de",
+  "terminal.integrated.profiles.osx": {
+    "nix": {
+      "path": "/nix/var/nix/profiles/default/bin/nix-shell",
+      "args": []
+    }
+  },
+  "css.format.enable": true
+}

@@ -1,0 +1,75 @@
+import "./schema.zmodel"
+import "./File.zmodel"
+import "./Tree.zmodel"
+
+
+model User {
+  uuid String @id @unique @default(uuid()) @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  Tokens Token[]
+  Sessions Session[]
+  Employee Employee?
+  Customer Customer?
+  UserUpload UserUpload[]
+  Organization Organization @relation(fields: [organizationUuid], references: [uuid], onDelete: Cascade, onUpdate: Cascade)
+  organizationUuid String @db.Uuid
+  role Roles
+  status UserStatus @default(INVITED)
+  Account Account?
+  isBlocked Boolean @default(false)
+
+
+  @@allow("all", auth() == this)
+  @@allow("all", auth().organizationUuid == organizationUuid && auth().role == "ADMIN")
+}
+
+model Account {
+  termsVersion Int @default(0)
+  privacyVersion Int @default(0)
+  email String
+  emailIsVerified Boolean @default(false)
+  password String? @deny("all", auth().uuid != userUuid)
+  User User @relation(fields: [userUuid], references: [uuid], onUpdate: Cascade, onDelete: Cascade)
+  userUuid String @id @unique @db.Uuid
+
+  @@allow("all", auth() == this.User)
+  @@allow("all", auth().organizationUuid == User.organizationUuid && auth().role == "ADMIN")
+}
+
+model Employee {
+  User User @relation(fields: [userUuid], references: [uuid], onUpdate: Cascade, onDelete: Cascade)
+  userUuid String @id @unique @db.Uuid
+  Trees Tree[]
+  accessCode String?
+  firstname String?
+  lastname String?
+
+  @@allow("all", auth().uuid == userUuid)
+  @@allow("all", auth().organizationUuid == User.organizationUuid && auth().role == "ADMIN")
+}
+
+model Customer {
+  User User @relation(fields: [userUuid], references: [uuid], onUpdate: Cascade, onDelete: Cascade)
+  userUuid String @id @unique @db.Uuid
+  SoldTrees SoldTree[]
+  referenceNumber String?
+  firstname String?
+  lastname String?
+  company String?
+  hasPortalAccess Boolean @default(false)
+
+  @@allow("all", auth().uuid == userUuid)
+  @@allow("all", auth().organizationUuid == User.organizationUuid && auth().role == "ADMIN")
+}
+
+enum Roles {
+  ADMIN
+  CUSTOMER
+  ANONYMUS_USER
+}
+
+enum UserStatus {
+  INVITED
+  ACTIVE
+}

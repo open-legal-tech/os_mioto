@@ -1,0 +1,16 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "validate-env": {
+      "dependsOn": ["^validate-env"],
+      "env": [
+        "DATABASE_URL",
+        "AZURE_OPENAI_API_KEY",
+        "CLIENT_ENDPOINT",
+        "APP_ENV",
+        "SENTRY_DSN"
+      ]
+    }
+  }
+}

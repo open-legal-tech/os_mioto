@@ -1,0 +1,21 @@
+{
+  "name": "@mioto/locale",
+  "type": "module",
+  "scripts": {
+    "lint": "pnpm biome check --apply ./",
+    "lint:unsafe": "pnpm biome check --apply-unsafe ./"
+  },
+  "exports": {
+    "./de": "./locales/de.json",
+    "./en": "./locales/en.json",
+    ".": "./index.ts",
+    "./server": "./server.ts",
+    "./config": "./config.ts",
+    "./middleware": "./middleware.ts",
+    "./plugin": "./plugin.js",
+    "./navigation": "./navigation.ts",
+    "./helpers": "./localeHelpers.ts",
+    "./locales": "./locales.ts"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "cache": true,
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "SENTRY_AUTH_TOKEN",
+        "OPENAI_API_KEY",
+        "LANGCHAIN_API_KEY",
+        "GOTENBERG_ENDPOINT",
+        "ACCESS_TOKEN_SECRET",
+        "REFRESH_TOKEN_SECRET",
+        "JWT_ACCESS_EXPIRATION_MINUTES",
+        "JWT_REFRESH_EXPIRATION_DAYS",
+        "RESET_PASSWORD_EXPIRATION_MINUTES",
+        "VERIFY_EMAIL_EXPIRATION_MINUTES",
+        "FILE_UPLOAD_EXPIRATION_MINUTES",
+        "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
+        "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
+        "EMAIL_API_TOKEN",
+        "AWS_S3_ACCESS_KEY_ID",
+        "AWS_S3_SECRET_ACCESS_KEY",
+        "WITH_EMAIL_SERVICE",
+        "CONTACT_EMAIL",
+        "REGISTER_ACCESS_CODES",
+        "DATABASE_URL",
+        "AZURE_OPENAI_API_KEY"
+      ]
+    },
+    "serve": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "SENTRY_AUTH_TOKEN",
+        "SENTRY_URL",
+        "SENTRY_ORG",
+        "OPENAI_API_KEY",
+        "LANGCHAIN_API_KEY",
+        "GOTENBERG_ENDPOINT",
+        "ACCESS_TOKEN_SECRET",
+        "REFRESH_TOKEN_SECRET",
+        "JWT_ACCESS_EXPIRATION_MINUTES",
+        "JWT_REFRESH_EXPIRATION_DAYS",
+        "RESET_PASSWORD_EXPIRATION_MINUTES",
+        "VERIFY_EMAIL_EXPIRATION_MINUTES",
+        "FILE_UPLOAD_EXPIRATION_MINUTES",
+        "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
+        "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
+        "EMAIL_API_TOKEN",
+        "AWS_S3_ACCESS_KEY_ID",
+        "AWS_S3_SECRET_ACCESS_KEY",
+        "WITH_EMAIL_SERVICE",
+        "CONTACT_EMAIL",
+        "REGISTER_ACCESS_CODES",
+        "DATABASE_URL",
+        "AZURE_OPENAI_API_KEY"
+      ]
+    },
+    "prepare:docker:build": {
+      "cache": false,
+      "persistent": false,
+      "outputs": ["../../out"]
+    }
+  }
+}

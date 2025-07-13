@@ -1,0 +1,7 @@
+.react-aria-Select {
+  .react-aria-SelectValue {
+    [slot=description] {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+*
+!out
+!tsconfig.base.json
+!.env.production
+
+
+# **/node_modules
+# tmp
+# *.log
+# .git
+# .github
+# .vscode
+# **/build
+# **/dist
+# **/.next
+# **/.turbo
+# Dockerfile
+

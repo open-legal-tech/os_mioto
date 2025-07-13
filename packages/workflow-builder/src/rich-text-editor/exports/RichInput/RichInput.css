@@ -1,0 +1,3 @@
+.rich-input::-webkit-scrollbar {
+  display: none;
+}

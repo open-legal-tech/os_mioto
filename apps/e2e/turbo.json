@@ -1,0 +1,20 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "e2e:debug": {
+      "cache": false,
+      "persistent": true,
+      "env": ["DOTENV_PRIVATE_KEY_DEVELOPMENT"]
+    },
+    "e2e": {
+      "dependsOn": [],
+      "cache": false,
+      "env": ["DOTENV_PRIVATE_KEY_DEVELOPMENT"]
+    },
+    "e2e:ui": {
+      "dependsOn": [],
+      "cache": false,
+      "env": ["DOTENV_PRIVATE_KEY_DEVELOPMENT"]
+    }
+  }
+}

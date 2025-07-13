@@ -1,0 +1,40 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "jsx": "react-jsx",
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "target": "ES2020",
+    "sourceMap": true,
+    "module": "ES2020",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "declaration": false,
+    "useUnknownInCatchVariables": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@design-system/shad/components/*": [
+        "packages/design-system/src/shad/components/*"
+      ],
+      "@design-system/shad/ui/*": [
+        "packages/design-system/src/shad/ui/*"
+      ],
+      "@design-system/shad/utils/*": [
+        "packages/design-system/src/shad/utils/*"
+      ],
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

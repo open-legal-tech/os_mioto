@@ -1,0 +1,2573 @@
+{
+  "app": {
+    "client": {
+      "alpha-badge": {
+        "title": "Alpha",
+        "tooltip": {
+          "content": "The client portal is still in the alpha phase. \nIt should not be used publicly yet, but can be tested. \nIn order to make the feature as good as possible, we would be happy to receive your feedback."
+        }
+      },
+      "block": {
+        "pageTitle": "Block client"
+      },
+      "block-client": {
+        "dialog": {
+          "block": {
+            "description": "Please confirm the blocking of {customerName}. The client will then no longer have access. This can be reversed at any time.",
+            "notification": {
+              "success": {
+                "content": "{customerName} was blocked.",
+                "title": "Client blocked"
+              }
+            },
+            "submit": "Block {customerName}",
+            "title": "Block client"
+          },
+          "unblock": {
+            "description": "Please confirm the unblocking of {customerName}. The client will have access again.",
+            "notification": {
+              "success": {
+                "content": "{customerName} has been unlocked.",
+                "title": "Client unblocked"
+              }
+            },
+            "submit": "Unblock {customerName}",
+            "title": "Unblock client"
+          }
+        }
+      },
+      "card": {
+        "menu": {
+          "block-client": {
+            "block": {
+              "label": "Block client"
+            },
+            "unblock": {
+              "label": "Unblock client"
+            }
+          },
+          "edit-client": {
+            "label": "Edit client"
+          },
+          "invite": {
+            "copy-link": {
+              "label": "Copy link",
+              "notification": {
+                "title": "Link copied"
+              }
+            },
+            "label": "Invitation",
+            "send-mail": {
+              "label": "Send email",
+              "notification": {
+                "success": {
+                  "content": "Invitation email could not be sent",
+                  "title": "Error"
+                }
+              }
+            }
+          },
+          "portal-access": {
+            "give-access": "Grant Access to Portal",
+            "label": "Portal"
+          },
+          "remove-client": {
+            "label": "Delete client"
+          },
+          "share-app": {
+            "label": "Share application"
+          },
+          "share-session": {
+            "label": "Share single session"
+          },
+          "tooltip": "Client menu: {name}"
+        },
+        "open": {
+          "tooltip": "Open Client Page"
+        }
+      },
+      "client-form": {
+        "company": {
+          "label": "Company"
+        },
+        "email": {
+          "label": "E-mail",
+          "required": "Email address cannot be empty."
+        },
+        "firstname": {
+          "label": "First name"
+        },
+        "lastname": {
+          "label": "Last name"
+        },
+        "portal-access": {
+          "label": "Give client portal access (possible later)"
+        },
+        "reference-number": {
+          "label": "Reference Number"
+        },
+        "send-email": {
+          "label": "Inform the client via email about portal access"
+        }
+      },
+      "client-status": {
+        "active": "Active",
+        "blocked": "Blocked",
+        "invited": "Invited",
+        "no-portal": "No Portal"
+      },
+      "deactivated": {
+        "content": "The portal is deactivated and all access is blocked. The portal can be reactivated in the <link>settings</link>.",
+        "title": "Client portal deactivated"
+      },
+      "delete": {
+        "pageTitle": "Delete client"
+      },
+      "delete-client": {
+        "dialog": {
+          "cancel": "Cancel",
+          "description": "Please confirm the deletion of {customerName}. The client and all data associated with it will be irrevocably deleted.",
+          "notification": {
+            "success": {
+              "content": "{customerName} has been deleted.",
+              "title": "Client deleted"
+            }
+          },
+          "submit": "Delete {customerName}",
+          "title": "Delete client"
+        }
+      },
+      "edit": {
+        "pageTitle": "Edit client"
+      },
+      "edit-client": {
+        "dialog": {
+          "description": "Create a new client.",
+          "info": {
+            "content": "Please make sure to inform the client about the changed credentials. This can be done automatically by checking the email option.",
+            "title": "Client notification"
+          },
+          "notification": {
+            "success": {
+              "content": "{name} has been updated.",
+              "title": "Client updated"
+            }
+          },
+          "title": "Edit Client"
+        }
+      },
+      "edit-client-form": {
+        "company": {
+          "label": "Company"
+        },
+        "email": {
+          "label": "E-mail",
+          "required": "Email address cannot be empty."
+        },
+        "firstname": {
+          "label": "First name"
+        },
+        "lastname": {
+          "label": "Last name"
+        },
+        "portal-access": {
+          "label": "Give client portal access (possible later)"
+        },
+        "reference-number": {
+          "label": "Reference Number"
+        },
+        "send-email": {
+          "label": "Inform the client via email about the changed credentials"
+        }
+      },
+      "individual": {
+        "pageTitle": "client"
+      },
+      "list": {
+        "search": {
+          "label": "Client search",
+          "placeholder": "Client name, e-mail, reference number ..."
+        },
+        "sort": {
+          "createdAt": "Created at",
+          "updatedAt": "Last edited"
+        }
+      },
+      "new-client": {
+        "dialog": {
+          "cancel": "Cancel",
+          "description": "A new client can be created here.",
+          "notification": {
+            "success-with-portal": {
+              "content": "{name} was successfully created and the invitation link copied to your clipboard",
+              "title": "Success"
+            },
+            "success-with-portal-with-email": {
+              "content": "{name} was successfully invited"
+            },
+            "success-without-portal": {
+              "content": "{name} was successfully created",
+              "title": "Success"
+            }
+          },
+          "submit": "Save",
+          "submit-and-next": "Save and add further clients",
+          "title": "New client"
+        },
+        "label": "Add clients",
+        "notification": {
+          "e-mail_taken": {
+            "content": "The desired email address is already taken.",
+            "title": "Email address already taken"
+          }
+        }
+      },
+      "not-configured": {
+        "description": "The client portal must be activated and configured before clients can be added.",
+        "link": "Configure client portal",
+        "title": "Client portal not active"
+      },
+      "page": {
+        "app-card": {
+          "active-session": {
+            "title": "Active Sessions"
+          },
+          "open-in-editor": "Open application in editor",
+          "session-count": {
+            "number-of-sessions": "{remainingSessions} remaining sessions",
+            "unlimited": "Unlimited Sessions"
+          }
+        },
+        "session-card": {
+          "app-title": "Application",
+          "last-edit": "Last edited"
+        },
+        "shared-apps": {
+          "share-button": "Release application",
+          "title": "Released Applications"
+        },
+        "tasks": {
+          "description": "In the future there will be an overview of open tasks in this client's sessions. \nTasks can be created within an application and are then displayed here.",
+          "title": "Open Tasks"
+        }
+      },
+      "pageTitle": "Clients",
+      "share": {
+        "pageTitle": "Share application"
+      },
+      "share-session": {
+        "dialog": {
+          "cancel": "Cancel",
+          "copy-link": {
+            "error": {
+              "notification": {
+                "content": "You didn't allow us to access your clipboard. \nPlease adjust the permissions in your browser or copy the link manually.",
+                "title": "Copying not possible"
+              }
+            },
+            "link": {
+              "cta": "Click to copy"
+            },
+            "success": {
+              "notification": {
+                "title": "Copied"
+              }
+            }
+          },
+          "submit": "Generate Link"
+        },
+        "pageTitle": "Share Session"
+      },
+      "share-tree": {
+        "dialog": {
+          "cancel": "Cancel",
+          "credits": {
+            "help-tooltip": "Credits allow you to restrict the number of sessions a user can have for this tree. Credits can be adjusted later by sharing the tree again.",
+            "placeholder": "Leave empty for unlimited Sessions"
+          },
+          "description": "Give {name} access to an application.",
+          "form": {
+            "app": {
+              "aria-label": "Application name",
+              "label": "Application",
+              "list": {
+                "aria-label": "Application list"
+              },
+              "placeholder": "Application name"
+            },
+            "credits": {
+              "label": "Credits"
+            }
+          },
+          "notification": {
+            "success": {
+              "title": "Successfully released"
+            }
+          },
+          "submit": "Save",
+          "title": "Share application"
+        }
+      },
+      "title": "Clients"
+    },
+    "client-list": {
+      "empty": "No Clients found"
+    },
+    "dashboard": {
+      "empty": "No applications found",
+      "help-tooltip": {
+        "content": "Mioto applications are interactive forms that are created as decision trees. They accept user input and generate output based on the rules and conditions defined in the decision tree.",
+        "title": "Applications"
+      },
+      "menu": {
+        "clients": {
+          "tooltip": "Clients"
+        },
+        "my-apps": {
+          "tooltip": "My Apps"
+        },
+        "portal": {
+          "tooltip": "Portal"
+        },
+        "settings": {
+          "tooltip": "Settings"
+        }
+      },
+      "new-project": {
+        "create-new": {
+          "form": {
+            "description": {
+              "label": "Description"
+            }
+          },
+          "submit": "Create application",
+          "title": "Create new application"
+        },
+        "import": {
+          "label": "Import application",
+          "notification": {
+            "invalid-file": {
+              "content": "The provided file is not valid.",
+              "title": "Invalid file"
+            }
+          }
+        },
+        "label": "Create application"
+      },
+      "pageTitle": "Applications",
+      "search": {
+        "label": "Application search",
+        "placeholder": "Application name"
+      },
+      "sort-button": {
+        "created-at": "Created at",
+        "last-edit": "Last edited"
+      },
+      "title": "My applications",
+      "tree-card": {
+        "aria-label": "Open application {name}"
+      }
+    },
+    "editor": {
+      "broken-tree": {
+        "dialog": {
+          "submit": "Contact support"
+        }
+      },
+      "canvas": {
+        "notification": {
+          "delete-start-node": {
+            "title": "Starting block cannot be deleted"
+          }
+        },
+        "select-block-type": "Select Block type"
+      },
+      "createNodeButton": {
+        "tooltip": "Add new Block"
+      },
+      "error": {
+        "broken-file": {
+          "content": "We are sorry that this error has occurred. Your data is not lost. Please contact us to try a manual recovery.",
+          "title": "The opened file contains errors that could not be reset automatically."
+        },
+        "connection-paused": {
+          "action": "Reconnect",
+          "icon": {
+            "tooltip": "Editor paused"
+          },
+          "title": "The connection to the server has been paused."
+        },
+        "unauthorized": {
+          "title": "You are not authorized to edit this application."
+        }
+      },
+      "errors": {
+        "circular_connection": {
+          "long": "A connection between these blocks would result in a circular connection.",
+          "short": "Bad connection"
+        },
+        "connected_to_self": {
+          "long": "A block cannot be connected to itself.",
+          "short": "Bad connection"
+        },
+        "duplicate_edge": {
+          "long": "A connection between these blocks already exists.",
+          "short": "Double connection"
+        }
+      },
+      "global-variables": {
+        "add-button": {
+          "label": "Add global variable"
+        },
+        "card": {
+          "copy-variable-key": {
+            "notification": {
+              "copy": {
+                "content": "Copied Name: <br></br><key></key>",
+                "title": "Copied Variable Name"
+              }
+            },
+            "tooltip": "Copy Variable Key"
+          },
+          "name": {
+            "label": "Name"
+          },
+          "no-name": "No name",
+          "remove": {
+            "tooltip": "Remove global variable"
+          }
+        },
+        "menu-button": "Global Variables",
+        "title": "Global Variables"
+      },
+      "mioto-mind": {
+        "alpha-badge": {
+          "contact-button": "How to get in touch",
+          "description": "Mioto Mind is still at a very early stage of development. Errors may occur. Please help us to improve Mioto Mind with your feedback.",
+          "title": "Mioto Mind in the alpha phase"
+        },
+        "initial-message": {
+          "content": "Hello, how can I help you with Mioto?"
+        },
+        "menu-button": {
+          "tooltip": "Mioto Mind"
+        },
+        "placeholder": "How can I help you?",
+        "submit": "AI questions",
+        "title": "Mioto Mind"
+      },
+      "nodeSearch": {
+        "createBadge": "Create",
+        "placeholder": "Search"
+      },
+      "not-found": {
+        "content": "There is no application with this id. Please check if the url is correct. If you think the url is correct but still can't find an application, please contact us.",
+        "title": "Application not found"
+      },
+      "pageTitle": "Editor",
+      "preview": {
+        "menu-button": {
+          "disabled": "A start block is required to open the preview.",
+          "enabled": "Application Preview"
+        },
+        "save-session": {
+          "help-tooltip": {
+            "content": "The session data can be saved to check the generated variables and the resulting path.",
+            "title": "Session storage"
+          },
+          "text": "Save session"
+        },
+        "unknown-error": {
+          "content": "An unknown error has occurred. \nWe have been informed and are working on a solution. \nYou can try resetting the session to solve the problem.",
+          "reset-action": {
+            "label": "Reset"
+          },
+          "title": "Unknown Error"
+        }
+      },
+      "project-menu": {
+        "select-theme": {
+          "disabled": {
+            "tooltip": "No themes available"
+          },
+          "label": "Select theme"
+        }
+      },
+      "toolbar": {
+        "fitView": {
+          "hiddenLabel": "Focus the application"
+        },
+        "redo": {
+          "hiddenLabel": {
+            "disabled": "Redo (deactivated)",
+            "enabled": "Redo"
+          }
+        },
+        "reset-zoom": {
+          "tooltip": "Reset Zoom"
+        },
+        "undo": {
+          "hiddenLabel": {
+            "disabled": "Undo (deactivated)",
+            "enabled": "Undo"
+          }
+        },
+        "zoomIn": {
+          "hiddenLabel": "Zoom in"
+        },
+        "zoomOut": {
+          "hiddenLabel": "Zoom out"
+        }
+      }
+    },
+    "error": {
+      "title": "Sorry something went wrong!"
+    },
+    "portal": {
+      "demo": {
+        "link": "Demo",
+        "tooltip": "Testing the portal allows you to use it like a portal user without having your own portal account. \nYou can configure the available applications in the settings."
+      },
+      "tabs": {
+        "settings": "Settings",
+        "users": "User"
+      },
+      "title": "Portal"
+    },
+    "settings": {
+      "background-upload": {
+        "existing-file": {
+          "title": "Background"
+        },
+        "label": "Background",
+        "notification": {
+          "unknown-error": {
+            "content": "The background could not be uploaded.",
+            "title": "Error"
+          }
+        },
+        "title": "Background"
+      },
+      "client-portal": {
+        "description": "The client portal gives your clients access to your digital law firm.",
+        "legal-documents": {
+          "title": "Legal documents"
+        },
+        "switch": {
+          "activate": {
+            "aria-label": "Activate client portal"
+          },
+          "deactivate": {
+            "alert": {
+              "description": "If you deactivate the client portal, the <strong> accesses of all your clients will be blocked.</strong> No data will be deleted and all access will be unlocked again if reactivated.",
+              "label": "Deactivate client portal",
+              "submit": "Deactivate client portal"
+            },
+            "aria-label": "Deactivate client portal"
+          }
+        },
+        "theming": {
+          "description": "The portal is whitelabelled. That means that you can configure your theme, logo and other assets to give the portal your branding. If you do not configure anything the normal Mioto theme is used and in place of a Logo we use the first letters of the first two words of your organization name.",
+          "title": "Theming"
+        },
+        "title": "Client portal"
+      },
+      "deleteAccount": {
+        "submit": "Delete account",
+        "title": "Delete account",
+        "verifyOverlay": {
+          "additionalMessage": {
+            "content": "The deletion of your account cannot be undone.",
+            "title": "Attention!"
+          },
+          "description": "Please verify to delete your account."
+        }
+      },
+      "file-card": {
+        "empty-dropzone": {
+          "aria-label": "Upload {title}",
+          "label": "Drag & Drop or click"
+        },
+        "url": {
+          "label": "File-URL"
+        }
+      },
+      "logo-upload": {
+        "existing-file": {
+          "title": "Logo"
+        },
+        "label": "Logo",
+        "notification": {
+          "unknown-error": {
+            "content": "The logo could not be uploaded.",
+            "title": "Error"
+          }
+        }
+      },
+      "org-config": {
+        "form": {
+          "name": {
+            "label": "Name",
+            "placeholder": "Organization name"
+          },
+          "submit": "Save",
+          "theme": {
+            "label": "Theme"
+          },
+          "title": "General"
+        },
+        "title": "Organization"
+      },
+      "pageTitle": "Settings",
+      "privacy-upload": {
+        "existing-file": {
+          "download": {
+            "tooltip": "Download privacy policy"
+          },
+          "remove": {
+            "tooltip": "Remove privacy policy"
+          },
+          "title": "Data protection"
+        },
+        "help-tooltip": {
+          "content": "The data protection declaration for your portal. \nThese are displayed to clients for confirmation upon registration.",
+          "title": "Privacy policy of the portal"
+        },
+        "label": "Data protection",
+        "notification": {
+          "unknown-error": {
+            "content": "The privacy policy could not be uploaded.",
+            "title": "Mistake"
+          }
+        },
+        "placeholder": "https://org.com/privacy",
+        "title": "Data-Protection Agreement"
+      },
+      "terms-upload": {
+        "existing-file": {
+          "download": {
+            "tooltip": "Download terms"
+          },
+          "remove": {
+            "tooltip": "Remove terms"
+          },
+          "title": "Terms"
+        },
+        "help-tooltip": {
+          "content": "The terms and conditions for your portal. \nThese are displayed to clients for confirmation upon registration.<br></br><br></br>Can be provided as a URL or file.",
+          "title": "Terms and conditions of the portal"
+        },
+        "label": "Terms",
+        "notification": {
+          "unknown-error": {
+            "content": "The terms and conditions could not be uploaded.",
+            "title": "Error"
+          }
+        },
+        "placeholder": "https://org.com/terms",
+        "title": "Terms"
+      },
+      "theme-management": {
+        "add": {
+          "tooltip": "Add a new Theme"
+        },
+        "custom-css-upload": {
+          "label": "Upload CSS (optional)"
+        },
+        "delete": {
+          "label": "Delete"
+        },
+        "delete-theme": {
+          "dialog": {
+            "cancel": "Cancel",
+            "content": "Are you sure you want to delete the Theme <weak>{themeName}</weak>?",
+            "heading": "Delete Theme",
+            "notification": {
+              "success": {
+                "title": "Successfully deleted Theme"
+              }
+            },
+            "submit": "Delete"
+          }
+        },
+        "download": {
+          "label": "Download"
+        },
+        "edit": {
+          "label": "Edit"
+        },
+        "empty-label": "Choose theme",
+        "file-upload": {
+          "css-template": {
+            "link": "CSS Template"
+          },
+          "download": {
+            "tooltip": "Download theme"
+          },
+          "existing-file": {
+            "download": "{title} download"
+          },
+          "form": {
+            "file-upload": {
+              "invalid": {
+                "error": "The theme cannot be uploaded because it does not meet the requirements."
+              },
+              "label": "Upload Theme",
+              "required": {
+                "error": "Please select a file"
+              },
+              "success": {
+                "content": "The theme has been uploaded successfully",
+                "title": "Success"
+              }
+            },
+            "name": {
+              "label": "Theme name",
+              "required": "Please enter a name for the new theme."
+            },
+            "submit": "Save"
+          },
+          "heading": "Create theme",
+          "remove": {
+            "tooltip": "Remove theme"
+          },
+          "theme-template": {
+            "link": "Theme Template"
+          }
+        },
+        "help-tooltip": {
+          "content": "Themes allow you to customize the portal and applications to your organization's brand.",
+          "title": "Explanation of themes"
+        },
+        "no-themes": {
+          "label": "No Themes"
+        },
+        "title": "Themes"
+      },
+      "title": "Settings",
+      "user": {
+        "title": "User"
+      }
+    }
+  },
+  "auth": {
+    "create-org": {
+      "description": "<strong>Since your account was created before 04.12.2023 you have to configure your organization.</strong><br></br> Since 04.12.2023 organizations are available in Mioto. Organizations will allow you to group multiple users and make it easier to share, edit and run applications.",
+      "form": {
+        "name": {
+          "description": "The name of your organization is used in various places in Mioto to make your organization identifiable to users.",
+          "errors": {
+            "required": {
+              "message": "Please enter a name for your organization."
+            }
+          },
+          "heading": "Name",
+          "label": "Organization name",
+          "placeholder": "Jensen & Partner"
+        },
+        "slug": {
+          "description": "The URL of your organization represents your space in Mioto. It is part of your branding and allows you to differentiate your links from those of other organizations.<br></br><strong>Please note that the URL cannot be changed.</strong>",
+          "errors": {
+            "allowed-characters": {
+              "message": "Please use only letters, numbers, hyphens and underscores."
+            },
+            "required": {
+              "message": "Please enter a URL for your organization."
+            },
+            "slug-taken": {
+              "message": "The requested URL is already taken. Please choose another one."
+            }
+          },
+          "label": "Organization URL<br></br>(permitted characters: letters, numbers, hyphens and underscores)",
+          "placeholder": "jensen-and-partner",
+          "title": "URL"
+        },
+        "submit": "Create organization"
+      },
+      "pageTitle": "Create organization",
+      "title": "Create organization"
+    },
+    "error": {
+      "content": "An unknown error has occurred. Please try again. If the error still occurs, please contact support.",
+      "title": "Error"
+    },
+    "forgotPassword": {
+      "description": "Please enter the e-mail address you used to register with Mioto.",
+      "errors": {
+        "user_not_found": "The user account could not be found."
+      },
+      "pageTitle": "Password forgotten",
+      "submitButton": "Reset password",
+      "success": {
+        "description": "A password reset email has been sent to the email address you entered. Please check your mailbox.",
+        "loginLink": "Back to login",
+        "title": "Password changed"
+      },
+      "title": "Reset password"
+    },
+    "layout": {
+      "image": {
+        "alt": "Mioto application"
+      }
+    },
+    "login": {
+      "description": "Start creating your personal automation tools in just a few moments.",
+      "errors": {
+        "incorrect_email_or_password": "You have entered an incorrect e-mail address or password.",
+        "user_blocked": "Your account has been blocked. Please contact your law firm."
+      },
+      "forgotPasswordLink": "Forgotten your password?",
+      "pageTitle": "Login",
+      "registerCTA": "Register here",
+      "registerQuestion": "Don't have an account yet?",
+      "submit": "Login",
+      "title": "Welcome back"
+    },
+    "maintenance": {
+      "description": "Mioto is currently in maintenance mode.",
+      "pageTitle": "maintenance"
+    },
+    "register": {
+      "access-form": {
+        "access-code": {
+          "required": {
+            "message": "Please enter an access password."
+          }
+        },
+        "cta-meet": {
+          "button": "Arrange a chat",
+          "cta": "Are you interested in Mioto? Schedule a chat here."
+        },
+        "description": "Are you already one of the first users? Then enter your access code here.",
+        "errors": {
+          "access_code_not_found": "The access password could not be found."
+        },
+        "submit": "Continue to registration",
+        "title": "Mioto will soon be available for everyone!"
+      },
+      "org-form": {
+        "description": "Configure your organization here.",
+        "form": {
+          "name": {
+            "errors": {
+              "required": {
+                "message": "An organization name is mandatory."
+              }
+            },
+            "label": "Organization name",
+            "placeholder": "Jensen and Partner"
+          },
+          "submit": "Register",
+          "url": {
+            "errors": {
+              "pattern": {
+                "message": "Please use only letters, numbers, hyphens and underscores."
+              },
+              "required": {
+                "message": "An organization URL is mandatory."
+              }
+            },
+            "help-tooltip": {
+              "description": "The organization url appears as part of all links in your Mioto account. It always remains the same and allows you to whitelabel your Mioto instance.",
+              "title": "Organization URL"
+            },
+            "label": "Organization URL <weak>(cannot be changed)</weak>",
+            "placeholder": "jensen-and-partner"
+          }
+        },
+        "title": "Your organization"
+      },
+      "pageTitle": "Registration",
+      "register-form": {
+        "description": "Start creating your personal automation tools in just a few moments.",
+        "email": {
+          "error": {
+            "already_used": "The e-mail address is already taken."
+          }
+        },
+        "form": {
+          "alphaDisclaimer": {
+            "label": "I have taken note that the software is in an early development phase and that error-free operation cannot be guaranteed."
+          },
+          "legal": {
+            "errors": {
+              "required": {
+                "message": "Please confirm this condition."
+              }
+            }
+          },
+          "new-password": {
+            "errors": {
+              "no-match": {
+                "message": "The passwords do not match."
+              },
+              "required": {
+                "message": "This field must be filled in."
+              }
+            }
+          },
+          "passwordConfirmation": {
+            "label": "Repeat password"
+          },
+          "privacy": {
+            "errors": {
+              "required": {
+                "message": "Please confirm this condition."
+              }
+            },
+            "label": "I have read and agree to the <link>privacy policy</link>"
+          },
+          "submit": "Register now",
+          "terms": {
+            "errors": {
+              "required": {
+                "message": "Please confirm this condition."
+              }
+            },
+            "label": "I have read and accept the <link>terms and conditions</link>."
+          }
+        },
+        "loginCTA": {
+          "link": "Login here",
+          "question": "Already have an account?"
+        },
+        "newsletterSignUp": "I would like to receive the Mioto newsletter to be informed about development progress.",
+        "title": "Welcome to Mioto!"
+      }
+    },
+    "resetPassword": {
+      "description": "Please enter a new password",
+      "errors": {
+        "unknown": {
+          "notification": {
+            "content": "Please contact support for assistance.",
+            "title": "Password could not be changed"
+          }
+        }
+      },
+      "form": {
+        "password": {
+          "errors": {
+            "no-match": {
+              "message": "The passwords do not match."
+            }
+          },
+          "label": "Repeat password"
+        },
+        "submit": "Reset password"
+      },
+      "invalid": {
+        "description": "This is not a valid link to reset a password. Please try again.",
+        "retry": "Reset password again",
+        "title": "Invalid"
+      },
+      "pageTitle": "Password reset",
+      "success": {
+        "notification": {
+          "title": "Successfully changed password"
+        }
+      },
+      "title": "Reset password"
+    }
+  },
+  "client-portal": {
+    "dashboard": {
+      "app-card": {
+        "continue": "Continue"
+      },
+      "backButton": "Go back to the dashboard",
+      "empty": {
+        "content": "Your law firm has not yet released any applications for you. Please check back later.",
+        "title": "No applications"
+      },
+      "logoutButton": "Logout",
+      "menu": {
+        "dashboardLink": {
+          "tooltip": "My Applications"
+        },
+        "settingsLink": {
+          "tooltip": "Settings"
+        }
+      },
+      "pageTitle": "Dashboard",
+      "title": "Available Apps"
+    },
+    "error": {
+      "refreshButton": "Reload page",
+      "title": "An unknown error has occurred."
+    },
+    "login": {
+      "blocked": {
+        "content": "The portal is currently not accessible. Please try again later.",
+        "title": "Portal locked"
+      },
+      "form": {
+        "password": {
+          "required": {
+            "errorMessage": "Please enter your password."
+          }
+        },
+        "submit": "Login"
+      },
+      "pageTitle": "Log in"
+    },
+    "no-access": {
+      "content": "Your law firm has not given you access to the portal. Please reach out to <strong>{orgName}</strong> if this is a mistake.",
+      "title": "No Access"
+    },
+    "not-found": {
+      "pageTitle": "Not found",
+      "title": "Page not found"
+    },
+    "public-renderer": {
+      "pageTitle": "Renderer"
+    },
+    "register": {
+      "data-protection": {
+        "label": "I have read and agree to the <link>privacy policy</link>.",
+        "required": {
+          "errorMessage": "Please confirm this condition."
+        }
+      },
+      "errors": {
+        "invite_not_found": "The invitation could not be found.",
+        "user_blocked": "Your account has been banned. \nPlease contact your law firm."
+      },
+      "pageTitle": "Registration",
+      "passwordConfirmation": {
+        "label": "Confirm password",
+        "mismatch": {
+          "errorMessage": "The passwords do not match."
+        },
+        "required": {
+          "errorMessage": "This field must be filled in."
+        }
+      },
+      "submit": "Register",
+      "terms": {
+        "label": "I have read and accept the general <link>terms and conditions</link>.",
+        "required": {
+          "errorMessage": "Please confirm this condition."
+        }
+      }
+    },
+    "renderer": {
+      "pageTitle": "{treeName} {sessionName}"
+    },
+    "settings": {
+      "pageTitle": "Settings"
+    },
+    "start-session": {
+      "disabled": "No more sesions available",
+      "error": {
+        "content": "Unfortunately the application could not be started. \nPlease contact the operator.",
+        "title": "Error"
+      },
+      "label": "Start"
+    },
+    "tree": {
+      "pageTitle": "Overview {treeName}",
+      "remaining-sessions": {
+        "title": "Remaining Sessions"
+      },
+      "session-list": {
+        "title": "Sessions"
+      },
+      "unlimited-sessions": {
+        "title": "Unlimited Sessions"
+      }
+    },
+    "treeCard": {
+      "continueButton": "Continue"
+    }
+  },
+  "common": {
+    "blockGroupNames": {
+      "action": "Actions",
+      "data": "Data",
+      "placeholder": "Placeholder",
+      "structure": "Structure",
+      "system": "System"
+    },
+    "nodeNames": {
+      "ai": {
+        "long": "AI Block",
+        "short": "AI"
+      },
+      "authentication": {
+        "long": "Client Block",
+        "short": "Client"
+      },
+      "calculation": {
+        "long": "Calculation Block",
+        "short": "Calculation"
+      },
+      "document": {
+        "long": "Document generation Block (old)",
+        "short": "Document (old)"
+      },
+      "documentv2": {
+        "long": "Document generation Block",
+        "short": "Document"
+      },
+      "form": {
+        "long": "Input Block",
+        "short": "Input"
+      },
+      "info": {
+        "long": "Information Block",
+        "short": "Information"
+      },
+      "logic": {
+        "long": "Logic Block",
+        "short": "Logic"
+      },
+      "node-group": {
+        "long": "Group Block",
+        "short": "Group"
+      },
+      "payment": {
+        "long": "Payment Block",
+        "short": "Payment"
+      },
+      "placeholder": {
+        "long": "Placeholder Block",
+        "short": "Placeholder"
+      },
+      "reporting": {
+        "long": "E-mail Block",
+        "short": "E-mail"
+      },
+      "system-globalVariables": {
+        "long": "Global Gariables",
+        "short": "Global Variables"
+      },
+      "text-interpolation": {
+        "long": "Text Block",
+        "short": "Text"
+      }
+    },
+    "variableNames": {
+      "boolean": "True/False",
+      "date": "Date",
+      "file": "Document",
+      "multi-select": "Multiple selection",
+      "number": "Number",
+      "record": "Group",
+      "rich-text": "Formatted text",
+      "select": "Simple selection",
+      "text": "Text",
+      "textarea": "Text field"
+    }
+  },
+  "components": {
+    "alphabadge": {
+      "label": "Alpha"
+    },
+    "beta-badge": {
+      "button": {
+        "label": "Beta"
+      },
+      "popover": {
+        "contact-button": "How to get in touch",
+        "content": "We are pleased that you are using Mioto. Please note that the software is currently still in the beta phase.<br></br>If you encounter any problems, have any questions or simply want to let us know what you think, please use the contact form. We look forward to your feedback!",
+        "heading": "Mioto in the beta phase"
+      }
+    },
+    "change-email": {
+      "description": "Your current e-mail address is: <weak>{userEmail}</weak>",
+      "errors": {
+        "email_already_used": "The desired email address is already taken."
+      },
+      "label": "New E-Mail",
+      "notifications": {
+        "success": {
+          "title": "E-mail successfully changed"
+        }
+      },
+      "submit": "Change E-mail",
+      "title": "Change E-mail"
+    },
+    "change-password": {
+      "errors": {
+        "weak_password": "Please create a more complex password. \nIt must be at least 8 characters long and contain at least one number and one special character."
+      },
+      "inputLabel": "New password",
+      "notifications": {
+        "success": "Password changed successfully"
+      },
+      "submit": "Save",
+      "title": "Change password"
+    },
+    "contact-form": {
+      "form": {
+        "email": {
+          "label": "Your e-mail",
+          "required": "Please enter your e-mail address so that we can reply to you."
+        },
+        "message": {
+          "label": "Your message",
+          "required": "We can't help you without a message."
+        }
+      },
+      "notifications": {
+        "unknown": {
+          "content": "An error occurred while sending the message. Please try again later.",
+          "title": "Error"
+        }
+      }
+    },
+    "date-picker": {
+      "placeholder": "Pick a date"
+    },
+    "deleteTreeDialog": {
+      "description": "Please enter the name of the application: <weak>{treeName}</weak> to confirm the deletion.",
+      "submit": "Delete",
+      "title": "Delete application",
+      "tree-name": {
+        "label": "Application name"
+      }
+    },
+    "dialog": {
+      "cancel": "Close the Dialog",
+      "close-button": "Cancel"
+    },
+    "email-input": {
+      "label": "E-mail",
+      "placeholder": "example@email.com",
+      "required": {
+        "errorMessage": "Please enter an e-mail."
+      }
+    },
+    "error-card": {
+      "assurance": "Don't worry, your data is stored and secure.",
+      "callToAction": "Click here to continue working",
+      "description": "Unfortunately Mioto is not working as it should. We are already working on fixing the error.",
+      "title": "Something has gone wrong"
+    },
+    "file-dropzone": {
+      "existing-file": {
+        "download": {
+          "tooltip": "{title} download"
+        },
+        "remove": {
+          "tooltip": "{title} Remove"
+        }
+      }
+    },
+    "group-input": {
+      "required": {
+        "errorMessage": "A selection must be made."
+      }
+    },
+    "header": {
+      "homeButtonHiddenLabel": "Go back to the dashboard"
+    },
+    "info-dropdown": {
+      "contact-support": "Contact support",
+      "documentation": {
+        "label": "Documentation"
+      },
+      "imprint": {
+        "label": "Imprint"
+      },
+      "privacy": {
+        "label": "Privacy policy"
+      },
+      "terms": {
+        "label": "Terms and conditions"
+      }
+    },
+    "inputs": {
+      "optional-badge": "*Optional"
+    },
+    "language-toogle": {
+      "languages": {
+        "de": "German",
+        "en": "English"
+      },
+      "tooltip": "Change language to {language}"
+    },
+    "new-password-input": {
+      "form": {
+        "new-password": {
+          "required": "This field must be filled in.",
+          "weak_password": "Your password is too weak. Click the strength indicator on the right for tips on how to create a strong password."
+        }
+      },
+      "strength-indicator": {
+        "label": "Strength: {strengthScore}",
+        "popover": {
+          "description": "These are tips to strengthen your password. These are not mandatory rules. You only need to reach a strength level of 3.",
+          "title": "Tips"
+        },
+        "tipps": {
+          "1": "No existing words",
+          "2": "No date",
+          "3": "Mixture of upper and lower case letters",
+          "4": "Use of special characters"
+        }
+      }
+    },
+    "password-input": {
+      "label": "Password",
+      "tooltip": {
+        "hidden": "Show password",
+        "visible": "Hide password"
+      }
+    },
+    "project-menu": {
+      "changeTreeData": {
+        "button": "Change application data"
+      },
+      "create-version": {
+        "button": "Create version",
+        "disabled": {
+          "no-store": {
+            "tooltip": "Your application has not been fully saved on the server. A version can only be created after the full transmition."
+          }
+        },
+        "errors": {
+          "missing_tree_document": {
+            "content": "The version could not be created because the application does not contain any content.",
+            "title": "Error"
+          },
+          "missing_tree_start_node": {
+            "content": "The version could not be created because the application does not contain a start block.",
+            "title": "Error"
+          },
+          "unknown": {
+            "content": "An error has occurred during the creation of the version. We have been informed and will fix it as soon as possible.",
+            "title": "Error"
+          }
+        },
+        "sub-menu": {
+          "label": "Versions"
+        },
+        "success": {
+          "content": "A version has been successfully created.",
+          "title": "Version created"
+        }
+      },
+      "deleteTree": {
+        "button": "Delete application"
+      },
+      "export": {
+        "button": "Export",
+        "errors": {
+          "unknown": {
+            "content": "The exported file is not valid. It cannot be imported again. Please contact support to restore it.",
+            "title": "Invalid file"
+          }
+        },
+        "saveButton": "Save"
+      },
+      "label": "Menu for {treeName}",
+      "sharePublic": {
+        "button": "Release publicly",
+        "configure": {
+          "button": "Manage public sharing",
+          "copy-link": {
+            "label": "Copy link",
+            "notification": {
+              "success": {
+                "title": "Successfully copied"
+              }
+            }
+          },
+          "end-sharing": "End public sharing",
+          "share-button": {
+            "label": "Share application publicly",
+            "notification": {
+              "success": {
+                "content": "The link has been copied.",
+                "title": "Successfully shared"
+              }
+            }
+          }
+        },
+        "disabled": {
+          "reason": {
+            "tooltip": "Create a version to share this app"
+          }
+        }
+      }
+    },
+    "rich-text-editor": {
+      "add-file-variable": {
+        "aria-label": "Select file variable",
+        "tooltip": "Add a document download link"
+      },
+      "add-image": {
+        "alt-text": {
+          "error": {
+            "required": "Please provide alt text."
+          },
+          "label": "Alt text",
+          "placeholder": "Mioto screenshot"
+        },
+        "button": {
+          "tooltip": "Insert an image"
+        },
+        "drag-and-drop": {
+          "clear-input": "Remove image",
+          "empty-label": "or upload image"
+        },
+        "heading": "Image integration",
+        "help-tooltip": {
+          "intro": {
+            "content": "To integrate images, you can either enter an image URL or upload a file.",
+            "heading": "How should images be integrated?"
+          },
+          "title": "Pictures",
+          "upload": {
+            "content": "For images that are only relevant in your Mioto application, you can upload the image directly and we will save it for you.",
+            "heading": "Upload Image"
+          },
+          "url": {
+            "content": "If the image is already available somewhere online (e.g. hosted on your website), it may make sense to just use the URL to make it easier to update the image everywhere.",
+            "heading": "Image URL"
+          }
+        },
+        "submit": "Add a picture",
+        "title": "Include image",
+        "url": {
+          "error": {
+            "invalid-url": "This URL is not valid.",
+            "required": "Please provide an image URL."
+          },
+          "label": "Image URL",
+          "placeholder": "https://mioto.app/Mioto_Product.png"
+        }
+      },
+      "add-link": {
+        "edit": {
+          "tooltip": "Edit link"
+        },
+        "error": {
+          "invalid-url": "Please enter a valid link"
+        },
+        "link": {
+          "errors": {
+            "required": "Please enter a link"
+          },
+          "label": "link",
+          "text": {
+            "label": "text"
+          }
+        },
+        "open-external": {
+          "tooltip": "Open {linkName}"
+        },
+        "remove": {
+          "tooltip": "Remove link"
+        },
+        "submit": "Save",
+        "tooltip": "Add a link"
+      },
+      "add-rich-text-variable": {
+        "aria-label": "Select formatted text variable",
+        "tooltip": "Add formatted text."
+      },
+      "add-variable": {
+        "aria-label": "Select variable",
+        "tooltip": "Add a variable"
+      },
+      "addition": {
+        "tooltip": "Add addition"
+      },
+      "bold": {
+        "tooltip": "Make the selected text bold"
+      },
+      "close-bracket": {
+        "tooltip": "Add a closed bracket"
+      },
+      "cursiv": {
+        "tooltip": "Highlight the selected text in italics"
+      },
+      "custom-date": {
+        "tooltip": "Add date"
+      },
+      "date-difference": {
+        "difference-selector": {
+          "business-days": "business days",
+          "days": "days",
+          "label": "Difference in",
+          "months": "months",
+          "weeks": "weeks",
+          "years": "years"
+        },
+        "earlier-date": {
+          "label": "Earlier date"
+        },
+        "later-date": {
+          "label": "Later date"
+        }
+      },
+      "division": {
+        "tooltip": "Add a division"
+      },
+      "file-variable": {
+        "loading": {
+          "tooltip": "Your link is still loading"
+        }
+      },
+      "heading": {
+        "tooltip": "Convert the selected text to a heading"
+      },
+      "multiplikation": {
+        "tooltip": "Add a multiplication"
+      },
+      "open-bracket": {
+        "tooltip": "Add an open bracket"
+      },
+      "paragraph": {
+        "tooltip": "Convert the selected text to a paragraph"
+      },
+      "placeholder": "Type / for commands.",
+      "potenz": {
+        "tooltip": "Add a potency"
+      },
+      "slashCommand": {
+        "addAddition": {
+          "description": "Add Addition",
+          "title": "Addition"
+        },
+        "addSubtraction": {
+          "description": "Add Subtraction",
+          "title": "Subtraction"
+        },
+        "addVariable": {
+          "description": "Add a Variable",
+          "title": "Variable"
+        },
+        "closedBracket": {
+          "description": "Add closed Bracket",
+          "title": "Closed Bracket"
+        },
+        "openBracket": {
+          "description": "Add Open Bracket",
+          "title": "Open Bracket"
+        }
+      },
+      "sorted-list": {
+        "tooltip": "Create a sorted list"
+      },
+      "subtraktion": {
+        "tooltip": "Add a subtraction"
+      },
+      "toggle-content": {
+        "tooltip": "Add expandable text"
+      },
+      "toolbar": {
+        "depreceation": {
+          "tooltip": {
+            "description": "To improve the editor workflow, we have introduced a new menu. \nThis can be opened directly in the editor by typing \"/\". \nThis menu will replace the toolbar.",
+            "extended-descriptions": {
+              "file-variable": "To access the file variables select the menu item File Download Link, File Preview or type \"file:\" after \"/\".",
+              "rich-text-variable": "To access the formatted variables, select the Formatted Text menu item or type \"rich-text\" after \"/\".",
+              "variable": "To access the variables, select the Variables menu item or type \"@\" after \"/\"."
+            },
+            "title": "Slash Menu"
+          }
+        }
+      },
+      "underline": {
+        "tooltip": "Underline the selected text"
+      },
+      "unsorted-list": {
+        "tooltip": "Create an unsorted list"
+      },
+      "variable-invalid-type": {
+        "tooltip": "{variableName} is now only available as {variableType}. \nPlease delete this variable and add it again."
+      },
+      "variables": {
+        "invalid": "Invalid Calculation",
+        "not-found": "Variable not found"
+      }
+    },
+    "search": {
+      "sort-button": {
+        "ascending": "Ascending",
+        "descending": "Descending",
+        "label": "sort by",
+        "remove-sort": {
+          "tooltip": "Remove filter"
+        }
+      }
+    },
+    "select": {
+      "clear": {
+        "tooltip": "Clear content"
+      }
+    },
+    "select-with-combobox": {
+      "no-options": "No option found"
+    },
+    "supportDialog": {
+      "added-data": {
+        "description": "To facilitate troubleshooting, we automatically attach the following data to the support request. If you do not agree to this, please contact us via the general support form.",
+        "title": "Automatically added data"
+      },
+      "form": {
+        "email": {
+          "label": "Your e-mail",
+          "required": "Please enter your e-mail address so that we can reply to you."
+        },
+        "message": {
+          "label": "Your message",
+          "required": "We can't help you without a message."
+        }
+      },
+      "submit": "Sending",
+      "success": "Thank you for your request. We will get back to you as soon as possible. The dialog can now be closed.",
+      "title": "Contact support"
+    },
+    "tree-name-input": {
+      "label": "Application name",
+      "length": "Please choose a shorter name for your application. A maximum of {treeNameMaxLength} characters is allowed.",
+      "placeholder": "Application name",
+      "required": "Please enter an application name."
+    },
+    "updateTreeDialog": {
+      "form": {
+        "description": {
+          "label": "Description"
+        }
+      },
+      "submit": "Saving application changes",
+      "title": "Change application data"
+    },
+    "user-menu": {
+      "docs": {
+        "label": "Documentation"
+      },
+      "home": {
+        "label": "Homepage"
+      },
+      "label": "Account",
+      "logout": "Logout",
+      "settings": "Settings"
+    },
+    "verifyLogin": {
+      "descriptionFallback": "Please confirm your identity.",
+      "form": {
+        "password": {
+          "required": "Please enter your password."
+        }
+      },
+      "submit": "Confirm",
+      "title": "Verify password"
+    }
+  },
+  "error": {
+    "backButton": "Back to Mioto",
+    "contact-support": {
+      "button": "Contact support"
+    },
+    "pageTitle": "Error | Mioto"
+  },
+  "maintenance": {
+    "info": {
+      "content": "Mioto is currently in maintenance mode.",
+      "title": "Maintenance",
+      "until": "This is expected to end at {time}."
+    }
+  },
+  "mioto-mind": {
+    "chat": {
+      "clear": "Clear chat",
+      "input": {
+        "placeholder": "Write something ..."
+      },
+      "quick-messages": {
+        "start-risk-analysis": "Start the risk analysis",
+        "user-message": "Start the risk analysis"
+      }
+    },
+    "system-prompt": "You are a highly-trained, precise top legal professional",
+    "tools": {
+      "analyze-risks": {
+        "description": "Use this for anything related to risks.",
+        "loading": {
+          "message": "Looking for risks"
+        },
+        "parameters": {
+          "question": {
+            "description": "The exact question asked by the user."
+          }
+        }
+      }
+    }
+  },
+  "not-found": {
+    "info": {
+      "title": "Oops, where did the page go?"
+    }
+  },
+  "packages": {
+    "design-system": {
+      "help-tooltip": {
+        "title": "Information about {title}"
+      }
+    },
+    "node-editor": {
+      "canvas-node": {
+        "end": {
+          "label": "End",
+          "tooltip": "Endblock"
+        },
+        "source-port": {
+          "aria-label": "Port for connecting blocks"
+        },
+        "start": {
+          "label": "Begin",
+          "tooltip": "Startblock"
+        }
+      },
+      "delete-nodes": {
+        "dialog": {
+          "heading": "Are you sure you want to delete the blocks?",
+          "submit": "Delete"
+        }
+      },
+      "logic-configurator": {
+        "condition": {
+          "number": {
+            "condition-selector": {
+              "label": "Comparative value"
+            }
+          },
+          "readable-input": {
+            "disabled": "Variable no longer available (click to delete)",
+            "empty": "Configure condition",
+            "readable-condition": {
+              "with-variable-name": "If <variable-name></variable-name> in <strong>{recordVariableName}</strong> <operator></operator> <comparator></comparator>",
+              "without-variable-name": "If <strong>{recordVariableName}</strong> <operator></operator> <comparator></comparator>"
+            }
+          },
+          "select": {
+            "condition-selector": {
+              "label": "Comparative value",
+              "no-label": "No label"
+            },
+            "variable-selector": {
+              "label": "input"
+            }
+          },
+          "text": {
+            "condition-selector": {
+              "label": "Comparative value"
+            },
+            "variable-selector": {
+              "label": "input"
+            }
+          },
+          "variable-selector": {
+            "combobox": {
+              "input": {
+                "placeholder": "Search variable"
+              },
+              "list": {
+                "aria-label": "Variable selection"
+              }
+            },
+            "label": "variable",
+            "placeholder": "Select variable",
+            "this-block": {
+              "badge": "This block"
+            }
+          }
+        },
+        "create-connection-button": {
+          "combobox": {
+            "input": {
+              "placeholder": "Find target"
+            }
+          },
+          "create-item": {
+            "badge": "Create"
+          },
+          "label": "Add connection"
+        },
+        "final-block": {
+          "info": {
+            "content": "This is an end block. \nThe connections have no effect.",
+            "title": "Inactive"
+          }
+        },
+        "help-tooltip": {
+          "content": "Connections control the transitions between blocks. \nThey contain conditions that determine when they are activated. \nIf several conditions apply, the first in the list is used.",
+          "title": "Connections"
+        },
+        "list": {
+          "aria-label": "Connections",
+          "card": {
+            "conditions": {
+              "add-button": "Add condition",
+              "and": "and",
+              "chain": {
+                "and": "And",
+                "help-tooltip": {
+                  "content": "This feature allows you to define complex conditions in your decision tree by chaining conditions together. \n'And' means that all conditions chained with 'And' must be met in order to continue the corresponding path. \n'Or' means that at least one of the conditions must be met to continue.",
+                  "title": "Concatenations"
+                },
+                "or": "Or"
+              },
+              "remove": "Delete condition",
+              "title": {
+                "help-tooltip": {
+                  "content": "Conditions represent the rules under which a specific connection between the blocks is controlled.",
+                  "title": "Conditions"
+                },
+                "text": "Condition"
+              }
+            },
+            "title-fallback": "No goal"
+          },
+          "direct-edge": {
+            "badge": {
+              "title": "Direct connection",
+              "tooltip": "Conditions have no effect in the direct connection."
+            }
+          },
+          "fallback-edge": {
+            "menu": {
+              "remove": "Remove fallback connection"
+            },
+            "title": "Fallback",
+            "tooltip": "If no condition applies, the fallback connection is activated."
+          },
+          "menu": {
+            "make-fallback-edge": {
+              "help-tooltip": {
+                "content": "With a fallback connection, conditions have no effect.",
+                "title": "Fallback connections"
+              },
+              "title": "Make it a fallback connection"
+            },
+            "remove": "Delete connection",
+            "select-target": "Jump to target",
+            "target-selector": {
+              "create-item": {
+                "badge": "Create"
+              },
+              "label": "Choose a destination"
+            },
+            "tooltip": "Connection menu"
+          }
+        },
+        "operator-selector": {
+          "aria-label": "Select operator - current {operator}"
+        },
+        "reorder": {
+          "start": {
+            "tooltip": "to change the order"
+          },
+          "stop": {
+            "tooltip": "Don't change the order anymore"
+          }
+        },
+        "title": "Connections"
+      },
+      "node-dropdown": {
+        "list": {
+          "aria-label": "Select the block type you want"
+        }
+      },
+      "node-menu": {
+        "copy-variable": {
+          "label": "Copy variable name",
+          "notification": {
+            "copy": {
+              "content": "Copied name: <br></br><key></key>",
+              "title": "Variable name copied"
+            }
+          }
+        },
+        "deleteNode": {
+          "disabledForStartNodeLabel": "The starting block cannot be removed.",
+          "label": "Delete block"
+        },
+        "duplicateNode": {
+          "label": "Duplicate block"
+        },
+        "endNode": {
+          "add": {
+            "label": "Make into an end block"
+          },
+          "remove": {
+            "label": "Remove end block"
+          }
+        },
+        "iconLabel": "Open menu for block: {name}",
+        "makeStartNode": {
+          "label": "Make it the starting block"
+        },
+        "previewLabel": "preview"
+      },
+      "nodeEditingSidebar": {
+        "nameInput": {
+          "error": {
+            "duplicate": "warning__The block name is already taken. \nWe recommend unique names to make blocks easier to find.",
+            "too_long": "A block name can be a maximum of 70 characters long."
+          },
+          "label": "Block name",
+          "placeholder": "My block"
+        },
+        "nodeLabels": {
+          "finalNode": "End",
+          "startNode": "begin"
+        },
+        "parentNodeSelector": {
+          "label": "Parent block",
+          "noNameFallback": "Parent block without name"
+        },
+        "richNumberEditor": {
+          "label": "Formula"
+        },
+        "richTextEditor": {
+          "label": "Contents"
+        }
+      },
+      "target-selector": {
+        "combobox": {
+          "list": {
+            "aria-label": "Target selection list"
+          },
+          "placeholder": "Search block..."
+        },
+        "create-item": {
+          "badge": "Create"
+        },
+        "select": {
+          "placeholder": "Select target block"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "edge": {
+      "complex-logic": {
+        "boolean": {
+          "false": "not activated",
+          "true": "activated",
+          "variable": {
+            "false": "False",
+            "true": "True"
+          }
+        },
+        "date": {
+          "after": "after",
+          "at": "at",
+          "before": "before"
+        },
+        "number": {
+          "defined": "set",
+          "equal": "equal",
+          "larger": "greater",
+          "larger-equal": "greater or equal",
+          "smaller": "smaller",
+          "smaller-equal": "smaller equal",
+          "undefined": "not set",
+          "unequal": "unequal"
+        },
+        "select": {
+          "defined": "set",
+          "equal": "equal",
+          "undefined": "not set",
+          "unequal": "unequal"
+        },
+        "text": {
+          "contains": "contains",
+          "defined": "set",
+          "equal": "equal",
+          "not-contain": "does not contain",
+          "undefined": "not set",
+          "unequal": "unequal"
+        }
+      }
+    },
+    "node": {
+      "AI": {
+        "files": {
+          "select": {
+            "placeholder": "Select files"
+          }
+        },
+        "prompt-types": {
+          "boolean": "True/False",
+          "number": "Number",
+          "text": "Text"
+        },
+        "select-ai-type": {
+          "decision": {
+            "label": "Decision"
+          },
+          "extraction": {
+            "label": "Extraction"
+          },
+          "label": "AI Type"
+        },
+        "sidebar": {
+          "decision": {
+            "meta-prompt": {
+              "heading": "Meta Prompt"
+            }
+          },
+          "extraction": {
+            "extraction": {
+              "button-label": "New Extraction",
+              "delete": {
+                "tooltip": "Delete extraction"
+              },
+              "formatting-instructions": {
+                "help-tooltip": "Tell the AI ​​how the response should be formatted. E.g. \"Give the answer in one sentence.\" or \"Give the answer with explanations.\"",
+                "label": "Format description",
+                "placeholder": "Describe how the result should be formatted."
+              },
+              "heading": "Extractions",
+              "name": {
+                "label": "Name",
+                "placeholder": "The name for the extracted variable"
+              },
+              "prompt": {
+                "label": "Prompt",
+                "placeholder": "Your prompt to the AI."
+              }
+            },
+            "files": {
+              "heading": "Attachments",
+              "label": "Files (currently only pdf is supported)"
+            },
+            "meta-prompt": {
+              "heading": "Meta Prompt"
+            },
+            "models": {
+              "gpt-35": "GPT 3.5",
+              "gpt-4": "GPT 4",
+              "label": "Language Model"
+            },
+            "rich-text": {
+              "label": "Prompt"
+            }
+          }
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Configuration"
+        }
+      },
+      "authentication": {
+        "sidebar": {
+          "tabs": {
+            "connections": "Connections"
+          }
+        },
+        "variable": {
+          "email": "User email",
+          "first-name": "User first name",
+          "last-name": "User last name",
+          "reference-number": "User reference number",
+          "session-name": "Session name"
+        }
+      },
+      "calculation": {
+        "global-variable-connector": {
+          "label": "Linked global variable"
+        },
+        "help-tooltip": {
+          "date": {
+            "content": "Date calculations allow you to add or subtract a number of days, business days, weeks, months or years to a date. The output will be a date variable.",
+            "heading": "Dates"
+          },
+          "date-difference": {
+            "content": "A date difference calculation gives you the difference between two dates in days, business days, weeks, months or years. The output will be a number variable.",
+            "heading": "Date Difference"
+          },
+          "numbers": {
+            "content": "Number calculations are exactly what you expect. They allow you to enter a formular that will be calculated and output a number as a variable.",
+            "heading": "Numbers"
+          }
+        },
+        "output": {
+          "alpha-disclaimer": {
+            "tooltip": "PDF generation is still in Alpha. That means it should only be tested and not used in a published application. Please send bug reports or feedback to support@mioto.app."
+          },
+          "date": "Date",
+          "date-difference": "Date Difference",
+          "date-variable-name": "Calculated Date",
+          "label": "Output as",
+          "number": "Number",
+          "number-variable-name": "Calculation"
+        },
+        "round-to": {
+          "label": "Round to decimal"
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Contents"
+        }
+      },
+      "document": {
+        "name": {
+          "label": "Document name"
+        },
+        "outputAs": {
+          "docx": "Word (.docx)",
+          "label": "File Format",
+          "pdf": "PDF"
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Contents"
+        },
+        "template-card": {
+          "notification": {
+            "invalid_file_type": {
+              "content": "The file is not in the correct format and therefore cannot be uploaded.",
+              "explanation": {
+                "title": "Errors"
+              },
+              "title": "Invalid file type"
+            },
+            "size_too_large": {
+              "content": "File exceeds the maximum size of 15MB",
+              "title": "File too large"
+            },
+            "upload-failed": {
+              "content": "Please try again.",
+              "title": "Upload Failed"
+            }
+          },
+          "remove": {
+            "label": "Delete template",
+            "notification": {
+              "error": {
+                "content": "The template could not be deleted.",
+                "title": "Deletion error"
+              }
+            }
+          },
+          "update": {
+            "label": "Update template"
+          },
+          "upload": {
+            "error": {
+              "maxsize": {
+                "content": "File exceeds maximum size of 3MB",
+                "title": "File too large"
+              }
+            },
+            "label": "Upload template"
+          }
+        },
+        "template-download-link": {
+          "error": {
+            "tooltip": "Error providing the template"
+          },
+          "loading": {
+            "tooltip": "Loading generated document"
+          },
+          "tooltip": "Download template"
+        },
+        "title": {
+          "help-tooltip": {
+            "content": "This block represents a specific document or file that is dynamically created as part of your project. \nThe document can be integrated as a variable in the text editor of various blocks to make it available to users.",
+            "title": "Document block"
+          },
+          "text": "Template configuration"
+        }
+      },
+      "form": {
+        "date": {
+          "description": "Allows users to enter a date.",
+          "label-default": "Date Input",
+          "name": "Date",
+          "required": {
+            "error-message": "This date is required"
+          }
+        },
+        "email": {
+          "label-default": "Email",
+          "name": "Email",
+          "pattern": {
+            "errorMessage": "The provided email is malformed"
+          }
+        },
+        "file": {
+          "description": "Allows users to upload files.",
+          "label-default": "File Upload",
+          "name": "File upload",
+          "renderer": {
+            "input": {
+              "datatype": "Accepted file type",
+              "noValue": "Upload file",
+              "required": {
+                "error": {
+                  "message": "A file must be uploaded"
+                }
+              },
+              "validate": {
+                "error": "File size exceeding 10MB"
+              },
+              "withValue": "Upload new file"
+            }
+          }
+        },
+        "generic-input": {
+          "required": {
+            "errorMessage": "Please fill in this field.",
+            "label": "*Mandatory field"
+          }
+        },
+        "info": {
+          "tabs": {
+            "connections": "Connections",
+            "content": "Contents"
+          }
+        },
+        "inputs": {
+          "card": {
+            "aria-label": {
+              "when-reordering": "Input {inputLabel} at location {position}",
+              "when-reordering-without-label": "Entry without name in place {position}"
+            }
+          },
+          "config": {
+            "name": {
+              "help-tooltip": {
+                "content": "You need the input name to reference an input as a variable.",
+                "title": "Input Name"
+              },
+              "label": "Input Name"
+            },
+            "placeholder": {
+              "label": "Placeholder"
+            },
+            "renderer-label": {
+              "deactivate": {
+                "label": "Disable label"
+              },
+              "help-tooltip": {
+                "content": "The label assigned here is used as a label for the input in the form.",
+                "title": "Label"
+              },
+              "label": "Label"
+            },
+            "required": {
+              "label": "Mandatory field"
+            }
+          },
+          "global-variable": {
+            "combobox": {
+              "placeholder": "Find global variable"
+            },
+            "tooltip": "Overrides the global {variableType} variable: {variableName}"
+          },
+          "menu": {
+            "global-variables": {
+              "add": "Link global variable",
+              "remove": "Remove global variable link"
+            },
+            "remove": "Delete entry",
+            "tooltip": "Input menu",
+            "type-dropdown": {
+              "help-tooltip": {
+                "title": "Input types"
+              },
+              "label": "Change input type"
+            }
+          },
+          "new": {
+            "aria-label": "Select input type",
+            "label": "Add input"
+          },
+          "reorder": {
+            "end": {
+              "tooltip": "Finish reordering"
+            },
+            "start": {
+              "tooltip": "Rearrange"
+            }
+          },
+          "title": {
+            "help-tooltip": {
+              "content": "These elements represent different types of user input that you can query in your form.",
+              "title": "Inputs"
+            },
+            "text": "Inputs"
+          }
+        },
+        "missing-answer-text": "No response text",
+        "multi-select": {
+          "answers": {
+            "input": {
+              "aria-label": "Answer at position {position}"
+            },
+            "label": "Answer",
+            "remove": "Remove the Answer",
+            "reorder": "Move the Answer"
+          },
+          "description": "Allows users to choose multiple options from a predefined list.",
+          "label-default": "Multi-Select Input",
+          "name": "Multiple selection"
+        },
+        "number": {
+          "description": "Allows users to enter a numeric entry.",
+          "label-default": "Number Entry",
+          "max": {
+            "errorMessage": "The value must be less than {maxValue}",
+            "label": "Max"
+          },
+          "min": {
+            "errorMessage": "The value must be greater than {minValue}",
+            "label": "Min"
+          },
+          "name": "Number entry",
+          "round-to": {
+            "label": "Rounds on the spot"
+          }
+        },
+        "renderer-configuration": {
+          "button-label": {
+            "label": "Button label"
+          },
+          "label": "Renderer configuration"
+        },
+        "rich-text": {
+          "description": "Allows users to enter formatted text such as lists and headings.",
+          "label-default": "Formatted Text Area Input",
+          "name": "Formatted text"
+        },
+        "select": {
+          "addOptionButton": "New answer",
+          "answers": {
+            "input": {
+              "aria-label": "Answer option {position}",
+              "placeholder": "Answer"
+            },
+            "label": "Answer",
+            "remove": {
+              "tooltip": "Remove the answer"
+            },
+            "reorder-handle": {
+              "tooltip": "Postpone the answer"
+            }
+          },
+          "description": "Allows users to choose a single option from a predefined list.",
+          "label-default": "Single Selection",
+          "name": "Single selection"
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Contents"
+        },
+        "text": {
+          "description": "Allows users to enter a single line of text.",
+          "label-default": "Text Input",
+          "name": "Text input"
+        },
+        "textarea": {
+          "description": "Allows users to enter multiple lines of text.",
+          "label-default": "Text Field Input",
+          "name": "Text field"
+        }
+      },
+      "global-variables": {
+        "execution-date": "Execution date",
+        "name": "Global Variables"
+      },
+      "info": {
+        "renderer-configuration": {
+          "button-label": {
+            "label": "Button label"
+          },
+          "label": "Renderer configuration"
+        }
+      },
+      "payment": {
+        "public-key": {
+          "label": "Public Key"
+        }
+      },
+      "reporting": {
+        "attachement": {
+          "card": {
+            "remove": {
+              "tooltip": "Remove {documentName} as an attachment"
+            }
+          },
+          "label": "Attachments (max. 2)",
+          "popover": {
+            "aria-label": "Go to origin block",
+            "title": "Origin block"
+          },
+          "select": {
+            "max": {
+              "notification": {
+                "content": "A maximum of {maxSelection} files can be selected. \nPlease remove a file first.",
+                "title": "Maximum number of files reached"
+              }
+            }
+          },
+          "selection": {
+            "empty-item": "No documents found",
+            "list": {
+              "aria-label": "Attachment selection list"
+            },
+            "placeholder": "filename"
+          }
+        },
+        "decision-process": "Decision Path",
+        "e-mail": {
+          "label": "Contents",
+          "title": "Email configuration"
+        },
+        "email-body": {
+        },
+        "files": {
+          "select": {
+            "placeholder": "Select attachements"
+          }
+        },
+        "no-content": "Report has no content",
+        "path": {
+          "label": "Attach decision history"
+        },
+        "recipient": {
+          "email-from-variable": "Email from Variable",
+          "enter-custom": "Enter Custom Email Now",
+          "label": "Send to",
+          "placeholder": "Enter email",
+          "select-email-variable": "Please Select an Email Variable",
+          "send-to-account-email": {
+            "label": "Send to account email"
+          },
+          "send-to-admin": "Admin Account Email"
+        },
+        "subject": {
+          "errors": {
+            "too_long": "The subject is too long.",
+            "too_short": "The subject is too short. \nIt must be at least {minLength} characters long."
+          },
+          "label": "Subject"
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Contents"
+        },
+        "variable": {
+          "send": "Email sent"
+        }
+      },
+      "text-interpolation": {
+        "formatted": {
+          "help-tooltip": {
+            "content": "If this option is selected the text is formatted and can be used in other blocks. \nIf it is not selected, the text will be output as unformatted text. \nThe advantage of unformatted text is that it can be used in continuous text.",
+            "title": "Formatted text"
+          },
+          "label": "Output text formatted"
+        },
+        "tabs": {
+          "connections": "Connections",
+          "content": "Contents"
+        },
+        "variable": {
+          "combination": "Text combination"
+        }
+      }
+    }
+  },
+  "renderer": {
+    "error": {
+      "content": "An error has occurred during processing. Don't worry, your data has been saved up to this point. Please reload the version to try again. If the error occurs again, please contact support.",
+      "invalid_formular": {
+        "content": "The configured formula could not be evaluated. \nPlease check the mathematical correctness of your formula.",
+        "title": "Invalid formula"
+      },
+      "invalid_recipient": {
+        "content": "The email could not be sent because the recipient email address is invalid.",
+        "title": "Invalid Recipient"
+      },
+      "invalid_template": {
+        "content": "The template provided is invalid.",
+        "title": "Invalid template"
+      },
+      "later_date_before_earlier_date": {
+        "content": "The later date must be after the earlier date.",
+        "title": "Incorrect Date Difference"
+      },
+      "missing_content": {
+        "content": "The email could not be sent because no content is configured.",
+        "title": "Missing content"
+      },
+      "missing_edges_for_node": {
+        "content": "This block has no connections and therefore cannot be executed further.",
+        "title": "No connections"
+      },
+      "missing_formular": {
+        "content": "No formula is configured.",
+        "title": "Missing formula"
+      },
+      "missing_recipient": {
+        "content": "The email could not be sent because no recipient is configured.",
+        "title": "Missing recipient"
+      },
+      "missing_subject": {
+        "content": "The email could not be sent because no subject was configured.",
+        "title": "Missing subject"
+      },
+      "missing_template": {
+        "content": "The linked template could not be found.",
+        "title": "Missing template"
+      },
+      "missing_template_uuid": {
+        "content": "There is no template stored in the document block.",
+        "title": "Missing template"
+      },
+      "no_edge_matched": {
+        "content": "A connection could not be made in block {blockName}. \nIt may be that the variable is missing from one or more conditions. \nCheck whether all relevant variables are queried and whether the queries are mandatory fields. \nTo ensure that a connection can always run, you can set a connection as a fallback connection. \nYou do this in the menu of a connection.",
+        "title": "Connection error"
+      },
+      "no_meta_prompt": {
+        "content": "No meta prompt has been configured for the AI. \nPlease add a meta prompt.",
+        "title": "Missing meta prompt"
+      },
+      "template_not_found": {
+        "content": "The linked template could not be found. \nPlease update the template to restore the document block.",
+        "title": "Template not found"
+      },
+      "title": "Error",
+      "unknown_error": {
+        "content": "An unknown error has occurred.",
+        "title": "Unknown error"
+      }
+    },
+    "final": {
+      "message": "Successfully completed"
+    },
+    "navigation": {
+      "back": "Forward",
+      "next": "Back",
+      "restart": "Restart",
+      "submit": "To the next step"
+    },
+    "renderer": {
+      "navigation": {
+        "restart": "Restart"
+      }
+    },
+    "reset": {
+      "alert": {
+        "description": "Please confirm the deletion of the current data. This cannot be undone.",
+        "submit": "Reset",
+        "title": "Reset execution"
+      },
+      "button": {
+        "tooltip": "Reset session"
+      },
+      "loading-text": "Resetting..."
+    }
+  }
+}

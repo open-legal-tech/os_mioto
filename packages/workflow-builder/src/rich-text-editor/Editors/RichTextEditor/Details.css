@@ -1,0 +1,56 @@
+@reference "@mioto/design-system/css"
+
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+
+.ProseMirror .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror .details {
+  display: flex;
+  border-radius: var(--radius-md)
+}
+
+.ProseMirror .details > button {
+  display: flex;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-top-left-radius: 0.8px;
+  border-bottom-left-radius: 0.8px;
+}
+
+.ProseMirror .details > button::before {
+  content: "\25B6";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: var(--radius-md);
+
+  @apply text-gray9 text-[10px] intent:bg-gray5 mr-1;
+}
+
+.ProseMirror .is-open > button::before {
+  content: "\25BC";
+}
+
+.ProseMirror .details > div {
+  flex: 1 1 auto;
+}
+.ProseMirror:last-child {
+  margin-bottom: 0;
+}
+
+.ProseMirror .details summary::marker {
+  display: none;
+  content: "";
+}

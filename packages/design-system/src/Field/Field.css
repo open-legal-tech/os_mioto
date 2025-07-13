@@ -1,0 +1,27 @@
+.field {
+  grid-area: label;
+  grid-template-areas:
+    "label topRight"
+    "input input";
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.field[data-layout="inline-left"] {
+  grid-template-areas: "label input topRight";
+  grid-template-columns: max-content 1fr max-content;
+}
+
+.field[data-layout="inline-right"] {
+  grid-template-areas: "input label topRight";
+  grid-template-columns: 1fr max-content max-content;
+}
+
+.field[data-layout="constrained-left"] {
+  grid-template-areas: "label input topRight";
+  grid-template-columns: max-content max-content max-content;
+}
+
+.field[data-layout="constrained-right"] {
+  grid-template-areas: "input label topRight";
+  grid-template-columns: max-content 1fr max-content;
+}
