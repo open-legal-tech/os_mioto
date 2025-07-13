@@ -7,7 +7,6 @@ import * as app from "@pulumi/azure-native/app/v20240802preview";
 import * as cognitiveservices from "@pulumi/azure-native/cognitiveservices/v20241001";
 import * as registry from "@pulumi/azure-native/containerregistry";
 import * as postgresql from "@pulumi/azure-native/dbforpostgresql";
-import * as scaleway from "@pulumiverse/scaleway";
 import * as sentry from "@pulumiverse/sentry";
 import * as communication from "@pulumi/azure-native/communication";
 import * as storage from "@pulumi/azure-native/storage";
@@ -17,68 +16,6 @@ import * as authorization from "@pulumi/azure-native/authorization";
 const config = new pulumi.Config();
 const scalewayConfig = new pulumi.Config("scaleway");
 const azureConfig = authorization.getClientConfigOutput({});
-
-type OptionalFromConfig = pulumi.Output<string> | string | undefined;
-
-// ------------------------------------------------------------------
-// Setup scaleway object storage
-
-let publicFileBucketName: OptionalFromConfig = config.get(
-  "public_file_bucket_name",
-);
-let privatFileBucketName: OptionalFromConfig = config.get(
-  "privat_file_bucket_name",
-);
-let s3Region: OptionalFromConfig = config.get("s3_region");
-let s3Endpoint: OptionalFromConfig = config.get("s3_endpoint");
-
-if (!publicFileBucketName) {
-  const publicFileBucket = new scaleway.ObjectBucket("public-files", {
-    corsRules: [
-      {
-        allowedOrigins: [
-          config.require("client_endpoint"),
-          "http://localhost:4200",
-        ],
-        allowedMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
-        allowedHeaders: ["*"],
-        maxAgeSeconds: 3000,
-        exposeHeaders: ["Etag"],
-      },
-    ],
-  });
-  new scaleway.ObjectBucketAcl("public-files-acl", {
-    bucket: publicFileBucket.id,
-    acl: "public-read-write",
-  });
-
-  publicFileBucketName = publicFileBucket.name;
-  s3Region = publicFileBucket.region;
-  s3Endpoint = publicFileBucket.endpoint;
-}
-
-if (!privatFileBucketName) {
-  const privatFileBucket = new scaleway.ObjectBucket("privat-files", {
-    corsRules: [
-      {
-        allowedOrigins: [
-          config.require("client_endpoint"),
-          "http://localhost:4200",
-        ],
-        allowedMethods: ["GET", "PUT", "POST", "DELETE", "HEAD"],
-        allowedHeaders: ["*"],
-        maxAgeSeconds: 3000,
-        exposeHeaders: ["Etag"],
-      },
-    ],
-  });
-  new scaleway.ObjectBucketAcl("privat-files-acl", {
-    bucket: privatFileBucket.id,
-    acl: "private",
-  });
-
-  privatFileBucketName = privatFileBucket.name;
-}
 
 // ------------------------------------------------------------------
 // Azure resource group
@@ -477,11 +414,9 @@ const syncServer = new app.ContainerApp("sync-server", {
             name: "AZURE_EMAIL_CONNECTION_STRING",
             secretRef: "azure-email-connection-string",
           },
-          { name: "S3_ENDPOINT", value: s3Endpoint },
           { name: "AZURE_STORAGE_KEY", secretRef: "azure-storage-key" },
           { name: "AZURE_STORAGE_ACCOUNT", value: storageAccount.name },
           { name: "AZURE_STORAGE_CONTAINER", value: storageContainer.name },
-          { name: "S3_REGION", value: s3Region },
           { name: "CLIENT_ENDPOINT", value: config.require("client_endpoint") },
           {
             name: "AWS_S3_SECRET_ACCESS_KEY",
@@ -490,14 +425,6 @@ const syncServer = new app.ContainerApp("sync-server", {
           {
             name: "AWS_S3_ACCESS_KEY_ID",
             value: scalewayConfig.require("access_key"),
-          },
-          {
-            name: "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
-            value: privatFileBucketName,
-          },
-          {
-            name: "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
-            value: publicFileBucketName,
           },
           { name: "SENTRY_AUTH_TOKEN", secretRef: "sentry-auth-token" },
           { name: "SENTRY_PROJECT", value: sentryProjectSyncServer.name },
@@ -692,8 +619,6 @@ const miotoEditor = new app.ContainerApp("editor", {
             name: "AWS_S3_ACCESS_KEY_ID",
             value: scalewayConfig.require("access_key"),
           },
-          { name: "S3_ENDPOINT", value: s3Endpoint },
-          { name: "S3_REGION", value: s3Region },
           { name: "CONTACT_EMAIL", value: config.require("contact_email") },
           {
             name: "WITH_EMAIL_SERVICE",
@@ -718,14 +643,6 @@ const miotoEditor = new app.ContainerApp("editor", {
           {
             name: "FILE_UPLOAD_EXPIRATION_MINUTES",
             value: config.get("specialized_token_expiration_minutes"),
-          },
-          {
-            name: "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
-            value: privatFileBucketName,
-          },
-          {
-            name: "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
-            value: publicFileBucketName,
           },
           {
             name: "GOTENBERG_ENDPOINT",
