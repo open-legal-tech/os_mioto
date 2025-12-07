@@ -1,5 +1,6 @@
 import { checkAuthenticated } from "@mioto/server/db/checkAuthenticated";
 import { getFileContent } from "@mioto/server/File/getContent";
+import { getFileContentAsBuffer } from "@mioto/server/File/getContentAsBuffer";
 import { PDFEngines } from "chromiumly";
 
 export async function GET(
@@ -20,7 +21,7 @@ export async function GET(
 
   if (!file) return new Response(null, { status: 404 });
 
-  const fileContent = await getFileContent(user.db)({
+  const fileContent = await getFileContentAsBuffer(user.db)({
     fileUuid,
     orgUuid: user.user.organizationUuid,
   });
@@ -28,8 +29,8 @@ export async function GET(
   if (!fileContent) return new Response(null, { status: 404 });
 
   const buffer = await PDFEngines.convert({
-    files: [Buffer.from(fileContent.content)],
+    files: [fileContent.content],
   });
 
-  return new Response(buffer);
+  return new Response(new Uint8Array(buffer));
 }

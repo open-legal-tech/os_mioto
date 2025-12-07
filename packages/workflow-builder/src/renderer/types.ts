@@ -2,9 +2,9 @@ import type { ClassNamesProp } from "@mioto/design-system/utils/types";
 import type { TNodeId } from "../tree/id";
 import type { TTreeClient } from "../tree/type/treeClient";
 import type { TModuleVariableValue } from "../variables/exports/types";
-import type { RendererClientProps } from "./components/RendererClient";
 
 import type { JSX } from "react";
+import type { RendererProps } from "./exports/Renderer";
 
 export type NodeRendererProps = {
   className?: string;
@@ -27,6 +27,6 @@ export type TNodeRendererLoader = (
 ) => Promise<any>;
 
 export type SharedRendererProps = Pick<
-  RendererClientProps,
+  RendererProps,
   "session" | "environment" | "userUuid" | "RestartButton"
 >;

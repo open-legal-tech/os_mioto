@@ -1,7 +1,7 @@
 import type { ExcludeFailures, ExtractFailures } from "@mioto/errors";
 import { z } from "zod";
 import type { DB } from "../../db/types";
-import { download } from "./download";
+import { getBlobClient } from "./shared";
 
 export const getFileContent =
   (db: DB) =>
@@ -10,7 +10,8 @@ export const getFileContent =
 
     if (!file) return undefined;
 
-    const content = await download({ ...file, orgUuid });
+    const blobClient = getBlobClient({ ...file, orgUuid });
+    const content = await blobClient.download();
 
     return { ...file, content };
   };

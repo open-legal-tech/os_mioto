@@ -17,7 +17,6 @@ export const builderEnv = createEnv({
   MAINTENANCE_MODE: z.coerce.boolean(),
   MAINTENANCE_MODE_UNTIL: z.coerce.date().optional(),
   CLIENT_ENDPOINT: z.string(),
-  SYNCSERVER_ENDPOINT: z.string(),
 });
 
 export default builderEnv;

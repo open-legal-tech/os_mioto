@@ -9,19 +9,20 @@
     "env:prod": "dotenvx run -f .env.production",
     "env": "dotenvx run -f .env.$ENV --",
     "serve": "ENV=development pnpm run env turbo run serve -F=./apps/* --env-mode=loose",
-    "docker:build": "turbo -F @mioto/editor docker:build --env-mode loose",
+    "docker:build:editor": "turbo -F @mioto/editor docker:build --env-mode loose",
+    "docker:build:sync-server": "turbo -F @mioto/sync-server docker:build --env-mode loose",
     "docker:push": "PUSH=true pnpm run docker:build"
   },
   "private": true,
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@dotenvx/dotenvx": "1.37.0",
-    "@types/node": "^22.13.13",
+    "@types/node": "^22.18.1",
     "eslint": "9.21.0",
-    "prettier": "^3.5.3",
-    "tsx": "^4.19.3",
-    "turbo": "^2.4.4",
-    "typescript": "^5.8.2"
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.5",
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2"
   },
   "volta": {
     "node": "22.11.0",

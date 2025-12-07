@@ -13,17 +13,27 @@ export const generateDocument =
   async ({ fileUuid, variables, orgUuid }: TInput) => {
     const docTemplate = await getFileContent(db)({ fileUuid, orgUuid });
 
-    if (!docTemplate)
-      return new Failure({
-        code: "missing_template",
-      });
+     const chunks: Buffer[] = [];
+     const readable = docTemplate?.content.readableStreamBody;
 
-    // if (globalEnv.FEATURE_DOC_GEN_V2) {
-    //   console.log("Using doc gen v2");
-    //   return docGenV2.generate(variables, docTemplate.content);
-    // }
+     if (!readable)
+       return new Failure({
+         code: "missing_template",
+       });
 
-    return legacyDocGen.generate(variables, docTemplate.content);
+
+  for await (const chunk of readable) {
+    chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk));
+  }
+
+  const content = Buffer.concat(chunks);
+
+  // if (globalEnv.FEATURE_DOC_GEN_V2) {
+  //   console.log("Using doc gen v2");
+  //   return docGenV2.generate(variables, docTemplate.content);
+  // }
+
+  return legacyDocGen.generate(variables, content);
   };
 
 export const generateDocumentInput = getFileContentInput.extend({

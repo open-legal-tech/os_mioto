@@ -12,6 +12,6 @@
     "lint:unsafe": "pnpm biome check --apply-unsafe ./"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.1.7"
+    "@phosphor-icons/react": "^2.1.10"
   }
 }

@@ -1,6 +1,6 @@
 import { PromptTemplate } from "@langchain/core/prompts";
 import { RunnableSequence } from "@langchain/core/runnables";
-import { getFileContent } from "@mioto/server/File/getContent";
+import { getFileContentAsBuffer } from "@mioto/server/File/getContentAsBuffer";
 import { StructuredOutputParser } from "langchain/output_parsers";
 import { isDefined } from "remeda";
 import type { ValuesType } from "utility-types";
@@ -56,7 +56,7 @@ export async function decisionAINodeAction({
         if (!isDefinedFileVariable(value)) return undefined;
 
         const fileContent = {
-          file: await getFileContent(db)({
+          file: await getFileContentAsBuffer(db)({
             fileUuid: value.value.uuid,
             orgUuid: user.organizationUuid,
           }),

@@ -19,7 +19,7 @@ import { AINode, type IAINode } from "../exports/plugin";
 import { createVectorStoreFromPdfs } from "./createVectorStoreFromPdfs";
 import { model_3, model_4 } from "./models";
 import { workflowBuilderEnv } from "../../../../../env";
-import { getFileContent } from "@mioto/server/File/getContent";
+import { getFileContentAsBuffer } from "@mioto/server/File/getContentAsBuffer";
 
 export async function extractionAINodeAction({
   getVariables,
@@ -60,7 +60,7 @@ export async function extractionAINodeAction({
         if (!isDefinedFileVariable(value)) return undefined;
 
         const fileContent = {
-          file: await getFileContent(db)({
+          file: await getFileContentAsBuffer(db)({
             fileUuid: value.value.uuid,
             orgUuid: user.organizationUuid,
           }),

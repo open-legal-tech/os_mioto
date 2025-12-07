@@ -7,7 +7,6 @@ import { InfoDropdown } from "../../../../../../shared/InfoDropdown";
 import { generateMiotoMetadata } from "../../../../../../shared/generateMiotoMetadata";
 import { LanguageToggle } from "../../shared/components/LanguageToggle";
 import { UserMenu } from "../../shared/components/UserMenu";
-import builderEnv from "../../../../../../../env";
 
 export const generateMetadata = generateMiotoMetadata((t) => ({
   title: t("app.editor.pageTitle"),
@@ -32,7 +31,6 @@ export default async function EditorPage(props: {
 
   return (
     <Editor
-      SYNCSERVER_ENDPOINT={builderEnv.SYNCSERVER_ENDPOINT}
       HeaderRightSlot={
         <Row className="items-center">
           <LanguageToggle />

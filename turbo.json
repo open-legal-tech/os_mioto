@@ -31,10 +31,6 @@
       "persistent": true,
       "dependsOn": ["^migrate"]
     },
-    "generate": {},
-    "docker:build": {
-      "dependsOn": ["prepare:docker:build"],
-      "cache": false
-    }
+    "generate": {}
   }
 }

@@ -1,7 +1,15 @@
 import { FatalError } from "@mioto/errors";
 import type { SessionStatus } from "@mioto/prisma";
 import type { ValuesType } from "utility-types";
-import { assertEvent, assign, fromCallback, fromPromise, setup } from "xstate";
+import {
+  assertEvent,
+  assign,
+  fromCallback,
+  fromPromise,
+  setup,
+  type ActorRef,
+  type ActorRefFrom,
+} from "xstate";
 import { GlobalVariablesNode } from "../../plugins/node/global-variables/plugin";
 import type { TNodeId } from "../../tree/id";
 import type { NodePlugin } from "../../tree/type/plugin/NodePlugin";
@@ -12,7 +20,6 @@ import type {
   TModuleVariableValue,
 } from "../../variables/exports/types";
 import { createEmptySessionState } from "../createEmptySessionState";
-import { executeNode } from "../executeNode";
 import {
   type EVALUATE,
   type INVALID_EXECUTION,
@@ -26,11 +33,12 @@ import {
   actions,
   renderPlugins,
 } from "./interpreterConfig";
+import { getCurrentNode, getCurrentNodeId } from "./methods";
 import {
-  type createInterpreterMethods,
-  getCurrentNode,
-  getCurrentNodeId,
-} from "./methods";
+  executeNode,
+  finishSessionAction,
+  persistSessionAction,
+} from "../interpreterActions";
 
 function leaveHandler(event: BeforeUnloadEvent) {
   const message =
@@ -94,29 +102,6 @@ export type InterpreterActor = ReturnType<typeof createInterpreterMachine>;
 
 export type TInterpreterEnvironments = "private" | "published";
 
-export type PersistSessionFn = (params: {
-  sessionUuid: string;
-  treeUuid: string;
-  history: { nodes: TModuleVariableHistory; position: number };
-  error: string | undefined;
-  variables?: string;
-}) => Promise<boolean>;
-
-type RetrieveSessionFnReturn = {
-  treeClient: TTreeClient;
-  session: Session;
-} & ReturnType<typeof createInterpreterMethods>;
-
-export type RetrieveSessionFn = (params: {
-  sessionUuid: string;
-  treeUuid: string;
-}) => Promise<RetrieveSessionFnReturn> | RetrieveSessionFnReturn;
-
-export type onSessionDoneFn = (params: {
-  sessionUuid: string;
-  context: TModuleVariableValue;
-}) => boolean | Promise<boolean>;
-
 export type ExtractErrorCodesFromPluginActions<
   TActions extends Record<
     string,
@@ -133,15 +118,12 @@ export type InterpreterConfig = {
     context: TModuleVariableValue,
   ) => void;
   onError?: (error?: Context["error"]) => void;
-  onDone?: onSessionDoneFn;
   onReset?: () => void | Promise<void>;
   environment: TInterpreterEnvironments;
   treeClient: TTreeClient;
   nodePlugins: Record<string, NodePlugin>;
   treeUuid: string;
   sessionUuid: string;
-  persistSession: PersistSessionFn;
-  retrieveSession: RetrieveSessionFn;
   userUuid: string;
   locale: string;
 };
@@ -153,15 +135,12 @@ export type Context<TErrors extends string = string> = TModuleVariableValue<
 export const createInterpreterMachine = ({
   onSelectedNodeChange,
   onError,
-  onDone,
   onReset,
   treeClient,
   nodePlugins,
   environment,
   treeUuid,
   sessionUuid,
-  persistSession,
-  retrieveSession,
   userUuid,
   locale,
 }: InterpreterConfig) => {
@@ -344,28 +323,33 @@ export const createInterpreterMachine = ({
           return createResolver(treeClient);
         })(),
       ),
-      executeNode: fromCallback(({ sendBack }) => {
-        (async () => {
+      executeNode: fromPromise(
+        async ({
+          input,
+        }: {
+          input: {
+            parent: ActorRef<any, InterpreterEvents, any>;
+          };
+        }) => {
           const result = await executeNode({
             environment,
             sessionUuid,
             treeUuid,
-            retrieveSession,
             userUuid,
             locale,
-          }).then((r) => r.promise);
+          });
 
-          sendBack(result);
-        })();
-      }),
+          return input.parent.send(result);
+        },
+      ),
       persistSession: fromPromise<true, { context: Context }>(
         async ({ input: { context } }) => {
-          const result = await persistSession({
-            treeUuid,
+          const result = await persistSessionAction({
             sessionUuid,
             history: context.history,
             variables: JSON.stringify(context.variables),
             error: context.error,
+            userUuid,
           });
 
           if (!result) throw new Error("Failed to persist session");
@@ -377,12 +361,12 @@ export const createInterpreterMachine = ({
         async ({ input: { context } }) => {
           const [, result] = await Promise.all([
             onReset?.(),
-            persistSession({
-              treeUuid,
+            persistSessionAction({
               sessionUuid,
               history: context.history,
               variables: JSON.stringify(context.variables),
               error: context.error,
+              userUuid,
             }),
           ]);
 
@@ -525,6 +509,7 @@ export const createInterpreterMachine = ({
         invoke: {
           id: "execute_node",
           src: "executeNode",
+          input: ({ self }) => ({ parent: self }),
           onError: {
             target: "error",
             actions: assign({
@@ -619,7 +604,7 @@ export const createInterpreterMachine = ({
         },
       },
       done: {
-        entry: ({ context }) => onDone?.({ context, sessionUuid }),
+        entry: () => finishSessionAction({ sessionUuid, userUuid }),
       },
     },
   });

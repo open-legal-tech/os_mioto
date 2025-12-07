@@ -28,5 +28,7 @@ export async function GET(
     zip.file("custom.css", result.customCss);
   }
 
-  return new Response(zip.generate({ type: "uint8array" }));
+  return new Response(
+    zip.generate({ type: "uint8array" }) as unknown as BodyInit,
+  );
 }

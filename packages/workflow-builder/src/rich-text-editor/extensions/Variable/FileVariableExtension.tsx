@@ -14,15 +14,19 @@ import { getVariable } from "../../../variables/utils/getVariable";
 import { VariableBadge } from "../../components/VariableBadge";
 import type { VariableExtensionsParams } from "../../types/VariablePlugins";
 import { HeadlessVariableExtension } from "./HeadlessVariableExtension";
+import { useRendererContext } from "../../../renderer/Context";
 
 const FileDownloadLink = ({ variable }: { variable: IFileVariable }) => {
   const t = useTranslations();
+  const {
+    config: { userUuid },
+  } = useRendererContext();
 
   return (
     <NodeViewWrapper>
       <Link
         ghost
-        href={`/api/getFile/${variable.value?.uuid}`}
+        href={`/api/getFile/${variable.value?.uuid}/${userUuid}`}
         download
         className="inline-flex items-baseline underline gap-1 link"
         data-variable-id={variable.id}

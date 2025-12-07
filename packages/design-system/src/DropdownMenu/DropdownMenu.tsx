@@ -84,7 +84,7 @@ export const Root = ({
   ...props
 }: RootProps) => {
   const [open, setOpen] = useControllableState({
-    defaultProp: defaultOpen,
+    defaultProp: defaultOpen ?? false,
     onChange: onOpenChange,
     prop: incomingOpen,
   });

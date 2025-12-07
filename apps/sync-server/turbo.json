@@ -14,11 +14,7 @@
         "RESET_PASSWORD_EXPIRATION_MINUTES",
         "VERIFY_EMAIL_EXPIRATION_MINUTES",
         "FILE_UPLOAD_EXPIRATION_MINUTES",
-        "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
-        "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
         "EMAIL_API_TOKEN",
-        "AWS_S3_ACCESS_KEY_ID",
-        "AWS_S3_SECRET_ACCESS_KEY",
         "WITH_EMAIL_SERVICE",
         "CONTACT_EMAIL",
         "REGISTER_ACCESS_CODES"
@@ -34,15 +30,20 @@
         "RESET_PASSWORD_EXPIRATION_MINUTES",
         "VERIFY_EMAIL_EXPIRATION_MINUTES",
         "FILE_UPLOAD_EXPIRATION_MINUTES",
-        "PUBLIC_DOCUMENT_TEMPLATE_BUCKET",
-        "PROTECTED_DOCUMENT_TEMPLATE_BUCKET",
         "EMAIL_API_TOKEN",
-        "AWS_S3_ACCESS_KEY_ID",
-        "AWS_S3_SECRET_ACCESS_KEY",
         "WITH_EMAIL_SERVICE",
         "CONTACT_EMAIL",
         "REGISTER_ACCESS_CODES"
       ]
+    },
+    "prepare:docker:build": {
+      "cache": false,
+      "persistent": false,
+      "outputs": ["../../out_sync_server"]
+    },
+    "docker:build": {
+      "dependsOn": ["prepare:docker:build"],
+      "cache": false
     }
   }
 }

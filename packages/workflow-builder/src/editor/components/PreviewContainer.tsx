@@ -11,15 +11,15 @@ import { useTranslations } from "@mioto/locale";
 import { ErrorBoundary } from "@sentry/nextjs";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import type { RendererProps } from "../../renderer/exports/Renderer.server";
 import { resetSessionAction } from "../../renderer/exports/resetSessionAction";
 import { getSessionAction } from "../actions/getSession.action";
 import { updateSessionNameAction } from "../actions/updateSessionName.action";
 import { debounce } from "../../utils/debounce";
+import type * as Renderer from "../../renderer/exports/Renderer";
 
 export type PreviewProps = {
   children: React.ReactNode;
-  session: RendererProps["session"];
+  session: Renderer.RendererProps["session"];
 };
 
 export const PreviewContainer = React.forwardRef<HTMLDivElement, PreviewProps>(

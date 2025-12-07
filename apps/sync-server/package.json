@@ -1,22 +1,22 @@
 {
   "name": "@mioto/sync-server",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "dependencies": {
-    "@hocuspocus/extension-database": "^2.15.2",
-    "@hocuspocus/extension-logger": "^2.15.2",
-    "@hocuspocus/server": "^2.15.2",
+    "@hocuspocus/extension-database": "^2.15.3",
+    "@hocuspocus/extension-logger": "^2.15.3",
+    "@hocuspocus/server": "^2.15.3",
     "@mioto/env": "workspace:^",
     "@mioto/prisma": "workspace:^",
     "@mioto/server": "workspace:^",
-    "@sentry/cli": "^2.42.5",
-    "@sentry/node": "^9.9.0",
+    "@sentry/cli": "^2.53.0",
+    "@sentry/node": "^9.46.0",
     "express": "^4.21.2",
     "express-ws": "^5.0.2",
-    "morgan": "^1.10.0",
+    "morgan": "^1.10.1",
     "y-protocols": "^1.0.6",
-    "yjs": "^13.6.24",
-    "zod": "^3.24.2"
+    "yjs": "^13.6.27",
+    "zod": "^3.25.76"
   },
   "scripts": {
     "build": "pnpm env:dev -- rm -rf dist && bun build ./src/index.ts --outdir ./dist --target=node",
@@ -30,11 +30,12 @@
     "ignore": "pnpm dlx turbo-ignore @mioto/sync-server --task=build",
     "env:dev": "dotenvx run -f .env.development",
     "sentry:sourcemaps": "pnpm env:prod -- sentry-cli sourcemaps inject --org miotolabs --project sync-server ./dist && sentry-cli sourcemaps upload --org miotolabs --project sync-server ./dist",
-    "docker:build": "APP_PATH='apps/sync-server' pnpm -w env:prod -- bash ./scripts/docker-build.sh"
+    "docker:build": "APP_PATH='apps/sync-server' pnpm -w env:prod -- bash ./scripts/docker-build.sh",
+    "prepare:docker:build": "rm -rf ./../../out && turbo prune @mioto/sync-server --docker"
   },
   "devDependencies": {
-    "@types/express": "^5.0.1",
+    "@types/express": "^5.0.3",
     "@types/express-ws": "^3.0.5",
-    "@types/morgan": "^1.9.9"
+    "@types/morgan": "^1.9.10"
   }
 }

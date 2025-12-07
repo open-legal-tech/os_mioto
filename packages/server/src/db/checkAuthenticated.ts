@@ -130,7 +130,7 @@ const getUser = async (userUuid: string) => {
   }
 };
 
-type Auth = Awaited<ReturnType<typeof getUser>> & { token: string };
+export type Auth = Awaited<ReturnType<typeof getUser>> & { token: string };
 
 export const machine = ({
   token,
@@ -376,12 +376,12 @@ async function checkAnonymusUser(userUuid: string) {
   } as const;
 }
 
+export type AnonymusAuth = Awaited<ReturnType<typeof checkAnonymusUser>>;
+
 export async function checkAuthWithAnonymus(userUuid: string) {
   return await checkAuthenticated({
     onUnauthenticated: async () => {
       const result = await checkAnonymusUser(userUuid);
-
-      if (result instanceof Failure) return notFound();
 
       return { ...result, token: undefined };
     },

@@ -2,6 +2,7 @@ import { getUnknownUser } from "@mioto/server/db/getUnknownUser";
 import { getFileContent } from "@mioto/server/File/getContent";
 import { notFound } from "next/navigation";
 import { NextResponse } from "next/server";
+import { convertContentToStream } from "../../../shared/convertFileContentToStream";
 
 export const dynamic = "force-dynamic";
 
@@ -49,5 +50,5 @@ export async function GET(
 
   if (!fileContent) return notFound();
 
-  return new Response(fileContent.content);
+  return convertContentToStream(fileContent);
 }

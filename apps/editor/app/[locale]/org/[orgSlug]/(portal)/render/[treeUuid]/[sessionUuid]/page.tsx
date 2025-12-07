@@ -5,12 +5,11 @@ import { generateOrgMetadata } from "@mioto/design-system/Org";
 import { Stack } from "@mioto/design-system/Stack";
 import Text from "@mioto/design-system/Text";
 import { setRequestLocale } from "@mioto/locale/server";
-import { verifyAnonymusUserToken } from "@mioto/server/Token/subModels/AnonymusUserToken/verify";
 import { checkAuthWithAnonymus } from "@mioto/server/db/checkAuthenticated";
 import { getUnauthorizedSession } from "@mioto/server/db/getUnauthorizedSession";
 import { getTreeSnapshot } from "@mioto/workflow-builder/db/getTreeSnapshot";
 import type { TActionErrors } from "@mioto/workflow-builder/interpreter/interpreterConfig";
-import { Renderer } from "@mioto/workflow-builder/renderer/components/Renderer.server";
+import { Renderer } from "@mioto/workflow-builder/renderer/components/Renderer";
 import buffer from "@mioto/workflow-builder/tree-utils/buffer";
 import { TreeProvider } from "@mioto/workflow-builder/tree/TreeProvider";
 import type { TModuleVariableValue } from "@mioto/workflow-builder/variables/types";
@@ -37,12 +36,7 @@ export const generateMetadata = generateOrgMetadata((t) => ({
 export default async function RenderPage(props: Params) {
   const params = await props.params;
 
-  const {
-    treeUuid,
-    locale,
-    sessionUuid,
-    orgSlug
-  } = params;
+  const { treeUuid, locale, sessionUuid, orgSlug } = params;
 
   setRequestLocale(locale);
 
@@ -55,7 +49,7 @@ export default async function RenderPage(props: Params) {
 
   const session = await getUnauthorizedSession(sessionUuid);
 
-  if (!session) notFound();
+  if (!session) return notFound();
 
   const { db, user } = await checkAuthWithAnonymus(session.ownerUuid);
 
@@ -124,10 +118,6 @@ export default async function RenderPage(props: Params) {
                     session.state as unknown as TModuleVariableValue<TActionErrors>,
                 }}
                 environment="published"
-                getAuthorization={async () => {
-                  "use server";
-                  return await checkAuthWithAnonymus(session.ownerUuid);
-                }}
               />
             </Session>
           </TreeProvider>

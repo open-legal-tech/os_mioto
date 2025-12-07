@@ -11,7 +11,7 @@ config:
   infra:docs_image: miotoregistry.azurecr.io/docs:1.0.0
   infra:dotenv-key:
     secure: AAABACGnFAG/7NWJM1FBYl5PK7jhlIZ4xa1/1bvtFpX0qrcUPO5lx9rHklPfZZV4AhrFlUl2aoNt8J2WMaLIDi7dwb/MK1ZPhiY7qs+J4/0x5z10MW5R2F2t3yj1+BiB
-  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.1
+  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.7
   infra:jwt_access_expiration_minutes: "15"
   infra:jwt_refresh_expiration_days: "30"
   infra:org: PhilGarb
@@ -26,12 +26,8 @@ config:
   infra:sentry_org: miotolabs
   infra:sentry_team: mioto-labs
   infra:specialized_token_expiration_minutes: "30"
-  infra:sync_server_image: miotoregistry.azurecr.io/sync-server:1.0.0
+  infra:sync_server_image: miotoregistry.azurecr.io/sync-server:1.0.2
   infra:with_email_service: "true"
-  scaleway:access_key:
-    secure: AAABAIe8sVokAWg/YWnpArt+oKdV7XR5+PmFuYxwxECEdbDFPtnFbHaG97Qw1IkU513CDQ==
-  scaleway:secret_key:
-    secure: AAABAA5TR3nVxa9oZ56Bk7aiGJXhsbgwDbdLFz2rlErIgFWuHvguNTl7w5rMH3Xj/Acu5rIyMfhjneeyLISzOWONcp4=
   sentry:token:
     secure: AAABACYNpaH5vDEUEepatoMJ7hrTePr+0Yvmfn8fGJj1dadAbHh799l3/4NuqQ6Dj450UTgNVj0/2wWHTU5VmF3v7r/WVsW/XdeN5IdBM2pNSJ9lPDgt3NNlbBaVYxF2h9L7UaKFOA==
   infra:s3_region: fr-par

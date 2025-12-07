@@ -14,7 +14,6 @@ import * as azuread from "@pulumi/azuread";
 import * as authorization from "@pulumi/azure-native/authorization";
 
 const config = new pulumi.Config();
-const scalewayConfig = new pulumi.Config("scaleway");
 const azureConfig = authorization.getClientConfigOutput({});
 
 // ------------------------------------------------------------------
@@ -366,10 +365,6 @@ const syncServer = new app.ContainerApp("sync-server", {
           return val;
         }),
       },
-      {
-        name: "aws-s3-secret",
-        value: scalewayConfig.requireSecret("secret_key"),
-      },
       { name: "azure-storage-key", value: storageKey },
     ],
     registries: [
@@ -418,14 +413,6 @@ const syncServer = new app.ContainerApp("sync-server", {
           { name: "AZURE_STORAGE_ACCOUNT", value: storageAccount.name },
           { name: "AZURE_STORAGE_CONTAINER", value: storageContainer.name },
           { name: "CLIENT_ENDPOINT", value: config.require("client_endpoint") },
-          {
-            name: "AWS_S3_SECRET_ACCESS_KEY",
-            secretRef: "aws-s3-secret",
-          },
-          {
-            name: "AWS_S3_ACCESS_KEY_ID",
-            value: scalewayConfig.require("access_key"),
-          },
           { name: "SENTRY_AUTH_TOKEN", secretRef: "sentry-auth-token" },
           { name: "SENTRY_PROJECT", value: sentryProjectSyncServer.name },
           { name: "SENTRY_ORG", value: sentryProjectSyncServer.organization },
@@ -545,10 +532,6 @@ const miotoEditor = new app.ContainerApp("editor", {
         }),
       },
       {
-        name: "aws-s3-secret",
-        value: scalewayConfig.requireSecret("secret_key"),
-      },
-      {
         name: "access-token-secret",
         value: config.requireSecret("access_token_secret"),
       },
@@ -593,10 +576,6 @@ const miotoEditor = new app.ContainerApp("editor", {
             secretRef: "azure-email-connection-string",
           },
           {
-            name: "AWS_S3_SECRET_ACCESS_KEY",
-            secretRef: "aws-s3-secret",
-          },
-          {
             name: "ACCESS_TOKEN_SECRET",
             secretRef: "access-token-secret",
           },
@@ -615,10 +594,6 @@ const miotoEditor = new app.ContainerApp("editor", {
           { name: "AZURE_STORAGE_KEY", secretRef: "azure-storage-key" },
           { name: "AZURE_STORAGE_ACCOUNT", value: storageAccount.name },
           { name: "AZURE_STORAGE_CONTAINER", value: storageContainer.name },
-          {
-            name: "AWS_S3_ACCESS_KEY_ID",
-            value: scalewayConfig.require("access_key"),
-          },
           { name: "CONTACT_EMAIL", value: config.require("contact_email") },
           {
             name: "WITH_EMAIL_SERVICE",

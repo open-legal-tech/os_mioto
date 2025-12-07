@@ -9,10 +9,6 @@ export const serverModelsEnv = createEnv({
   RESET_PASSWORD_EXPIRATION_MINUTES: z.coerce.number().min(1).default(30),
   VERIFY_EMAIL_EXPIRATION_MINUTES: z.coerce.number().min(1).default(30),
   FILE_UPLOAD_EXPIRATION_MINUTES: z.coerce.number().min(1).default(30),
-  PUBLIC_DOCUMENT_TEMPLATE_BUCKET: z.string().min(1),
-  PROTECTED_DOCUMENT_TEMPLATE_BUCKET: z.string().min(1),
-  AWS_S3_ACCESS_KEY_ID: z.string().min(1),
-  AWS_S3_SECRET_ACCESS_KEY: z.string().min(1),
   WITH_EMAIL_SERVICE: z
     .preprocess((value) => value === "true", z.boolean())
     .optional(),
@@ -24,8 +20,6 @@ export const serverModelsEnv = createEnv({
     )
     .optional(),
   AZURE_EMAIL_CONNECTION_STRING: z.string().min(1),
-  S3_ENDPOINT: z.string().min(1),
-  S3_REGION: z.string().min(1),
   CLIENT_ENDPOINT: z.string(),
   APP_ENV: zAppEnvs,
   AZURE_STORAGE_KEY: z.string(),

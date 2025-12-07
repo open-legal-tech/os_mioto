@@ -1,6 +1,7 @@
 "use server";
 
 import { getFileContent } from "@mioto/server/File/getContent";
+import { getFileContentAsBuffer } from "@mioto/server/File/getContentAsBuffer";
 import { checkAuthWithAnonymus } from "@mioto/server/db/checkAuthenticated";
 
 export async function getFileAction({
@@ -12,7 +13,7 @@ export async function getFileAction({
 }) {
   const { db, user } = await checkAuthWithAnonymus(userUuid);
 
-  const file = await getFileContent(db)({
+  const file = await getFileContentAsBuffer(db)({
     fileUuid,
     orgUuid: user.organizationUuid,
   });
@@ -20,7 +21,7 @@ export async function getFileAction({
   if (!file?.content) return;
 
   return {
-    data: new Uint8Array(file.content),
+    data: file.content,
     name: file.displayName,
     downloadLink: `/api/getFile/${file.uuid}`,
   };

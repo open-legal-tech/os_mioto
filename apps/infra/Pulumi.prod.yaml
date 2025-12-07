@@ -1,18 +1,14 @@
 config:
   infra:org: PhilGarb
   azure-native:location: swedencentral
-  scaleway:access_key:
-    secure: AAABAAoSl/2aVbSd3RqfeUG7lNqM2qgB2T8KTylsZZ3EIvKZeaNX6NpSMR72hWxQslCriw==
-  scaleway:secret_key:
-    secure: AAABAHH4txvj701GQXUUo3BfvibGxE7WEgF2xCeYS4yQN6Mg5nJlFc4j85hQz8/HqRhjWhAnAs9pJoQLtf9tVk6s/RA=
   sentry:token:
     secure: AAABAD5oH5m/bem54MW957buK3WG/hxfkcJI3xyduEum+tcHfu2p88ScZNsbfvODrSPS28D3PgnKmucKvsIlggunBp2IuO4G5wVxaaiFuPHvdkD5LzK6gszb5XatEuWFeUP9idlDhg==
   infra:db_username: mioto
   infra:db_password:
     secure: AAABADIQvto2ndb8RTisJMUDm8rPkKAqmTIB/ZGhq64hfsm/c7o7T9qTINSop35u/6mSzHFVAOQKfBR9tetvUY/dvJqJV/ISFovkeg==
   infra:pdf_engine_image: gotenberg/gotenberg:8
-  infra:sync_server_image: mioto.azurecr.io/sync-server:1.0.0
-  infra:editor_image: mioto.azurecr.io/editor:1.0.2
+  infra:sync_server_image: mioto.azurecr.io/sync-server:1.0.2
+  infra:editor_image: mioto.azurecr.io/editor:1.1.7
   infra:docs_image: mioto.azurecr.io/docs:1.0.1
   infra:sentry_org: miotolabs
   infra:sentry_team: mioto-labs
@@ -29,3 +25,6 @@ config:
     secure: AAABAMlG65nLy7jZETadlnAZvkWyGLk4l+iuzaOHZWyLF5HG+nLPwtq4Zk3H144w4cMbl41ydiLsWSbGnR7PopWKZNFOsl1e
   infra:refresh_token_secret:
     secure: AAABABqpIFR5Nd3OBFD+44T2jmXAu4rnBl9Ruzc0nGLWbP/5ecx/SgKjyRNUxqr81Iy+9csVlvCU/zOP3w5WwXJf5K+N+XaG
+  infra:posthog_token:
+    secure: AAABANvRAEce5St+9Z5xQpuZH32+XrQWsltRFjfjeHMew7QyqpGoN5Tl7cR7QRDMUPOTZcBESFZ1kQteOBGBulMGHON1TyrKfFYjSoFCnQ==
+  infra:sender_email: DoNotReply@email.mioto.app

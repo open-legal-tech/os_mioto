@@ -1,7 +1,6 @@
 import "server-only";
 import type { DB } from "@mioto/server/db/types";
 import { getTreeSnapshot } from "../../db/exports/getTreeSnapshot";
-import type { RetrieveSessionFn } from "../../interpreter/exports/interpreter";
 import type { TActionErrors } from "../../interpreter/exports/interpreterConfig";
 import { createInterpreterMethods } from "../../interpreter/exports/methods";
 import { TreeClient } from "../../tree/type/treeClient";
@@ -10,8 +9,7 @@ import { convertBufferToTreeDoc } from "../../tree/utils/exports/convertBufferTo
 import type { TModuleVariableValue } from "../../variables/exports/types";
 
 export const retrieveSessionFromSnapshot =
-  (db: DB, userUuid: string): RetrieveSessionFn =>
-  async ({ sessionUuid }) => {
+  (db: DB, userUuid: string) => async (sessionUuid: string) => {
     const session = await db.session.findUnique({
       where: { uuid: sessionUuid, ownerUuid: userUuid },
       select: {

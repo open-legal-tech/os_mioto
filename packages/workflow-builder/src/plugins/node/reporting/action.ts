@@ -2,7 +2,6 @@
 
 import { FatalError } from "@mioto/errors";
 import { sendEmail } from "@mioto/email/sendEmail";
-import { getFileContent } from "@mioto/server/File/getContent";
 import { checkAuthWithAnonymus } from "@mioto/server/db/checkAuthenticated";
 import { dangerousFullAccessPrisma } from "@mioto/server/db/prisma";
 import type { DB } from "@mioto/server/db/types";
@@ -25,6 +24,7 @@ import {
   isPrimitiveVariable,
 } from "../../../variables/exports/types";
 import { type IReportingNode, ReportingNode } from "./plugin";
+import { getFileContentAsBuffer } from "@mioto/server/File/getContentAsBuffer";
 
 const generateJSONContentFromVariables = (
   variable: Variable,
@@ -121,7 +121,7 @@ const sendReport = async ({
           if (!isDefinedFileVariable(variable)) return undefined;
 
           return {
-            file: await getFileContent(db)({
+            file: await getFileContentAsBuffer(db)({
               fileUuid: variable.value.uuid,
               orgUuid,
             }),
@@ -135,7 +135,7 @@ const sendReport = async ({
       if (!value.file) return undefined;
 
       return {
-        contentInBase64: Buffer.from(value.file.content).toString("base64"),
+        contentInBase64: value.file.content.toString("base64"),
         name: `${value.fileName}.${value.file.extension}`,
         contentType: value.file.fileType,
       };

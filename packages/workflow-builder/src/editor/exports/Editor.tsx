@@ -4,7 +4,7 @@ import { getCurrentEmployee } from "@mioto/server/db/getCurrentEmployee";
 import type React from "react";
 import { mapValues } from "remeda";
 import { ResetButton } from "../../renderer/ResetButton";
-import { WebsocketRenderer } from "../../renderer/exports/WebsocketRenderer.server";
+import { Renderer } from "../../renderer/exports/Renderer";
 import { createSessionAction } from "../actions/createSession.action";
 import { EditorHeader } from "../components/EditorHeader";
 import { EditorProvider } from "../components/EditorProvider";
@@ -20,13 +20,11 @@ export async function Editor({
   onTreeNotFound,
   SideMenuBottomSlot,
   HeaderRightSlot,
-  SYNCSERVER_ENDPOINT,
 }: {
   treeUuid: string;
   onTreeNotFound: () => void;
   SideMenuBottomSlot?: React.ReactNode;
   HeaderRightSlot?: React.ReactNode;
-  SYNCSERVER_ENDPOINT: string;
 }) {
   const { db, user } = await getCurrentEmployee();
 
@@ -123,8 +121,7 @@ export async function Editor({
             onCreateSession={onCreateSession}
             PreviewSlot={
               <PreviewContainer session={session as any}>
-                <WebsocketRenderer
-                  SYNCSERVER_ENDPOINT={SYNCSERVER_ENDPOINT}
+                <Renderer
                   environment="private"
                   session={session as any}
                   userUuid={user.uuid}

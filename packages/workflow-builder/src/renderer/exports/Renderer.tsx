@@ -14,25 +14,22 @@ import {
 import { RendererPrimitives } from "../RendererPrimitives";
 import { renderers } from "../rendererPlugins";
 
-export type RendererClientProps = Pick<
+export type RendererProps = Pick<
   ProviderProps,
   | "session"
-  | "persistSession"
-  | "retrieveSession"
   | "environment"
   | "onError"
-  | "onDone"
   | "withResetConfirmation"
   | "userUuid"
   | "RestartButton"
 >;
 
-export function RendererClient({ environment, ...props }: RendererClientProps) {
+export function Renderer({ environment, ...props }: RendererProps) {
   return (
     //@ts-expect-error - It errors because the types allow either a treeString or a treeBuffer. Here they are both optional, because typescript is not inferring them as either or.
-    (<RendererProvider {...props} environment={environment}>
+    <RendererProvider {...props} environment={environment}>
       <RendererImpl />
-    </RendererProvider>)
+    </RendererProvider>
   );
 }
 

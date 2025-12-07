@@ -11,7 +11,7 @@ import {
   TextUnderline,
   X,
 } from "@phosphor-icons/react/dist/ssr";
-import { TextBolder } from "@phosphor-icons/react/dist/ssr/TextB";
+import { TextBolderIcon } from "@phosphor-icons/react/ssr";
 import {
   BubbleMenu,
   type Editor,
@@ -319,7 +319,7 @@ function MarkMenu({ editor }: { editor: Editor }) {
             children: t("components.rich-text-editor.bold.tooltip"),
           }}
         >
-          <TextBolder />
+          <TextBolderIcon />
         </Toolbar.ToggleButton>
         <Toolbar.ToggleButton
           size="small"

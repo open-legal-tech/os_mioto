@@ -78,23 +78,16 @@ export type ProviderProps = {
   treeUuid: string;
   userUuid: string;
   RestartButton?: React.ReactNode;
-} & Pick<
-  InterpreterConfig,
-  "environment" | "retrieveSession" | "persistSession" | "onError" | "onDone"
->;
+} & Pick<InterpreterConfig, "environment" | "onError">;
 
 export const RendererProvider = ({
   children,
   environment,
-  persistSession,
-  retrieveSession,
   onError,
-  onDone,
   withResetConfirmation,
   session: initialSession,
   userUuid,
   RestartButton,
-
 }: ProviderProps) => {
   const locale = useLocale();
   const { treeMap } = useTreeContext();
@@ -111,10 +104,7 @@ export const RendererProvider = ({
       treeClient,
       treeUuid: initialSession.treeUuid,
       sessionUuid: initialSession.uuid,
-      persistSession,
-      retrieveSession,
       onError,
-      onDone,
       onReset: async () => {
         await resetSessionAction({
           sessionUuid: initialSession.uuid,
