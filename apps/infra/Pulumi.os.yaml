@@ -30,3 +30,5 @@ config:
   infra:sender_email: DoNotReply@email.mioto.app
   infra:register_access_codes: ["test"]
   infra:resource-group-name: "os"
+  infra:docker_password:
+    secure: AAABAO2RkveTe0UvwWka3F8uIeythqqJif7mQqyNvluA8SBoLj6toJpBJznFOXlr7FadKQ==

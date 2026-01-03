@@ -200,6 +200,8 @@ if (!dbConnectionString) {
   );
 }
 
+const dockerPw = config.require("docker_password");
+
 const databaseMigrationImage = new docker_build.Image("image", {
   platforms: ["linux/amd64"],
   context: {
@@ -213,7 +215,7 @@ const databaseMigrationImage = new docker_build.Image("image", {
   registries: [
     {
       address: "docker.io",
-      password: "J*L-8xQMyet3CV8NRtne",
+      password: dockerPw,
       username: "philtechdev",
     },
   ],

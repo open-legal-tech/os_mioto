@@ -8,7 +8,7 @@ config:
     secure: AAABADIQvto2ndb8RTisJMUDm8rPkKAqmTIB/ZGhq64hfsm/c7o7T9qTINSop35u/6mSzHFVAOQKfBR9tetvUY/dvJqJV/ISFovkeg==
   infra:pdf_engine_image: gotenberg/gotenberg:8
   infra:sync_server_image: mioto.azurecr.io/sync-server:1.0.2
-  infra:editor_image: mioto.azurecr.io/editor:1.1.7
+  infra:editor_image: mioto.azurecr.io/editor:1.1.8
   infra:docs_image: mioto.azurecr.io/docs:1.0.1
   infra:sentry_org: miotolabs
   infra:sentry_team: mioto-labs
@@ -28,3 +28,5 @@ config:
   infra:posthog_token:
     secure: AAABANvRAEce5St+9Z5xQpuZH32+XrQWsltRFjfjeHMew7QyqpGoN5Tl7cR7QRDMUPOTZcBESFZ1kQteOBGBulMGHON1TyrKfFYjSoFCnQ==
   infra:sender_email: DoNotReply@email.mioto.app
+  infra:docker_password:
+    secure: AAABAIc674OoaTPTy+iCgnsSQePH3VCl/ZIgNvlXuUeOM3XaeJNZoTC4epk3ojEEy1ORFA==

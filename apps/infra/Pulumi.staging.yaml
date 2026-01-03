@@ -11,7 +11,7 @@ config:
   infra:docs_image: miotoregistry.azurecr.io/docs:1.0.0
   infra:dotenv-key:
     secure: AAABACGnFAG/7NWJM1FBYl5PK7jhlIZ4xa1/1bvtFpX0qrcUPO5lx9rHklPfZZV4AhrFlUl2aoNt8J2WMaLIDi7dwb/MK1ZPhiY7qs+J4/0x5z10MW5R2F2t3yj1+BiB
-  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.7
+  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.8
   infra:jwt_access_expiration_minutes: "15"
   infra:jwt_refresh_expiration_days: "30"
   infra:org: PhilGarb
@@ -35,3 +35,5 @@ config:
   infra:public_file_bucket_name: public-files-a6ae18f
   infra:privat_file_bucket_name: privat-files-011deea
   infra:resource-group-name: "company"
+  infra:docker_password:
+    secure: AAABAPn85fHH+qbyzw9tXgIHcjJCj0WGbm/KykLCKyqe3BZfd4P7mYLTxUT0DjdBo7+E2Q==
