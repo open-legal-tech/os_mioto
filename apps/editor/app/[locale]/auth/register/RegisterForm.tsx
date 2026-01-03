@@ -173,53 +173,6 @@ export const RegisterForm = ({ className, onSuccess }: Props) => {
                   name="privacy"
                 />
               </Stack>
-              <Stack>
-                <div>
-                  <Form.Checkbox
-                    {...methods.register("legal", {
-                      required: {
-                        value: true,
-                        message: t(
-                          "auth.register.register-form.form.legal.errors.required.message",
-                        ),
-                      },
-                    })}
-                    className="inline align-middle mr-3"
-                  />
-                  <Form.Label
-                    className="inline align-middle font-mediumText"
-                    htmlFor="legal"
-                  >
-                    {t(
-                      "auth.register.register-form.form.alphaDisclaimer.label",
-                    )}
-                  </Form.Label>
-                </div>
-                <Form.FormError
-                  data-test={`error-legal`}
-                  name="legal"
-                  className="mt-2"
-                />
-              </Stack>
-              <Stack>
-                <div>
-                  <Form.Checkbox
-                    {...methods.register("newsletter")}
-                    className="inline align-middle mr-3"
-                  />
-                  <Form.Label
-                    className="inline align-middle font-mediumText"
-                    htmlFor="newsletter"
-                  >
-                    {t("auth.register.register-form.newsletterSignUp")}
-                  </Form.Label>
-                </div>
-                <Form.FormError
-                  data-test={`error-newsletter`}
-                  name="newsletter"
-                  className="mt-2"
-                />
-              </Stack>
             </Stack>
             <Form.FormError name="root" />
             <Form.SubmitButton className="mt-4" type="submit">
