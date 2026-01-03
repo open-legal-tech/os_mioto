@@ -32,7 +32,7 @@ export default async function Page(props: Props) {
           gridTemplateColumns: "1fr 20% min(50%, 700px)",
         }}
       >
-        <div className="row-[1] col-span-full lg:ml-4 justify-center flex lg:justify-start z-50 bg-white lg:bg-transparent">
+        <div className="row-[1] w-max col-span-full lg:ml-4 justify-center flex lg:justify-start z-50 bg-white lg:bg-transparent">
           <Link
             href="/docs"
             className="rounded w-[80px] lg:w-[110px] focus:outer-focus p-2"

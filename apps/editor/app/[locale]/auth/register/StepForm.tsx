@@ -29,14 +29,6 @@ export const StepForm = ({ className }: Props) => {
   const router = useRouter();
 
   const Steps = [
-    <AccessForm
-      onSuccess={(code) => {
-        setRegisterData({ accessCode: code });
-        setStep(1);
-      }}
-      className={className}
-      key="access-form"
-    />,
     <RegisterForm
       onSuccess={(values) => {
         setRegisterData({ ...registerData, ...values });
