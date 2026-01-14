@@ -47,7 +47,6 @@ export default async function LocalizationLayout(props: {
     >
       <body className={`h-full app-theme w-full bg-gray1`}>
         <SystemProvider locale={locale} messages={messages}>
-          <Script async src="https://js.stripe.com/v3/buy-button.js" />
           <TooltipProvider>
             <StyledJsxRegistry>
               <QueryClientProvider>

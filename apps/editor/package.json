@@ -1,6 +1,6 @@
 {
   "name": "@mioto/editor",
-  "version": "1.1.9",
+  "version": "1.1.12",
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",

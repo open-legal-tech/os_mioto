@@ -33,13 +33,6 @@ export const AnalyticsPopup = ({ shouldOptIn }: AnalyticsPopupProps) => {
     setShowBanner(false);
   };
 
-  React.useEffect(() => {
-    if (shouldOptIn) {
-      posthog.opt_in_capturing();
-      setShowBanner(false);
-    }
-  });
-
   return showBanner ? (
     <Stack className="absolute bottom-3 left-2 right-2 @md:bottom-5 @md:left-5 @md:right-5 p-2 md:p-4 bg-gray1 z-50 rounded gap-2 shadow-md border border-gray5 max-w-[500px]">
       <Heading size="small">Magst du uns helfen?</Heading>

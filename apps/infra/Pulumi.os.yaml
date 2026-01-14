@@ -11,7 +11,7 @@ config:
   infra:docs_image: miotoregistry.azurecr.io/docs:1.0.0
   infra:dotenv-key:
     secure: AAABAM/izuqwwxaCda0hk6ynEcA7ZVAMIRDBp8JQrszdvIpiX+jR5FUkO2qZc61bz4tmP5YVv4Z3SW4qUeEMHF8FhVThOy8aepVX92JVk10GkGTVXGQQeuxEdlwNGNot
-  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.9
+  infra:editor_image: miotoregistry.azurecr.io/editor:1.1.11
   infra:jwt_access_expiration_minutes: "15"
   infra:jwt_refresh_expiration_days: "30"
   infra:org: PhilGarb

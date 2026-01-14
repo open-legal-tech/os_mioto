@@ -48,7 +48,7 @@ export async function AnalyticsProvider({
       userUuid={userUuid}
       POSTHOG_TOKEN={builderEnv.POSTHOG_TOKEN}
     >
-      {withPopoup ? <AnalyticsPopup shouldOptIn /> : null}
+      {withPopoup ? <AnalyticsPopup /> : null}
       {auth !== "unauthenticated" && auth.user.Account?.email ? (
         <AnalyticsIdentify
           userEmail={auth.user.Account.email}

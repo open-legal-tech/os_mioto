@@ -2,7 +2,7 @@ import { setRequestLocale } from "@mioto/locale/server";
 import { getCurrentEmployee } from "@mioto/server/db/getCurrentEmployee";
 import type React from "react";
 import { LegalNotification } from "../../../(legal)/shared/LegalNotification";
-import { AnalyticsProvider } from "../../../shared/AnalyticsProvider";
+// import { AnalyticsProvider } from "../../../shared/AnalyticsProvider";
 import { checkMaintenanceMode } from "./shared/checkMaintenanceMode";
 import { redirect } from "../../../../../i18n/routing";
 
@@ -25,12 +25,14 @@ export default async function EmployeeSpaceLayout(props: Props) {
   }
 
   return (
-    <AnalyticsProvider popupProps={{ shouldOptIn: true }}>
+    <>
+      {/* <AnalyticsProvider popupProps={{ shouldOptIn: true }}> */}
       <LegalNotification
         userPrivacyVersion={user.Account.privacyVersion}
         userTermsVersion={user.Account.termsVersion}
       />
       {children}
-    </AnalyticsProvider>
+    </>
+    // </AnalyticsProvider>
   );
 }
